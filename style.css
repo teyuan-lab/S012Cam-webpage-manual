@@ -1,0 +1,91 @@
+:root {
+  --bg: #ffffff;
+  --ink: #16181d;
+  --muted: #5b6270;
+  --line: #e4e6eb;
+  --soft: #f5f6f8;
+  --accent: #3a5bd9;
+  --night: #0b0e18;
+  --max: 920px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", "Noto Sans TC", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* top bar */
+.bar {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(255,255,255,.88); backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.bar .in { max-width: var(--max); margin: 0 auto; padding: 10px 20px; display: flex; align-items: center; gap: 14px; }
+.bar .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--ink); }
+.bar .brand img { width: 30px; height: 30px; border-radius: 7px; }
+.bar nav { margin-left: auto; display: flex; gap: 18px; font-size: 15px; flex-wrap: wrap; }
+.bar nav a { color: var(--muted); }
+.bar nav a:hover { color: var(--ink); text-decoration: none; }
+
+/* hero */
+.hero { background: var(--night); }
+.hero img { width: 100%; max-width: 1400px; margin: 0 auto; }
+
+main { max-width: var(--max); margin: 0 auto; padding: 8px 20px 60px; }
+section { padding: 36px 0 8px; border-bottom: 1px solid var(--line); }
+section:last-of-type { border-bottom: 0; }
+h1 { font-size: 34px; line-height: 1.2; margin: 28px 0 8px; letter-spacing: -.01em; }
+h2 { font-size: 26px; line-height: 1.25; margin: 0 0 14px; letter-spacing: -.01em; }
+h3 { font-size: 19px; margin: 26px 0 8px; }
+p { margin: 0 0 14px; }
+.lead { font-size: 19px; color: var(--muted); max-width: 46em; }
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+
+.note {
+  background: var(--soft); border: 1px solid var(--line); border-radius: 12px;
+  padding: 14px 18px; margin: 16px 0;
+}
+.note.warn { background: #fff7e8; border-color: #f3dfb4; }
+
+ol.steps { counter-reset: s; list-style: none; padding: 0; margin: 10px 0 0; }
+ol.steps > li { counter-increment: s; position: relative; padding: 2px 0 14px 48px; }
+ol.steps > li::before {
+  content: counter(s); position: absolute; left: 0; top: 0;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--ink); color: #fff; font-weight: 700; font-size: 15px;
+  display: grid; place-items: center;
+}
+ol.steps > li strong:first-child { display: block; }
+
+table { width: 100%; border-collapse: collapse; margin: 10px 0 18px; font-size: 16px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 14px; color: var(--muted); font-weight: 600; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
+@media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } h1 { font-size: 28px; } }
+
+.angles { display: flex; gap: 10px; flex-wrap: wrap; margin: 6px 0 14px; }
+.angles span {
+  border: 1px solid var(--line); border-radius: 999px; padding: 4px 14px; font-weight: 600; font-size: 15px;
+  background: #fff;
+}
+code, .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .92em; }
+code { background: var(--soft); padding: 1px 6px; border-radius: 5px; }
+.math { font-family: "Cambria Math", "STIX Two Math", Georgia, serif; font-size: 18px; background: var(--soft); border-radius: 10px; padding: 12px 16px; margin: 8px 0 16px; line-height: 1.9; }
+
+details { border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 10px 0; }
+details summary { cursor: pointer; font-weight: 600; }
+details[open] summary { margin-bottom: 8px; }
+
+.swatch { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: -2px; margin-right: 4px; }
+
+footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+footer .in { max-width: var(--max); margin: 0 auto; padding: 22px 20px 40px; display: flex; gap: 18px; flex-wrap: wrap; }
+footer .in span:first-child { margin-right: auto; }

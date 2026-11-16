@@ -1,215 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PolarCam – Polarization camera for iPhone</title>
-<meta name="description" content="PolarCam turns an iPhone and a rotating polarizer into a polarization camera. Learn how to set it up, take measurements and read AoLP and DoLP images.">
-<link rel="icon" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PolarCam – Polarization camera for iPhone</title>
+  <meta name="description" content="Explore polarization, assemble the PolarCam rotator, and measure polarized light with your iPhone.">
+  <link rel="alternate" hreflang="en" href="https://teyuan-lab.github.io/polarcam/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://teyuan-lab.github.io/polarcam/zh/">
+  <link rel="icon" href="./assets/favicon.png">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./language.js" defer></script>
 </head>
-<body>
-
-<header class="bar">
-  <div class="in">
-    <a class="brand" href="./"><img src="assets/icon.png" alt="">PolarCam</a>
-    <nav>
-      <a href="#how">How it works</a>
-      <a href="#hardware">Hardware</a>
-      <a href="#measure">Measure</a>
-      <a href="#results">Results</a>
-      <a href="#faq">FAQ</a>
-      <a href="#support">Support</a>
-    </nav>
-  </div>
-</header>
-
-<div class="hero"><img src="assets/hero.jpg" alt="PolarCam – See how light is polarized."></div>
-
-<main>
-
-<h1>See how light is polarized.</h1>
-<p class="lead">PolarCam turns an iPhone into a polarization camera. With a rotating polarizer in front of the camera, it takes four RAW photos and calculates, for every pixel, how strongly the light is polarized (DoLP) and in which direction (AoLP).</p>
-
-<!-- HOW IT WORKS -->
-<section id="how">
-  <h2>How it works</h2>
-  <p>Your eyes and a normal camera only see brightness and colour. Light also has a polarization: the direction in which its electric field oscillates. Reflections from glass, water and paint, glare, the blue sky, and stress inside transparent plastics all change the polarization of light, and PolarCam makes this visible.</p>
-  <p>A linear polarizer only lets through the part of the light that oscillates along its axis. By photographing the same scene through the polarizer at four angles, PolarCam measures the intensities <i>I</i><sub>0</sub>, <i>I</i><sub>45</sub>, <i>I</i><sub>90</sub> and <i>I</i><sub>135</sub> at every pixel and computes the linear Stokes parameters:</p>
-  <div class="math">
-    S<sub>0</sub> = I<sub>0</sub> + I<sub>90</sub> = I<sub>45</sub> + I<sub>135</sub> &nbsp;&nbsp;(total intensity)<br>
-    S<sub>1</sub> = I<sub>0</sub> − I<sub>90</sub> &nbsp;&nbsp;&nbsp; S<sub>2</sub> = I<sub>45</sub> − I<sub>135</sub><br>
-    DoLP = √(S<sub>1</sub>² + S<sub>2</sub>²) / S<sub>0</sub> &nbsp;&nbsp;&nbsp;(0 = unpolarized, 1 = fully polarized)<br>
-    AoLP = ½ · atan2(S<sub>2</sub>, S<sub>1</sub>) &nbsp;&nbsp;&nbsp;(0° to 180°)
-  </div>
-  <p>PolarCam works on the camera's linear RAW (DNG) data, so the numbers are not distorted by the usual photo processing. It calculates each colour channel (R, G, B) separately and also a combined RGB result.</p>
-</section>
-
-<!-- HARDWARE -->
-<section id="hardware">
-  <h2>The hardware: a polarization rotator</h2>
-  <div class="grid2">
-    <div>
-      <p>PolarCam is used with a <b>polarization rotator</b> mounted in front of the iPhone's camera. It holds a linear polarizer in a wheel that you turn by hand to four positions:</p>
-      <div class="angles"><span>1 · 0°</span><span>2 · 45°</span><span>3 · 90°</span><span>4 · 135°</span></div>
-      <p>Each position gives one of the four RAW photos. The order matters: photo 1 must be taken at 0°, photo 2 at 45°, photo 3 at 90° and photo 4 at 135°.</p>
-      <p>The rotator must not move relative to the phone between photos, and the polarizer must cover the lens completely.</p>
-      <div class="note small"><b>Rotator design and assembly instructions are coming soon.</b> This section will be updated with drawings, parts and mounting instructions.</div>
+<body class="guide">
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="bar">
+    <div class="in">
+      <a class="brand" href="./"><img src="./assets/icon.png" width="30" height="30" alt="">PolarCam</a>
+      <nav aria-label="Main navigation"><a href="#how">Polarization</a><a href="#app">The app</a><a href="#hardware">Assembly</a><a href="#measure">How to measure</a><a href="#manual">Manual</a><a href="#support">Support</a></nav>
+      <a class="language" data-language href="zh/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a>
     </div>
-    <div>
-      <svg viewBox="0 0 420 360" role="img" aria-label="Diagram of the polarization rotator: a wheel with a polarizer in front of the iPhone camera, with marks at 0, 45, 90 and 135 degrees" style="width:100%;height:auto">
-        <defs>
-          <linearGradient id="pol" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#d9def0"/><stop offset="1" stop-color="#b9c2e0"/>
-          </linearGradient>
-        </defs>
-        <!-- wheel -->
-        <circle cx="210" cy="180" r="150" fill="#f3f4f7" stroke="#2a2d35" stroke-width="4"/>
-        <circle cx="210" cy="180" r="92" fill="url(#pol)" stroke="#2a2d35" stroke-width="3"/>
-        <!-- polarizer axis lines (shown at 0°) -->
-        <g stroke="#5a6aa8" stroke-width="2" opacity=".7">
-          <line x1="125" y1="150" x2="295" y2="150"/><line x1="120" y1="165" x2="300" y2="165"/>
-          <line x1="118" y1="180" x2="302" y2="180"/><line x1="120" y1="195" x2="300" y2="195"/>
-          <line x1="125" y1="210" x2="295" y2="210"/>
-        </g>
-        <!-- position marks -->
-        <g font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#2a2d35" text-anchor="middle">
-          <line x1="360" y1="180" x2="384" y2="180" stroke="#2a2d35" stroke-width="4"/><text x="398" y="186" text-anchor="start">0°</text>
-          <line x1="316" y1="74" x2="333" y2="57" stroke="#2a2d35" stroke-width="4"/><text x="346" y="52">45°</text>
-          <line x1="210" y1="30" x2="210" y2="6" stroke="#2a2d35" stroke-width="4"/><text x="252" y="22">90°</text>
-          <line x1="104" y1="74" x2="87" y2="57" stroke="#2a2d35" stroke-width="4"/><text x="70" y="52">135°</text>
-        </g>
-        <!-- pointer -->
-        <polygon points="378,172 362,180 378,188" fill="#e0533d"/>
-        <text x="210" y="352" font-family="Inter, -apple-system, sans-serif" font-size="16" fill="#5b6270" text-anchor="middle">Front view (illustration only)</text>
-      </svg>
+  </header>
+  <main id="content">
+    <div class="hero">
+      <div class="hero-copy">
+        <h1>See how light is polarized</h1>
+        <p class="lead">Take four photos through a linear polarizer. PolarCam turns the polarization in glass reflections, blue skies and transparent plastic into an image you can measure.</p>
+        <div class="actions">
+          <a class="button" href="https://apps.apple.com/app/polarcam/id6834323253">View on the App Store</a>
+          <a class="button secondary" href="#measure">Take a measurement</a>
+        </div>
+      </div>
+      <img class="hero-art" src="./assets/hero-optics.webp" alt="" width="840" height="823" fetchpriority="high">
     </div>
-  </div>
-</section>
-
-<!-- MEASURE -->
-<section id="measure">
-  <h2>Taking a measurement</h2>
-
-  <h3>Before you start</h3>
-  <ul>
-    <li>Fix the iPhone on a tripod or a stable stand. Small movements can be corrected, but a steady phone gives the best results.</li>
-    <li>Mount the rotator over the main camera and set the wheel to <b>0°</b>.</li>
-    <li>Keep the lighting constant during the four photos (no flickering lights, no people walking through the scene).</li>
-  </ul>
-
-  <h3>Camera settings</h3>
-  <p>Tap the <b>settings</b> button on the camera screen to show these settings:</p>
-  <table>
-    <tr><th>Setting</th><th>What it does</th></tr>
-    <tr><td><b>Interval</b></td><td>Seconds between the four photos. This is the time you have to turn the wheel to the next position. About <b>2 s</b> works well when turning by hand.</td></tr>
-    <tr><td><b>Sampling scale</b> (1/N)</td><td>1 = full resolution. Higher values calculate a smaller image, which is faster. Use 2–3 for quick checks.</td></tr>
-    <tr><td><b>Shutter</b> (1/N s)</td><td>Exposure time. Choose it so that the brightest part of the scene is <i>not</i> overexposed. Overexposed pixels cannot be measured and are shown in magenta.</td></tr>
-  </table>
-
-  <h3>Capture</h3>
-  <ol class="steps">
-    <li><strong>Press the shutter button</strong> on the right edge of the screen. PolarCam takes photo 1 (0°).</li>
-    <li><strong>Turn the wheel to 45°</strong> before the next photo is taken. PolarCam takes the next photo automatically after the interval.</li>
-    <li><strong>Turn to 90°, then to 135°</strong> in the same way, until all four photos are taken.</li>
-    <li><strong>Choose how to calculate.</strong>
-      <ul>
-        <li><b>Align and Calculate</b> (recommended): corrects small shifts of the phone between the photos, then calculates.</li>
-        <li><b>Calculate Without Aligning</b>: use this when the phone was perfectly still.</li>
+    <section id="how">
+      <h2>What is polarization?</h2>
+      <p>Polarization describes the direction in which the electric field of light oscillates. Reflections from glass and water often favour one direction. Light scattered by the sky can also be polarized. Hold transparent plastic in front of an LCD screen to see how internal stress changes the polarization.</p>
+<p>A linear polarizer transmits the electric field component along its transmission axis. PolarCam uses four images at 0°, 45°, 90° and 135° to calculate the degree and angle of linear polarization at each pixel.</p>
+      <figure><img src="./assets/polarization-example.webp" alt="Ordinary and polarized images of the same glass-topped table" width="1000" height="405" loading="lazy"><figcaption>The same glass-topped table. The PolarCam image on the right shows direction in colour and degree of polarization in brightness.</figcaption></figure>
+      <details>
+        <summary>How do four images give us polarization?</summary>
+        <p>Let I₀, I₄₅, I₉₀ and I₁₃₅ be the intensities at the four angles. Under ideal conditions the linear Stokes parameters, degree and angle are given by:</p>
+        <div class="math">
+          <div>S₀ = I₀ + I₉₀ = I₄₅ + I₁₃₅</div>
+          <div>S₁ = I₀ − I₉₀</div><div>S₂ = I₄₅ − I₁₃₅</div>
+          <div>DoLP = √(S₁² + S₂²) / S₀</div>
+          <div>AoLP = ½ atan2(S₂, S₁) (mod 180°)</div>
+        </div>
+      </details>
+    </section>
+    <section id="app">
+      <h2>The PolarCam app</h2>
+      <p>PolarCam calculates polarization pixel by pixel from linear RAW (DNG) data. View combined RGB or individual R, G and B channels, zoom in, and tap a point to read its values. Optional automatic alignment corrects small shifts between shots.</p>
+      <div id="results" class="grid2 result-grid">
+        <table><thead><tr><th scope="col">View</th><th scope="col">How to read it</th></tr></thead><tbody><tr><td>DoLP (degree of linear polarization)</td><td>Black is 0 (unpolarized) and white is 1 (fully linearly polarized).</td></tr><tr><td>AoLP (angle of linear polarization)</td><td>Colour shows the angle, measured from the polarizer’s 0° position.</td></tr><tr><td>AoLP + DoLP</td><td>Colour shows the angle and brightness shows the degree of polarization.</td></tr></tbody></table>
+        <figure><img src="./assets/legend.png" alt="Polarization colour wheel: hue encodes angle, radius encodes degree" width="600" height="600" loading="lazy"><figcaption>Angle changes around the wheel. Degree of polarization increases outward.</figcaption></figure>
+      </div>
+      <div id="data"><p>Measurements are saved on your iPhone. You can keep the four original DNGs or export PNG images and 32-bit floating-point TIFFs (S₀, S₁, S₂, DoLP and AoLP) from the result screen. The app requires iOS 15.6 or later and an iPhone camera that supports RAW (DNG) capture.</p></div>
+      <p>Adjust the camera’s sampling scale for faster calculations, or adjust the shutter speed to avoid overexposing bright areas. In the saved measurements list, swipe left to share or delete a measurement, or use Select to manage several at once.</p>
+    </section>
+    <section id="hardware">
+      <h2>Assemble the PolarCam rotator</h2>
+      <div class="grid2 assembly-grid">
+        <div>
+          <p>The kit contains a base, dial, thin ball bearing, 12 round magnets, 3 cube magnets, a linear polarizer and 8 nano gel pads. Have small pliers, a utility knife, a soft cloth, a fine marker and a blunt pin or toothpick ready.</p>
+          <p class="note warn">Keep small, strong magnets away from children, pets, pacemakers and other medical implants. When trimming supports with a utility knife, cut away from your hands.</p>
+          <p><a href="https://claude.ai/artifact/6ecn4Kd3XfYrGinNGq5Cke">Watch the assembly animation</a></p>
+        </div>
+        <figure><img src="./assets/rotator-exploded.webp" alt="Exploded drawing of the polarizer, dial, bearing and base" width="785" height="900" loading="lazy"><figcaption>Exploded view from the PolarCam user manual.</figcaption></figure>
+      </div>
+      <ol class="steps">
+        <li><strong>Remove the printing supports</strong>Pull off larger supports with small pliers and trim the rest with a utility knife. Clear the magnet pockets and bearing seat.</li>
+        <li><strong>Insert the round magnets</strong>Keep the magnets stacked and take each one from the same end. Always put the same face in first. Press 8 into the base and 4 into the dial until flush.</li>
+        <li><strong>Seat the bearing</strong>Turn the dial upside down. Place the bearing in the recess and press evenly on its outer ring until it meets the lip.</li>
+        <li><strong>Fit the dial to the base</strong>Lower the dial and bearing so the bearing’s inner ring slides over the raised hub.</li>
+        <li><strong>Insert the cube magnets</strong>Place the 3 cube magnets in their seats through the centre of the dial. They hold the bearing’s inner ring against the base.</li>
+        <li><strong>Test the dial</strong>Turn it once in the direction of the arrows. It should click every 45°, eight times per turn, without scraping. If a stop repels the dial, push the reversed magnet out through the hole behind it and flip it.</li>
+      </ol>
+      <h3>Fit the polarizer and mount the rotator</h3>
+      <p>Leave the protective film on. Look through the polarizer at glare from a flat, horizontal surface. Turn it until the glare is darkest and draw a vertical line on the film to mark the transmission axis. Turn the dial to position 1 and fit four pads. Align the mark with the ↔ arrows, press the polarizer onto the pads and remove the protective film.</p>
+<p>Take the iPhone out of its case and wipe the back clean. Fit the other four pads to the mounting plate and leave their outer backing on. Hold the plate with its long side along the long edge of the phone and the opening centred over the rear lenses. Check all available lenses in the app for dark corners, then peel the backing and press for 10 seconds. A phone case can lift the rotator away from the lenses and obstruct the Ultra Wide view.</p>
+<p>Before the first measurement, hold the phone level and measure glare on a flat, horizontal surface. The result should show horizontal polarization. If it shows vertical, refit the polarizer after turning it 90°.</p>
+    </section>
+    <section id="measure">
+      <h2>Take a measurement with the app and rotator</h2>
+      <div class="angles" aria-label="Polarizer angle for each photo"><span>Photo 1 <b>0°</b></span><span>Photo 2 <b>45°</b></span><span>Photo 3 <b>90°</b></span><span>Photo 4 <b>135°</b></span></div>
+      <div class="grid2 capture-grid">
+        <ol class="steps">
+        <li><strong>Choose your lens and interval</strong>Hold the iPhone sideways, choose a camera lens and tap to focus. Set Interval to 2 seconds or more if you’re new to the rotator. Keep the scene, lighting and phone steady. Use a tripod or solid surface for close-ups.</li>
+        <li><strong>Start at position 1</strong>Line up the pointer with one ridge (0°) and tap the shutter once. Wait for the app to take Photo 1.</li>
+        <li><strong>Turn one click at each new label</strong>When Photo 2 appears, turn to 45° and hold still. Do the same at Photo 3 (90°) and Photo 4 (135°). Hold still until the fourth shot is taken.</li>
+        <li><strong>Check the result</strong>Choose a display mode and colour channel on the result screen. If alignment fails or broad colour fringes appear along edges, steady the phone and try again.</li>
+      </ol>
+        <figure><img src="./assets/rotator-positions.webp" alt="Four dial positions identified by one to four ridges at the pointer" width="866" height="900" loading="lazy"><figcaption>The ridge count at the base pointer matches the photo number.</figcaption></figure>
+      </div>
+      <div class="note">Without the rotator, hold a sheet polarizer in front of the lens and turn it by hand through the same angles. At 0° the transmission axis runs along the iPhone’s long edge. Set a longer interval and keep the phone steady.</div>
+    </section>
+    <section id="manual" class="manual">
+      <h2>PolarCam user manual</h2>
+      <p>The PDF includes the parts checklist, assembly drawings, polarizer check, shooting instructions and troubleshooting. The current English draft still contains some image placeholders.</p>
+      <a class="button" href="./assets/polarcam-user-manual-en.pdf" download>Download the English user manual (PDF)</a>
+    </section>
+    <section id="faq">
+      <h2>Troubleshooting</h2>
+      <details><summary>Why are some pixels magenta?</summary><p>Magenta marks pixels the app could not measure. They may be overexposed, too dark or outside the area where the four photos align. Try adjusting the exposure or resting the phone on a stable surface.</p></details>
+      <details><summary>Why are the corners dark?</summary><p>Remove the iPhone case, then check that the mounting plate opening is centred over the rear lenses. Check each lens in the app before sticking the plate down again.</p></details>
+      <details><summary>Why do the angles look wrong?</summary><p>Check the order of the four positions and repeat the first-use reflection check to confirm the polarizer axis.</p></details>
+    </section>
+    <section id="support">
+      <h2>Support</h2>
+      <p>When reporting a problem, include your iPhone model, iOS version and, if available, an exported measurement.</p>
+      <ul class="support-links">
+        <li><a href="mailto:teyuan@gmail.com?subject=PolarCam%20support">teyuan@gmail.com</a></li>
+        <li><a href="https://github.com/teyuan-lab/polarcam/issues">Open a GitHub issue</a></li>
       </ul>
-    </li>
-  </ol>
-  <div class="note">
-    <b>“Alignment Not Confirmed”?</b> If the photos cannot be lined up as a whole (for example near and far objects moved differently), PolarCam offers:
-    <ul style="margin:6px 0 0">
-      <li><b>Use aligned areas (NN%)</b>: calculates only where the photos line up and shows the rest in magenta.</li>
-      <li><b>Retake</b>: take the four photos again.</li>
-      <li><b>Continue without aligning</b>: calculates everything without correction.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- RESULTS -->
-<section id="results">
-  <h2>Reading the results</h2>
-  <div class="grid2">
-    <div>
-      <p>The results screen shows one image at a time. Use the buttons along the bottom to choose:</p>
-      <ul>
-        <li><b>Channel</b>: <b>RGB</b> (all colours combined), or <b>R</b>, <b>G</b>, <b>B</b> separately.</li>
-        <li><b>Display</b>: <b>AoLP+DoLP</b>, <b>DoLP</b> or <b>AoLP</b>.</li>
-      </ul>
-      <table>
-        <tr><th>Image</th><th>Meaning</th></tr>
-        <tr><td><b>AoLP+DoLP</b></td><td>Colour = angle of polarization, brightness = degree of polarization. Dark areas are hardly polarized; bright, saturated areas are strongly polarized.</td></tr>
-        <tr><td><b>DoLP</b></td><td>Greyscale: black = unpolarized (0), white = fully polarized (1).</td></tr>
-        <tr><td><b>AoLP</b></td><td>The angle only, as colour at full brightness, even where polarization is weak. Black where the angle is undefined.</td></tr>
-      </table>
-      <p><span class="swatch" style="background:#ff00ff"></span><b>Magenta</b> marks pixels that could not be measured: overexposed or too dark, or not aligned.</p>
-    </div>
-    <div>
-      <img src="assets/legend.png" alt="Colour scale: colour around the circle is the angle of polarization from 0 to 180 degrees; distance from the centre is the degree of polarization" width="600" height="600">
-      <p class="small muted" style="text-align:center">Colour scale: the colour gives the angle (0°–180°, measured from the polarizer's 0° position towards 45°); distance from the centre gives DoLP. The same scale is shown next to the image in the app.</p>
-    </div>
-  </div>
-  <h3>Inspecting details</h3>
-  <ul>
-    <li><b>Pinch</b> to zoom in to individual pixels; tap <b>1×</b> to reset.</li>
-    <li><b>Tap the image</b> to open it full screen, then tap a point to read its values there.</li>
-  </ul>
-</section>
-
-<!-- SAVE / EXPORT -->
-<section id="data">
-  <h2>Saving and exporting data</h2>
-  <p>Every measurement is saved automatically on the iPhone. Open them from the <b>photo button</b> at the bottom left of the camera screen.</p>
-  <ul>
-    <li><b>Reopen</b> a measurement to see exactly the same results again.</li>
-    <li><b>Export</b> (on the results screen) writes the images as PNG files and <b>S0, S1, S2, DoLP and AoLP as 32-bit float TIFF</b> files for analysis in MATLAB, Python, ImageJ and similar tools. Invalid pixels are stored as NaN.</li>
-    <li><b>Share</b> a measurement folder by swiping left on it, for example to AirDrop it to a computer or save it to Files.</li>
-    <li><b>Delete</b> one measurement by swiping left, or several with <b>Select</b>.</li>
-    <li><b>Keep original DNGs</b> (switch in the list): keeps the four original RAW photos. Turning it off saves about 90% of the space, but the original photos can then no longer be reprocessed.</li>
-  </ul>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <h2>Frequently asked questions</h2>
-  <details><summary>Do I need special hardware?</summary>
-    <p>Yes. PolarCam needs a linear polarizer in front of the camera that can be turned to 0°, 45°, 90° and 135°. Without it, the app still runs, but the measured polarization will be close to zero.</p></details>
-  <details><summary>Why is most of my DoLP image dark?</summary>
-    <p>Most natural light is only weakly polarized, so a dark DoLP image is normal. Strong polarization usually appears in reflections from glass, water and glossy surfaces, in the sky at 90° from the sun, and on LCD screens.</p></details>
-  <details><summary>Why do I see magenta areas?</summary>
-    <p>Those pixels could not be measured: they were overexposed or too dark in one of the photos, or the photos did not line up there. Use a shorter exposure for bright scenes and keep the phone still.</p></details>
-  <details><summary>Does the order of the four photos matter?</summary>
-    <p>Yes. The photos must be taken at 0°, 45°, 90° and 135°, in this order. A wrong order gives wrong angles.</p></details>
-  <details><summary>Which iPhones are supported?</summary>
-    <p>An iPhone that can take RAW (DNG) photos with its main camera, running iOS 15.6 or later.</p></details>
-  <details><summary>Does PolarCam upload my photos?</summary>
-    <p>No. Everything is processed and stored on your iPhone. See the <a href="privacy.html">privacy policy</a>.</p></details>
-</section>
-
-<!-- SUPPORT -->
-<section id="support">
-  <h2>Support</h2>
-  <p>Questions, problems or ideas? Contact us:</p>
-  <ul>
-    <li>Email: <a href="mailto:teyuan@gmail.com?subject=PolarCam%20support">teyuan@gmail.com</a></li>
-    <li>Or open an issue on <a href="https://github.com/teyuan-lab/polarcam/issues">GitHub</a>.</li>
-  </ul>
-  <p class="muted small">When reporting a problem, please include your iPhone model, iOS version and, if possible, an exported measurement.</p>
-</section>
-
-</main>
-
-<footer>
-  <div class="in">
-    <span>© 2026 Te-yuan Chung · Department of Optics and Photonics, National Central University, Taiwan</span>
-    <a href="privacy.html">Privacy policy</a>
-    <a href="#support">Support</a>
-  </div>
-</footer>
-
+    </section>
+  </main>
+  <footer><div class="in"><span>© 2026 Te-yuan Chung · Department of Optics and Photonics, National Central University, Taiwan</span><a href="privacy.html">Privacy policy</a></div></footer>
 </body>
 </html>

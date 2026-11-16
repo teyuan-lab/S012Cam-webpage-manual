@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PolarCam｜iPhone 偏振相機</title>
+  <meta name="description" content="認識光的偏振，組裝 PolarCam 轉盤，並用 iPhone 拍攝線偏振影像。">
+  <link rel="alternate" hreflang="en" href="https://teyuan-lab.github.io/polarcam/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://teyuan-lab.github.io/polarcam/zh/">
+  <link rel="icon" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../language.js" defer></script>
+</head>
+<body class="guide">
+  <a class="skip" href="#content">跳至主要內容</a>
+  <header class="bar">
+    <div class="in">
+      <a class="brand" href="./"><img src="../assets/icon.png" width="30" height="30" alt="">PolarCam</a>
+      <nav aria-label="主要導覽"><a href="#how">偏振概述</a><a href="#app">App 說明</a><a href="#hardware">轉盤組裝</a><a href="#measure">拍攝教學</a><a href="#manual">手冊下載</a><a href="#support">支援</a></nav>
+      <a class="language" data-language href="../" lang="en" hreflang="en">English</a>
+    </div>
+  </header>
+  <main id="content">
+    <div class="hero">
+      <div class="hero-copy">
+        <h1>用 iPhone 看見光的偏振</h1>
+        <p class="lead">用線性偏光片拍攝同一場景的四張照片。PolarCam 會把玻璃反光、藍天和透明塑膠中的偏振變化，轉成可讀取的影像。</p>
+        <div class="actions">
+          <a class="button" href="https://apps.apple.com/app/polarcam/id6834323253">前往 App Store</a>
+          <a class="button secondary" href="#measure">開始拍攝</a>
+        </div>
+      </div>
+      <img class="hero-art" src="../assets/hero-optics.webp" alt="" width="840" height="823" fetchpriority="high">
+    </div>
+    <section id="how">
+      <h2>偏振概述</h2>
+      <p>光的偏振描述電場振盪的方向。光在玻璃或水面反射後，常會偏向某個方向振盪。藍天的散射光也可能帶有偏振。把透明塑膠放在 LCD 螢幕前，還可以觀察材料應力造成的偏振變化。</p>
+<p>線性偏光片會讓沿著其透光軸振盪的電場分量通過。PolarCam 透過 0°、45°、90° 和 135° 的四張影像，計算每個像素的線偏振度和線偏振角。</p>
+      <figure><img src="../assets/polarization-example.webp" alt="左為一般照片，右為同一張玻璃桌的偏振影像" width="1000" height="405" loading="lazy"><figcaption>同一張玻璃桌。右圖以色彩標示偏振方向、以亮度標示偏振度。</figcaption></figure>
+      <details>
+        <summary>四張影像如何算出線偏振？</summary>
+        <p>令 I₀、I₄₅、I₉₀、I₁₃₅ 為四個角度的光強度。在理想條件下，線偏振的 Stokes 參數與線偏振度、線偏振角的關係如下。</p>
+        <div class="math">
+          <div>S₀ = I₀ + I₉₀ = I₄₅ + I₁₃₅</div>
+          <div>S₁ = I₀ − I₉₀</div><div>S₂ = I₄₅ − I₁₃₅</div>
+          <div>DoLP = √(S₁² + S₂²) / S₀</div>
+          <div>AoLP = ½ atan2(S₂, S₁) (mod 180°)</div>
+        </div>
+      </details>
+    </section>
+    <section id="app">
+      <h2>PolarCam App 說明</h2>
+      <p>PolarCam 以線性的 RAW（DNG）資料逐像素計算偏振。可切換合併 RGB 或單獨的 R、G、B 通道，放大影像並點選位置讀值。選用自動對齊可修正小幅手震。</p>
+      <div id="results" class="grid2 result-grid">
+        <table><thead><tr><th scope="col">顯示模式</th><th scope="col">判讀方式</th></tr></thead><tbody><tr><td>DoLP（線偏振度）</td><td>黑色為 0，白色為 1，分別代表無線偏振和完全線偏振。</td></tr><tr><td>AoLP（線偏振角）</td><td>以色彩表示偏振方向，角度以偏光片的 0° 位置為基準。</td></tr><tr><td>AoLP + DoLP</td><td>色彩表示角度，亮度表示偏振度。</td></tr></tbody></table>
+        <figure><img src="../assets/legend.png" alt="偏振色輪，色相對應角度，從中心向外偏振度增加" width="600" height="600" loading="lazy"><figcaption>色輪的圓周表示偏振角，離中心越遠，偏振度越高。</figcaption></figure>
+      </div>
+      <div id="data"><p>量測會儲存在 iPhone。可選擇保留四張原始 DNG，或從結果畫面匯出 PNG 與 32 位元浮點 TIFF（S₀、S₁、S₂、DoLP、AoLP）。App 需要 iOS 15.6 或更新版本，並使用支援 RAW（DNG）的 iPhone 相機。</p></div>
+      <p>在相機設定中，可降低取樣解析度以加快運算，或調整快門避免亮部過曝。在已儲存量測清單中，向左滑動可分享或刪除單筆量測，也可用「選取」一次管理多筆。</p>
+    </section>
+    <section id="hardware">
+      <h2>組裝 PolarCam 轉盤</h2>
+      <div class="grid2 assembly-grid">
+        <div>
+          <p>零件包括底座、轉盤、薄型軸承、12 顆圓磁鐵、3 顆方磁鐵、線性偏光片和 8 片奈米凝膠貼片。組裝時準備尖嘴鉗或小鉗子、美工刀、軟布、細筆與鈍針或牙籤。</p>
+          <p class="note warn">套件含小型強力磁鐵，請遠離兒童、寵物、心律調節器及其他植入式醫療裝置。用美工刀修整支撐時，刀口朝外，遠離手部。</p>
+          <p><a href="https://claude.ai/artifact/6ecn4Kd3XfYrGinNGq5Cke">觀看組裝動畫</a></p>
+        </div>
+        <figure><img src="../assets/rotator-exploded.webp" alt="偏光片、轉盤、軸承和底座的分解圖" width="785" height="900" loading="lazy"><figcaption>轉盤分解圖，取自 PolarCam 使用手冊。</figcaption></figure>
+      </div>
+      <ol class="steps">
+        <li><strong>清除列印支撐</strong>用小鉗子移除大塊支撐，再用美工刀修平。確認磁鐵孔與軸承座沒有殘料。</li>
+        <li><strong>壓入圓磁鐵</strong>保持 12 顆磁鐵疊在一起，每次從同一端取下一顆，同一面先入孔。底座裝 8 顆，轉盤裝 4 顆，全部壓至與表面齊平。</li>
+        <li><strong>安裝軸承</strong>翻轉轉盤，將軸承放入圓形凹槽，再均勻按壓軸承外環，直到貼住止擋。</li>
+        <li><strong>將轉盤裝到底座</strong>把轉盤和軸承放到底座上，讓軸承內環套住底座凸台。</li>
+        <li><strong>插入方磁鐵</strong>從轉盤中央將 3 顆方磁鐵分別放入卡座，使軸承內環固定在底座上。</li>
+        <li><strong>檢查轉盤</strong>沿箭頭轉一圈。每 45° 應卡住一次，一圈共 8 次，轉動時應無摩擦。若某一格出現排斥，從孔後推出裝反的磁鐵並翻面。</li>
+      </ol>
+      <h3>安裝偏光片與轉盤</h3>
+      <p>保留保護膜，透過偏光片斜看水平亮面的反光。轉到反光最暗時，在膜上畫一條垂直線，標出透光軸。將轉盤轉到位置 1，放入四片貼片，讓標線平行於轉盤的 ↔ 記號。貼妥後撕去保護膜。</p>
+<p>取下 iPhone 保護殼並擦乾淨背面。先將另外四片貼片貼在底板背面，保留外側背膠。試放底板，讓底板長邊沿著手機長邊，並將開口對準後鏡頭。切換 App 中可用的鏡頭，確認畫面沒有暗角，再撕掉背膠並按壓 10 秒。手機殼會讓轉盤離鏡頭更遠，可能遮住超廣角鏡頭的視野。</p>
+<p>首次使用時，保持手機水平，對著水平亮面的反光做一次量測。反光應顯示為水平偏振。如果顯示垂直，將偏光片轉 90° 後重新貼合。</p>
+    </section>
+    <section id="measure">
+      <h2>用 App 和轉盤拍攝</h2>
+      <div class="angles" aria-label="四張照片的偏光片角度"><span>Photo 1 <b>0°</b></span><span>Photo 2 <b>45°</b></span><span>Photo 3 <b>90°</b></span><span>Photo 4 <b>135°</b></span></div>
+      <div class="grid2 capture-grid">
+        <ol class="steps">
+        <li><strong>選鏡頭並設定拍攝間隔</strong>橫拿手機，選擇鏡頭並點一下畫面對焦。新手可把 Interval 設成 2 秒或更長。盡量保持光線、場景和手機穩定，拍近物時可用腳架或桌面支撐。</li>
+        <li><strong>從位置 1 開始</strong>讓底座指標對準 1 道凸紋（0°），按一次快門。畫面顯示 Photo 1，等第一張自動拍攝。</li>
+        <li><strong>看到下一張提示就轉一格</strong>看到 Photo 2 時沿箭頭轉到 45°，並保持不動。依序在 Photo 3、Photo 4 出現時轉到 90°、135°，直到第四張拍完。</li>
+        <li><strong>檢查結果</strong>結果畫面可切換顯示模式與色彩通道。若 App 無法確認對齊，或物體邊緣出現大片彩邊，固定好手機後再量一次。</li>
+      </ol>
+        <figure><img src="../assets/rotator-positions.webp" alt="以底座指標讀取轉盤上的一道至四道凸紋" width="866" height="900" loading="lazy"><figcaption>底座指標對準的凸紋數，對應 Photo 1 到 Photo 4。</figcaption></figure>
+      </div>
+      <div class="note">若沒有轉盤，可用手將線性偏光片放在鏡頭前，依同一順序旋轉。0° 時透光軸沿 iPhone 長邊。將拍攝間隔設長一些，並保持手機穩定。</div>
+    </section>
+    <section id="manual" class="manual">
+      <h2>PolarCam 使用手冊</h2>
+      <p>PDF 涵蓋零件清單、組裝圖、偏光片校正、拍攝與故障排除。目前提供英文草稿，部分圖像仍為預留框。</p>
+      <a class="button" href="../assets/polarcam-user-manual-en.pdf" download>下載英文使用手冊（PDF）</a>
+    </section>
+    <section id="faq">
+      <h2>常見問題</h2>
+      <details><summary>為什麼有些像素顯示洋紅色？</summary><p>洋紅色標示無法量測的像素。這些像素可能過曝、太暗，或位於四張照片無法對齊的區域。可調整曝光，或將手機放在穩固的支撐物上再拍。</p></details>
+      <details><summary>為什麼影像四角變暗？</summary><p>先取下手機殼，再確認底板開口對準後鏡頭。重新貼合前，在 App 中逐一檢查可用的鏡頭。</p></details>
+      <details><summary>為什麼偏振角不對？</summary><p>檢查四個角度的拍攝順序，再用水平亮面的反光確認偏光片透光軸。</p></details>
+    </section>
+    <section id="support">
+      <h2>支援</h2>
+      <p>需要協助時，請提供 iPhone 型號、iOS 版本，並在方便時附上匯出的量測。</p>
+      <ul class="support-links">
+        <li><a href="mailto:teyuan@gmail.com?subject=PolarCam%20support">teyuan@gmail.com</a></li>
+        <li><a href="https://github.com/teyuan-lab/polarcam/issues">在 GitHub 提出問題</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer><div class="in"><span>© 2026 Te-yuan Chung · 國立中央大學光電科學與工程學系</span><a href="privacy.html">隱私權政策</a></div></footer>
+</body>
+</html>

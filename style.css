@@ -160,3 +160,6 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #697ffa; outline-off
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+.guide figure.video { max-width: 720px; margin: 24px auto; }
+.guide figure.video video { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 12px; background: #2a3238; }

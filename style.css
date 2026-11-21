@@ -85,7 +85,7 @@ footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 14px
 footer .in { max-width: var(--max); margin: 0 auto; padding: 22px 20px 40px; display: flex; gap: 18px; flex-wrap: wrap; }
 footer .in span:first-child { margin-right: auto; }
 
-/* PolarCam guide */
+/* S012Cam guide */
 .guide {
   --ink: #161827;
   --muted: #4f566c;
@@ -163,3 +163,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #697ffa; outline-off
 
 .guide figure.video { max-width: 720px; margin: 24px auto; }
 .guide figure.video video { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 12px; background: #2a3238; }
+
+.camera-reference td:first-child { width: 3em; color: var(--accent); font-weight: 700; }
+.camera-reference td:nth-child(2) { width: 9em; overflow-wrap: anywhere; }
+.camera-reference td { padding: 10px 8px; }

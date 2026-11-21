@@ -3,20 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PolarCam – Polarization camera for iPhone</title>
-  <meta name="description" content="Explore polarization, assemble the PolarCam rotator, and measure polarized light with your iPhone.">
-  <link rel="alternate" hreflang="en" href="https://teyuan-lab.github.io/polarcam/">
-  <link rel="alternate" hreflang="zh-Hant" href="https://teyuan-lab.github.io/polarcam/zh/">
-  <link rel="icon" href="./assets/favicon.png">
-  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="./style.css?v=f28e6aefbe26">
+  <title>S012Cam – Polarization camera for iPhone</title>
+  <meta name="description" content="Explore polarization, assemble the S012Cam rotator, and measure polarized light with your iPhone.">
+  <link rel="canonical" href="https://teyuan-lab.github.io/S012Cam-webpage-manual/">
+  <meta property="og:title" content="S012Cam – Polarization camera for iPhone">
+  <meta property="og:description" content="Explore polarization, assemble the S012Cam rotator, and measure polarized light with your iPhone.">
+  <meta property="og:image" content="https://teyuan-lab.github.io/S012Cam-webpage-manual/assets/icon.png?v=s012cam2">
+  <link rel="alternate" hreflang="en" href="https://teyuan-lab.github.io/S012Cam-webpage-manual/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://teyuan-lab.github.io/S012Cam-webpage-manual/zh/">
+  <link rel="icon" href="./assets/favicon.png?v=s012cam2">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=s012cam2">
+  <link rel="stylesheet" href="./style.css?v=4c1f1a5db38d">
   <script src="./language.js" defer></script>
 </head>
 <body class="guide">
   <a class="skip" href="#content">Skip to content</a>
   <header class="bar">
     <div class="in">
-      <a class="brand" href="./"><img src="./assets/icon.png" width="30" height="30" alt="">PolarCam</a>
+      <a class="brand" href="./"><img src="./assets/icon.png?v=s012cam2" width="30" height="30" alt="">S012Cam</a>
       <nav aria-label="Main navigation"><a href="#how">Polarization</a><a href="#app">The app</a><a href="#hardware">Assembly</a><a href="#measure">How to measure</a><a href="#manual">Manual</a><a href="#support">Support</a></nav>
       <a class="language" data-language href="zh/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a>
     </div>
@@ -25,19 +29,18 @@
     <div class="hero">
       <div class="hero-copy">
         <h1>See how light is polarized</h1>
-        <p class="lead">Take four photos through a linear polarizer. PolarCam turns the polarization in glass reflections, blue skies and transparent plastic into an image you can measure.</p>
+        <p class="lead">S012Cam 2.0 takes a four-angle set with one shutter press. Turn the linear polarizer, hold your iPhone steady, and see how light is polarized.</p>
         <div class="actions">
-          <a class="button" href="https://apps.apple.com/app/polarcam/id6834323253">View on the App Store</a>
+          <a class="button" href="https://apps.apple.com/app/id6834323253">View on the App Store</a>
           <a class="button secondary" href="#measure">Take a measurement</a>
         </div>
       </div>
-      <img class="hero-art" src="./assets/hero-optics.webp" alt="" width="840" height="823" fetchpriority="high">
+      <img class="hero-art" src="./assets/icon.png?v=s012cam2" alt="" width="1024" height="1024" fetchpriority="high">
     </div>
     <section id="how">
       <h2>What is polarization?</h2>
       <p>Polarization describes the direction in which the electric field of light oscillates. Reflections from glass and water often favour one direction. Light scattered by the sky can also be polarized. Hold transparent plastic in front of an LCD screen to see how internal stress changes the polarization.</p>
-<p>A linear polarizer transmits the electric field component along its transmission axis. PolarCam uses four images at 0°, 45°, 90° and 135° to calculate the degree and angle of linear polarization at each pixel.</p>
-      <figure><img src="./assets/polarization-example.webp" alt="Ordinary and polarized images of the same glass-topped table" width="1000" height="405" loading="lazy"><figcaption>The same glass-topped table. The PolarCam image on the right shows direction in colour and degree of polarization in brightness.</figcaption></figure>
+<p>A linear polarizer transmits the electric field component along its transmission axis. S012Cam uses four images at 0°, 45°, 90° and 135° to calculate the degree and angle of linear polarization at each pixel.</p>
       <details>
         <summary>How do four images give us polarization?</summary>
         <p>Let I₀, I₄₅, I₉₀ and I₁₃₅ be the intensities at the four angles. Under ideal conditions the linear Stokes parameters, degree and angle are given by:</p>
@@ -50,28 +53,35 @@
       </details>
     </section>
     <section id="app">
-      <h2>The PolarCam app</h2>
-      <p>PolarCam calculates polarization pixel by pixel from linear RAW (DNG) data. View combined RGB or individual R, G and B channels, zoom in, and tap a point to read its values. Optional automatic alignment corrects small shifts between shots.</p>
+      <h2>The S012Cam app</h2>
+      <p>S012Cam calculates polarization pixel by pixel from linear RAW (DNG) data. View combined RGB or individual R, G and B channels, zoom in, and tap a point to read its values. Optional automatic alignment corrects small shifts between shots.</p>
       <div id="results" class="grid2 result-grid">
         <table><thead><tr><th scope="col">View</th><th scope="col">How to read it</th></tr></thead><tbody><tr><td>DoLP (degree of linear polarization)</td><td>Black is 0 (unpolarized) and white is 1 (fully linearly polarized).</td></tr><tr><td>AoLP (angle of linear polarization)</td><td>Colour shows the angle, measured from the polarizer’s 0° position.</td></tr><tr><td>AoLP + DoLP</td><td>Colour shows the angle and brightness shows the degree of polarization.</td></tr></tbody></table>
         <figure><img src="./assets/legend.png" alt="Polarization colour wheel: hue encodes angle, radius encodes degree" width="600" height="600" loading="lazy"><figcaption>Angle changes around the wheel. Degree of polarization increases outward.</figcaption></figure>
       </div>
-      <div id="data"><p>Measurements are saved on your iPhone. You can keep the four original DNGs or export PNG images and 32-bit floating-point TIFFs (S₀, S₁, S₂, DoLP and AoLP) from the result screen. The app requires iOS 15.6 or later and an iPhone camera that supports RAW (DNG) capture.</p></div>
-      <p>Adjust the camera’s sampling scale for faster calculations, or adjust the shutter speed to avoid overexposing bright areas. In the saved measurements list, swipe left to share or delete a measurement, or use Select to manage several at once.</p>
+      <div id="data"><p>Measurements are saved on your iPhone. You can keep the four original DNGs or export PNG images and 32-bit floating-point TIFFs (S₀, S₁, S₂, DoLP and AoLP) from the result screen. The app works on iPhones with iOS 15.6 or later. It was developed and tested on iPhone 16 Pro. Older iPhones may take longer to calculate a measurement.</p></div>
+      <h3>Capture in 2.0</h3>
+      <p>In the default Gyro mode, press the shutter for photo 1. Then turn the dial. The gyroscope senses each turn and takes photos 2–4 automatically when the iPhone is steady and the view lines up.</p>
+      <ul>
+        <li>An outline of photo 1 appears inside the dashed measurement box to help line up the next photos. The eye button shows or hides it.</li>
+        <li>Each photo is checked for blur and position immediately. If a photo fails, the app retakes that angle and keeps the earlier photos.</li>
+        <li>Switch “Photos 2–4” at the bottom right between Gyro and Timer. Timer uses a fixed interval, 2 seconds by default. Interval is dimmed in Gyro mode because it is not used.</li>
+      </ul>
+      <h3 id="camera">Camera screen: numbered guide</h3><figure><img src="./assets/s012cam-camera-numbered.png" alt="Camera screen on iPhone 16 Pro, before photo 1. Match the blue numbers to the table." width="2622" height="1206" loading="lazy"><figcaption>Camera screen on iPhone 16 Pro, before photo 1. Match the blue numbers to the table.</figcaption></figure><p><a href="./assets/s012cam-camera-numbered.png">Open the full-size numbered screenshot</a></p><div class="camera-reference"><table><thead><tr><th scope="col">No.</th><th scope="col">Control</th><th scope="col">What to do</th></tr></thead><tbody><tr><td>1</td><td>Guide and support (?)</td><td>Tap to open the S012Cam website.</td></tr><tr><td>2</td><td>Settings (gear)</td><td>Tap to open settings.</td></tr><tr><td>3</td><td>Interval (s)</td><td>Set the time between photos in Timer mode. The default is 2 seconds. Gyro mode does not use this setting, so the field is dimmed.</td></tr><tr><td>4</td><td>Resolution</td><td>Choose the calculation resolution: Full, 1/2, 1/3, 1/4, 1/5, 1/6, 1/8 or 1/10. Lower resolutions calculate faster.</td></tr><tr><td>5</td><td>Exposure</td><td>Adjust exposure compensation from −2 to +2 EV in 1/3 EV steps. Try this when the red or blue channel is weak.</td></tr><tr><td>6</td><td>Shutter</td><td>Choose 1/60 to 1/1000 s, or Custom. The default 1/200 s suits handheld use. If photos are repeatedly rejected as blurred, choose a faster shutter.</td></tr><tr><td>7</td><td>ISO</td><td>The app chooses ISO. Tap the preview to meter while keeping the selected shutter. ⚠ means ISO reached its limit. The image may be too dark or bright, or the shutter may have been lengthened.</td></tr><tr><td>8</td><td>Camera buttons</td><td>Tap to choose a camera; yellow marks the selection. This iPhone shows 5, 1× and .5 from top to bottom. Available cameras depend on the model; see the model notes below.</td></tr><tr><td>9</td><td>Shutter button</td><td>Press at 0° for photo 1. In Gyro mode, turn the dial and hold still for automatic photos 2–4. Press during a set to capture the current photo immediately.</td></tr><tr><td>10</td><td>Saved measurements</td><td>Tap to open the saved measurements list.</td></tr><tr><td>11</td><td>Photos 2–4</td><td>Choose Gyro or Timer. Gyro is the default. Turn the dial, hold still and wait for the automatic photo. Timer uses the fixed interval set at number 3.</td></tr><tr><td>12</td><td>Dashed measurement box</td><td>Keep the subject inside. After photo 1, its outline helps align the next photos. The eye button shows or hides the outline; it is not yet visible here.</td></tr></tbody></table></div>
+<p>Camera buttons match your iPhone: 1× on every model, 0.5× on models with an ultra wide camera, and 2×, 3× or 5× on models with a telephoto camera. For example, iPhone 12 Pro shows 2×; 13 Pro and 14 Pro show 3×; 15 Pro Max and 16 Pro show 5×. Cameras the iPhone does not have are not shown.</p>
     </section>
     <section id="hardware">
-      <h2>Assemble the PolarCam rotator</h2>
-      <div class="grid2 assembly-grid">
+      <h2>Assemble the S012Cam rotator</h2>
+      <div class="assembly-grid">
         <div>
           <p>The kit contains a base, dial, MagSafe plate, MagSafe magnet sticker, thin ball bearing, 12 round magnets, 3 cube magnets, a linear polarizer and 9 nano gel pads. Have small pliers, a utility knife, a soft cloth, a fine marker and a blunt pin or toothpick ready.</p>
           <p class="note warn">Keep small, strong magnets away from children, pets, pacemakers and other medical implants. When trimming supports with a utility knife, cut away from your hands.</p>
-          <p><a href="#assembly-video">Watch the assembly video</a></p>
         </div>
-        <figure><img src="./assets/rotator-exploded.webp" alt="Exploded drawing of the polarizer, dial, bearing, base, magnet sticker and MagSafe plate" width="590" height="900" loading="lazy"><figcaption>Exploded view from the PolarCam user manual.</figcaption></figure>
+
       </div>
-      <figure id="assembly-video" class="video"><video controls playsinline preload="metadata" poster="./assets/polarcam-assembly-en.webp" width="1600" height="1200"><source src="./assets/polarcam-assembly-en.mp4" type="video/mp4"><a href="./assets/polarcam-assembly-en.mp4">Download the assembly video (MP4)</a></video><figcaption>Assembly video (2 min 9 s, no sound): parts check, finding the polarizer axis, magnets, bearing, cube magnets and the final rotation check.</figcaption></figure>
+      <p id="assembly-video"><a href="./assets/polarcam-assembly-en.mp4">Assembly video for the earlier kit (MP4)</a>. Follow the current manual below if a part or step differs.</p>
       <ol class="steps">
-        <li><strong>Remove the printing supports</strong>Pull off larger supports with small pliers and trim the rest with a utility knife. Clear the magnet pockets and bearing seat.</li>
+        <li><strong>Check the printed parts</strong>If your print used supports, remove them with small pliers and carefully trim any residue. If it was printed without supports, skip removal. Check that the magnet pockets and bearing seat are clear.</li>
         <li><strong>Insert the round magnets</strong>Keep the magnets stacked and take each one from the same end. Always put the same face in first. Press 8 into the base and 4 into the dial until flush.</li>
         <li><strong>Seat the bearing</strong>Turn the dial upside down. Place the bearing in the recess and press evenly on its outer ring until it meets the lip.</li>
         <li><strong>Fit the dial to the base</strong>Lower the dial and bearing so the bearing’s inner ring slides over the raised hub.</li>
@@ -87,22 +97,21 @@
     <section id="measure">
       <h2>Take a measurement with the app and rotator</h2>
       <div class="angles" aria-label="Polarizer angle for each photo"><span>Photo 1 <b>0°</b></span><span>Photo 2 <b>45°</b></span><span>Photo 3 <b>90°</b></span><span>Photo 4 <b>135°</b></span></div>
-      <div class="grid2 capture-grid">
+      <div class="capture-grid">
         <ol class="steps">
-        <li><strong>Choose your lens and interval</strong>Hold the iPhone sideways, choose a camera lens and tap to focus. Set Interval to 2 seconds or more if you’re new to the rotator. Keep the scene, lighting and phone steady. Use a tripod or solid surface for close-ups.</li>
-        <li><strong>Start at position 1</strong>Line up the pointer with one ridge (0°) and tap the shutter once. Wait for the app to take Photo 1.</li>
-        <li><strong>Turn one click at each new label</strong>When Photo 2 appears, turn to 45° and hold still. Do the same at Photo 3 (90°) and Photo 4 (135°). Hold still until the fourth shot is taken.</li>
-        <li><strong>Check the result</strong>Choose a display mode and colour channel on the result screen. If alignment fails or broad colour fringes appear along edges, steady the phone and try again.</li>
-      </ol>
-        <figure><img src="./assets/rotator-positions.webp" alt="Four dial positions identified by one to four ridges at the pointer" width="866" height="900" loading="lazy"><figcaption>The ridge count at the base pointer matches the photo number.</figcaption></figure>
+          <li><strong>Frame the scene and take photo 1</strong>Hold the iPhone sideways. Keep the subject inside the dashed measurement box. Choose your camera, set the dial to position 1 (0°), and press the shutter.</li>
+          <li><strong>Turn the dial and hold still</strong>Follow the prompt to turn to 45°. Line up the view with the photo 1 outline and hold still. The allowed shift is 3% of the frame. The app takes photo 2 automatically.</li>
+          <li><strong>Complete the next angles</strong>Repeat at 90° and 135°. If a photo fails the blur or position check, keep that angle and let the app retake it. Earlier photos are kept.</li>
+          <li><strong>Align and calculate</strong>After all four photos, choose Align and Calculate or Calculate Without Aligning. Alignment corrects small shifts between photos.</li>
+        </ol>
+
       </div>
-      <div class="note">Without the rotator, hold a sheet polarizer in front of the lens and turn it by hand through the same angles. At 0° the transmission axis runs along the iPhone’s long edge. Set a longer interval and keep the phone steady.</div>
+      <p class="note">“Hold still…” means the app is waiting for the phone to settle. With a plain area such as a white wall, position cannot be checked. The app shows a “Plain area” message. Keep the phone steady.</p>
+      <p>After about 8 seconds without a photo, Capture now, Redo previous and Cancel appear. You can also press the shutter at any time during a set to take the current photo immediately.</p>
+      <p>In Timer mode, turn to the next angle before the fixed interval ends. If photos keep failing the blur check, choose a faster shutter. Deep scenes with both near and far objects may fail alignment because of parallax. Step back, choose a flatter scene, or use a tripod. Continue without alignment is also available.</p>
+      <div class="note">Without the rotator, hold a sheet polarizer in front of the lens and turn it by hand through the same angles. At 0° the transmission axis runs along the iPhone’s long edge. Use Timer mode with a longer interval and keep the phone steady.</div>
     </section>
-    <section id="manual" class="manual">
-      <h2>PolarCam user manual</h2>
-      <p>The PDF includes the parts checklist, assembly drawings, MagSafe mounting, polarizer check, shooting instructions and troubleshooting.</p>
-      <a class="button" href="./assets/polarcam-user-manual-en.pdf" download>Download the English user manual (PDF)</a>
-    </section>
+    <section id="manual" class="manual"><h2>S012Cam 2.0 user manuals</h2><p>Download the English or Traditional Chinese manual. Both include assembly, MagSafe mounting, the numbered camera photograph, Gyro and Timer capture, result reading and export.</p><div class="actions"><a class="button" href="./assets/s012cam-user-manual-en.pdf" download>English PDF</a><a class="button" href="./assets/s012cam-user-manual-zh.pdf" download>繁體中文 PDF</a></div><p><a href="./manuals/S012Cam-user-manual-en.html">Read in English</a> · <a href="./manuals/S012Cam-user-manual-zh.html">線上閱讀繁體中文</a></p></section>
     <section id="faq">
       <h2>Troubleshooting</h2>
       <details><summary>Why are some pixels magenta?</summary><p>Magenta marks pixels the app could not measure. They may be overexposed, too dark or outside the area where the four photos align. Try adjusting the exposure or resting the phone on a stable surface.</p></details>
@@ -113,8 +122,8 @@
       <h2>Support</h2>
       <p>When reporting a problem, include your iPhone model, iOS version and, if available, an exported measurement.</p>
       <ul class="support-links">
-        <li><a href="mailto:teyuan@gmail.com?subject=PolarCam%20support">teyuan@gmail.com</a></li>
-        <li><a href="https://github.com/teyuan-lab/polarcam/issues">Open a GitHub issue</a></li>
+        <li><a href="mailto:teyuan@gmail.com?subject=S012Cam%20support">teyuan@gmail.com</a></li>
+        <li><a href="https://github.com/teyuan-lab/S012Cam-webpage-manual/issues">Open a GitHub issue</a></li>
       </ul>
     </section>
   </main>

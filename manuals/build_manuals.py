@@ -53,7 +53,7 @@ def blocks(text):
 
 def footer(c,doc):
  c.setStrokeColor(LINE);c.line(48,43,547,43)
- c.setFont('Manual',8);c.setFillColor(MUTED);c.drawString(48,29,'S012Cam 2.0 · 2026-11-21');c.drawRightString(547,29,str(doc.page))
+ c.setFont('Manual',8);c.setFillColor(MUTED);c.drawString(48,29,'S012Cam 2.0 · 2026-11-22');c.drawRightString(547,29,str(doc.page))
 
 for lang in ('en','zh'):
  source=ROOT/f'S012Cam-user-manual-{lang}.md';text=source.read_text()
@@ -63,7 +63,7 @@ for lang in ('en','zh'):
  for kind,data in blocks(text):
   if kind in ('title','h2','h3'):
    if kind=='h2' and data.startswith(('6.','7.','8.','9.','10.')):story.append(PageBreak())
-   if kind=='h3' and data.startswith(('Example 1.','Example 2.','Example 3.','範例 1：','範例 2：','範例 3：')):story.append(PageBreak())
+   if kind=='h3' and data.startswith(('Example 1.','Example 2.','Example 3.','範例 1：','範例 2：','範例 3：','Without a Rotator:','沒有 Rotator：')):story.append(PageBreak())
    if kind=='title':story.append(Image(str(ROOT.parent/'assets/icon.png'),width=52,height=52,hAlign='LEFT'));story.append(Spacer(1,10))
    story.append(Paragraph(inline(data),styles[kind]));web.append(f'<{dict(title="h1",h2="h2",h3="h3")[kind]}>{inline(data)}</{dict(title="h1",h2="h2",h3="h3")[kind]}>')
   elif kind=='image':

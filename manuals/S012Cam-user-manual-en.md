@@ -1,6 +1,6 @@
 # S012Cam User Manual
 
-App version 2.0 · 21 November 2026
+App version 2.0 · 22 November 2026
 
 ## 1. Welcome and compatibility
 
@@ -10,7 +10,7 @@ S012Cam works on iPhones with iOS 15.6 or later. It was developed and tested on 
 
 Every model shows a 1× camera button. Models with an ultra wide camera also show 0.5×. Models with a telephoto camera show 2×, 3× or 5×. For example, iPhone 12 Pro shows 2×; 13 Pro and 14 Pro show 3×; 15 Pro Max and 16 Pro show 5×. Cameras the iPhone does not have are not shown.
 
-You can use the rotator or hold a loose linear polarizer in front of the lens. With a loose polarizer, set its transmission axis along the iPhone's long edge for 0°. Turn it through the same four angles. Timer mode with a longer interval can give you more time to turn it.
+You can use the S012Cam Polarizer Rotator accessory or hold a hand-held linear polarizer in front of the lens and turn it through four angles. With a hand-held polarizer, mount or secure the iPhone and use Timer. Estimated angles, tilt and position changes affect the result. Do not use the values from this method as a quantitative reference. See section 8.
 
 ## 2. Before you start
 
@@ -137,11 +137,35 @@ Figure 1. S012Cam 2.0 camera screen. The displayed values are examples.
 
 ## 8. Take a four-angle set
 
-### Hold the iPhone
+### Case 1. Hold the iPhone and use the Polarizer Rotator
 
 Hold it sideways with both hands, screen facing you. Your right thumb controls the screen. Your left middle finger turns the dial. From your view, the dial turns counterclockwise. Turn one click at a time. Keep your elbows against your body and tap gently.
 
 Choose a still subject under steady light. Keep the subject inside the dashed measurement box (12). Tap the preview to focus and meter. This keeps the selected shutter and changes ISO. The default shutter of 1/200 s suits handheld use.
+
+### Case 2. Use a tripod or secure the iPhone
+
+Mount the iPhone on a steady tripod or place it on a firm support where it cannot slip. Fix the framing and camera direction. Do not push the phone when turning the Polarizer Rotator or touching the screen. Keep both the phone and the subject still for all four photos.
+
+You can use Gyro or Timer. With a firmly mounted phone, turning the polarizer may not move the phone enough for Gyro to detect a turn. Timer is convenient in this case. Allow enough time to turn the dial and let vibration stop. After all four photos, choose Calculate Without Aligning to calculate directly without image alignment.
+
+A tripod does not guarantee alignment if the phone, subject or framing moved. Choose Align and Calculate or retake the set in that case.
+
+### Without a Rotator: use a hand-held polarizer
+
+![Hand-held polarizer with a fixed iPhone and four rotation angles](../assets/s012cam-hand-held-polarizer.png)
+
+Figure 2. Use a tripod or firm support and select Timer for Photos 2–4. The upper view is from the camera side. The lower views are from the screen side, with a phone screen corner in the foreground. Blue lines mark the transmission axis at 0°, 45°, 90° and 135°. Keep the selected lens's entire field of view within the clear filter at every angle.
+
+
+1. Mount the iPhone on a tripod or secure it on a firm support. Choose a still scene.
+2. Hold the linear polarizer by its edges in front of the selected camera. The entire field of view must pass through the clear area of the polarizer at all four angles. Use a large enough sheet and hold it close to the lens without touching it. Keep fingers and the filter frame out of the view. Keep the polarizer roughly parallel to the back of the phone. Check the preview at each angle for blocked edges or dark corners.
+3. Set the transmission axis along the long edge of the landscape iPhone for 0°. The edge of the filter is not necessarily its transmission axis.
+4. Set Photos 2–4 (11) to Timer. The default interval is 2 seconds. Use a longer interval if you need more time to turn and settle.
+5. Press the shutter for photo 1. From the screen side, turn counterclockwise to 45°, 90° and 135°, measured from the starting position. Follow the prompt, reach each angle before the next photo, and hold still.
+6. Do not move the iPhone. If the phone and scene stayed fixed, choose Calculate Without Aligning after photo 4.
+
+Hand rotation makes the angle, tilt and position hard to repeat. This method can show polarization patterns, but its values are not a quantitative reference. Securing the phone and using Timer reduce handling disturbance; they do not remove polarizer angle errors. This limitation applies only to a hand-held polarizer with hand-estimated angles. With a correctly fitted and calibrated Polarizer Rotator, captured at its indexed positions, the measurement values can be used as a reference.
 
 ### Gyro mode: one shutter press
 
@@ -176,7 +200,11 @@ Set Photos 2–4 (11) to Timer. Set Interval (3), 2 seconds by default. Press th
 
 ### Align and calculate
 
-Align and Calculate corrects small shifts between photos. Calculate Without Aligning uses the photos as captured.
+![Calculation choices after four photos](../assets/s012cam-align-dialog.png)
+
+Figure 3. The actual four-photo completion dialog. Align and Calculate is above Calculate Without Aligning. Cropped from the supplied screenshot.
+
+For a handheld iPhone, choose Align and Calculate to correct small shifts. With a tripod or a secured iPhone, choose Calculate Without Aligning if both the phone and scene stayed fixed for all four photos. It calculates from the photos as captured.
 
 If Alignment Not Confirmed appears, use Retake when the iPhone or subject moved. If Use aligned areas (…%) is offered, you can calculate only the aligned areas. Excluded areas are marked in magenta. Continue without alignment is also offered; the button may read Continue without aligning. Displaced edges can then show false polarization.
 
@@ -200,11 +228,11 @@ Open **Tap for details** to see the alignment status and any exposure warnings. 
 
 ![AoLP+DoLP result screen](../assets/s012cam-result-overview.png)
 
-Figure 2. An actual saved measurement of a monitor displaying a landscape photograph. This is the polarization of the monitor light, not a direct measurement of the outdoor scene in that photograph.
+Figure 4. An actual saved measurement of a monitor displaying a landscape photograph. This is the polarization of the monitor light, not a direct measurement of the outdoor scene in that photograph.
 
 The main image is AoLP+DoLP (RGB). Colour shows polarization angle. Brightness shows degree of linear polarization. These colours are not the original colours of the objects.
 
-Use the lower-left buttons to choose RGB, R, G or B. Use the lower-right buttons to choose AoLP+DoLP, DoLP or AoLP. Export is at the top. Tap the result image to open the point-reading view shown in Figure 3.
+Use the lower-left buttons to choose RGB, R, G or B. Use the lower-right buttons to choose AoLP+DoLP, DoLP or AoLP. Export is at the top. Tap the result image to open the point-reading view shown in Figure 5.
 
 The upper-right message reports overexposed and low-signal areas. Tap for details before interpreting values. A bright or colourful result alone does not show that every pixel is reliable.
 
@@ -212,7 +240,7 @@ The upper-right message reports overexposed and low-signal areas. Tap for detail
 
 ![Point reading and polarization colour wheel](../assets/s012cam-result-angle-point.png)
 
-Figure 3. The cross marks the selected point. Its reading is AoLP = 173.9° (equivalently −6.1°) and DoLP = 0.969.
+Figure 5. The cross marks the selected point. Its reading is AoLP = 173.9° (equivalently −6.1°) and DoLP = 0.969.
 
 Tap a point to move the cross. Read its values at the top. Angles 180° apart describe the same polarization direction, so 173.9° and −6.1° are equivalent.
 
@@ -222,7 +250,7 @@ The yellow marker on the wheel shows the selected point. Its direction indicates
 
 ![Grayscale DoLP result with a point reading](../assets/s012cam-result-dolp-point.png)
 
-Figure 4. The DoLP view of the same monitor scene. This selected point reads 0.855. It is a different point from Figure 3, so the two readings need not match.
+Figure 6. The DoLP view of the same monitor scene. This selected point reads 0.855. It is a different point from Figure 5, so the two readings need not match.
 
 Black means DoLP = 0. White means DoLP = 1. The grayscale shows the degree of linear polarization, not the ordinary brightness of the scene. Tap a point and read its DoLP at the top; the yellow marker locates it on the grayscale bar.
 
@@ -230,7 +258,7 @@ Black means DoLP = 0. White means DoLP = 1. The grayscale shows the degree of li
 
 ![Saved measurements list](../assets/s012cam-measurements-list.png)
 
-Figure 5. The Measurements list. The saved count, storage size and dates are examples from this iPhone and change as measurements are added or removed.
+Figure 7. The Measurements list. The saved count, storage size and dates are examples from this iPhone and change as measurements are added or removed.
 
 Keep original DNGs is at the top right; it is on in this example. Select starts multiple selection. Tap a measurement row to reopen its result. Each row shows its date, sampling, alignment status, whether DNGs were kept, and file size. See the steps below for sharing and deletion.
 

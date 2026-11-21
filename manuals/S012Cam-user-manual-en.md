@@ -196,7 +196,43 @@ Pinch to zoom, drag to move around, and tap **1×** when visible to reset the vi
 
 Open **Tap for details** to see the alignment status and any exposure warnings. If you used partial alignment, magenta areas have no usable measurement.
 
+### Example 1. Read the result screen
+
+![AoLP+DoLP result screen](../assets/s012cam-result-overview.png)
+
+Figure 2. An actual saved measurement of a monitor displaying a landscape photograph. This is the polarization of the monitor light, not a direct measurement of the outdoor scene in that photograph.
+
+The main image is AoLP+DoLP (RGB). Colour shows polarization angle. Brightness shows degree of linear polarization. These colours are not the original colours of the objects.
+
+Use the lower-left buttons to choose RGB, R, G or B. Use the lower-right buttons to choose AoLP+DoLP, DoLP or AoLP. Export is at the top. Tap the result image to open the point-reading view shown in Figure 3.
+
+The upper-right message reports overexposed and low-signal areas. Tap for details before interpreting values. A bright or colourful result alone does not show that every pixel is reliable.
+
+### Example 2. Read angle and degree at a point
+
+![Point reading and polarization colour wheel](../assets/s012cam-result-angle-point.png)
+
+Figure 3. The cross marks the selected point. Its reading is AoLP = 173.9° (equivalently −6.1°) and DoLP = 0.969.
+
+Tap a point to move the cross. Read its values at the top. Angles 180° apart describe the same polarization direction, so 173.9° and −6.1° are equivalent.
+
+The yellow marker on the wheel shows the selected point. Its direction indicates AoLP. Its distance from the centre indicates DoLP. The outer edge is 1 and the centre is 0. A value of 0.969 indicates strongly linearly polarized light at this point. It does not describe every point in the image.
+
+### Example 3. Read the DoLP view
+
+![Grayscale DoLP result with a point reading](../assets/s012cam-result-dolp-point.png)
+
+Figure 4. The DoLP view of the same monitor scene. This selected point reads 0.855. It is a different point from Figure 3, so the two readings need not match.
+
+Black means DoLP = 0. White means DoLP = 1. The grayscale shows the degree of linear polarization, not the ordinary brightness of the scene. Tap a point and read its DoLP at the top; the yellow marker locates it on the grayscale bar.
+
 ## 10. Save, share and export
+
+![Saved measurements list](../assets/s012cam-measurements-list.png)
+
+Figure 5. The Measurements list. The saved count, storage size and dates are examples from this iPhone and change as measurements are added or removed.
+
+Keep original DNGs is at the top right; it is on in this example. Select starts multiple selection. Tap a measurement row to reopen its result. Each row shows its date, sampling, alignment status, whether DNGs were kept, and file size. See the steps below for sharing and deletion.
 
 ### Find and reopen a measurement
 

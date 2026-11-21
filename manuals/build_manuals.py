@@ -1,6 +1,8 @@
 """Build the bilingual S012Cam PDFs and HTML from the reviewed Markdown sources."""
 from pathlib import Path
 import re,html,hashlib
+from reportlab import rl_config
+rl_config.useA85 = 0
 from reportlab.pdfgen import canvas
 from reportlab.platypus import SimpleDocTemplate,Paragraph,Spacer,Image,Table,TableStyle,PageBreak,KeepTogether
 from reportlab.lib.styles import ParagraphStyle
@@ -47,7 +49,7 @@ def blocks(text):
   para=[s];i+=1
   while i<len(lines) and lines[i].strip() and not re.match(r'^(#|\||!\[|- |\d+\. )',lines[i].strip()):
    para.append(lines[i].strip());i+=1
-  yield 'caption' if s.startswith(('Figure 1.','圖 1：')) else 'body',' '.join(para)
+  yield 'caption' if re.match(r'^(Figure \d+\.|圖 \d+：)',s) else 'body',' '.join(para)
 
 def footer(c,doc):
  c.setStrokeColor(LINE);c.line(48,43,547,43)
@@ -60,11 +62,12 @@ for lang in ('en','zh'):
  story=[];web=[]
  for kind,data in blocks(text):
   if kind in ('title','h2','h3'):
-   if kind=='h2' and data.startswith(('6.','7.','8.')):story.append(PageBreak())
+   if kind=='h2' and data.startswith(('6.','7.','8.','9.','10.')):story.append(PageBreak())
+   if kind=='h3' and data.startswith(('Example 1.','Example 2.','Example 3.','範例 1：','範例 2：','範例 3：')):story.append(PageBreak())
    if kind=='title':story.append(Image(str(ROOT.parent/'assets/icon.png'),width=52,height=52,hAlign='LEFT'));story.append(Spacer(1,10))
    story.append(Paragraph(inline(data),styles[kind]));web.append(f'<{dict(title="h1",h2="h2",h3="h3")[kind]}>{inline(data)}</{dict(title="h1",h2="h2",h3="h3")[kind]}>')
   elif kind=='image':
-   alt,path=data;image=Image(str(ROOT/path));image.drawWidth=499;image.drawHeight=499*1206/2622;story.append(image);story.append(Spacer(1,7));web.append(f'<figure><a href="{path}"><img src="{path}" alt="{alt}"></a></figure>')
+   alt,path=data;image=Image(str(ROOT/path));ratio=image.imageHeight/image.imageWidth;image.drawWidth=499;image.drawHeight=499*ratio;image.keepWithNext=True;story.append(image);story.append(Spacer(1,7));web.append(f'<figure><a href="{path}"><img src="{path}" alt="{alt}"></a></figure>')
   elif kind=='table':
    n=len(data[0]);first=data[0][0]
    if first in ('No.','編號'):widths=[38,112,349]

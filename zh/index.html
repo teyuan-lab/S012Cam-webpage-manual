@@ -3,20 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PolarCam｜iPhone 偏振相機</title>
-  <meta name="description" content="認識光的偏振，組裝 PolarCam 轉盤，並用 iPhone 拍攝線偏振影像。">
-  <link rel="alternate" hreflang="en" href="https://teyuan-lab.github.io/polarcam/">
-  <link rel="alternate" hreflang="zh-Hant" href="https://teyuan-lab.github.io/polarcam/zh/">
-  <link rel="icon" href="../assets/favicon.png">
-  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="../style.css?v=f28e6aefbe26">
+  <title>S012Cam｜iPhone 偏振相機</title>
+  <meta name="description" content="認識光的偏振，組裝 S012Cam 轉盤，並用 iPhone 拍攝線偏振影像。">
+  <link rel="canonical" href="https://teyuan-lab.github.io/S012Cam-webpage-manual/zh/">
+  <meta property="og:title" content="S012Cam｜iPhone 偏振相機">
+  <meta property="og:description" content="認識光的偏振，組裝 S012Cam 轉盤，並用 iPhone 拍攝線偏振影像。">
+  <meta property="og:image" content="https://teyuan-lab.github.io/S012Cam-webpage-manual/assets/icon.png?v=s012cam2">
+  <link rel="alternate" hreflang="en" href="https://teyuan-lab.github.io/S012Cam-webpage-manual/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://teyuan-lab.github.io/S012Cam-webpage-manual/zh/">
+  <link rel="icon" href="../assets/favicon.png?v=s012cam2">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=s012cam2">
+  <link rel="stylesheet" href="../style.css?v=4c1f1a5db38d">
   <script src="../language.js" defer></script>
 </head>
 <body class="guide">
   <a class="skip" href="#content">跳至主要內容</a>
   <header class="bar">
     <div class="in">
-      <a class="brand" href="./"><img src="../assets/icon.png" width="30" height="30" alt="">PolarCam</a>
+      <a class="brand" href="./"><img src="../assets/icon.png?v=s012cam2" width="30" height="30" alt="">S012Cam</a>
       <nav aria-label="主要導覽"><a href="#how">偏振概述</a><a href="#app">App 說明</a><a href="#hardware">轉盤組裝</a><a href="#measure">拍攝教學</a><a href="#manual">手冊下載</a><a href="#support">支援</a></nav>
       <a class="language" data-language href="../" lang="en" hreflang="en">English</a>
     </div>
@@ -25,19 +29,18 @@
     <div class="hero">
       <div class="hero-copy">
         <h1>用 iPhone 看見光的偏振</h1>
-        <p class="lead">用線性偏光片拍攝同一場景的四張照片。PolarCam 會把玻璃反光、藍天和透明塑膠中的偏振變化，轉成可讀取的影像。</p>
+        <p class="lead">S012Cam 2.0 只需按一次快門。轉動線性偏光片並持穩 iPhone，即可自動拍完四個角度，觀察光的偏振。</p>
         <div class="actions">
-          <a class="button" href="https://apps.apple.com/app/polarcam/id6834323253">前往 App Store</a>
+          <a class="button" href="https://apps.apple.com/app/id6834323253">前往 App Store</a>
           <a class="button secondary" href="#measure">開始拍攝</a>
         </div>
       </div>
-      <img class="hero-art" src="../assets/hero-optics.webp" alt="" width="840" height="823" fetchpriority="high">
+      <img class="hero-art" src="../assets/icon.png?v=s012cam2" alt="" width="1024" height="1024" fetchpriority="high">
     </div>
     <section id="how">
       <h2>偏振概述</h2>
       <p>光的偏振描述電場振盪的方向。光在玻璃或水面反射後，常會偏向某個方向振盪。藍天的散射光也可能帶有偏振。把透明塑膠放在 LCD 螢幕前，還可以觀察材料應力造成的偏振變化。</p>
-<p>線性偏光片會讓沿著其透光軸振盪的電場分量通過。PolarCam 透過 0°、45°、90° 和 135° 的四張影像，計算每個像素的線偏振度和線偏振角。</p>
-      <figure><img src="../assets/polarization-example.webp" alt="左為一般照片，右為同一張玻璃桌的偏振影像" width="1000" height="405" loading="lazy"><figcaption>同一張玻璃桌。右圖以色彩標示偏振方向、以亮度標示偏振度。</figcaption></figure>
+<p>線性偏光片會讓沿著其透光軸振盪的電場分量通過。S012Cam 透過 0°、45°、90° 和 135° 的四張影像，計算每個像素的線偏振度和線偏振角。</p>
       <details>
         <summary>四張影像如何算出線偏振？</summary>
         <p>令 I₀、I₄₅、I₉₀、I₁₃₅ 為四個角度的光強度。在理想條件下，線偏振的 Stokes 參數與線偏振度、線偏振角的關係如下。</p>
@@ -50,26 +53,32 @@
       </details>
     </section>
     <section id="app">
-      <h2>PolarCam App 說明</h2>
-      <p>PolarCam 以線性的 RAW（DNG）資料逐像素計算偏振。可切換合併 RGB 或單獨的 R、G、B 通道，放大影像並點選位置讀值。選用自動對齊可修正小幅手震。</p>
+      <h2>S012Cam App 說明</h2>
+      <p>S012Cam 以線性的 RAW（DNG）資料逐像素計算偏振。可切換合併 RGB 或單獨的 R、G、B 通道，放大影像並點選位置讀值。選用自動對齊可修正小幅手震。</p>
       <div id="results" class="grid2 result-grid">
         <table><thead><tr><th scope="col">顯示模式</th><th scope="col">判讀方式</th></tr></thead><tbody><tr><td>DoLP（線偏振度）</td><td>黑色為 0，白色為 1，分別代表無線偏振和完全線偏振。</td></tr><tr><td>AoLP（線偏振角）</td><td>以色彩表示偏振方向，角度以偏光片的 0° 位置為基準。</td></tr><tr><td>AoLP + DoLP</td><td>色彩表示角度，亮度表示偏振度。</td></tr></tbody></table>
         <figure><img src="../assets/legend.png" alt="偏振色輪，色相對應角度，從中心向外偏振度增加" width="600" height="600" loading="lazy"><figcaption>色輪的圓周表示偏振角，離中心越遠，偏振度越高。</figcaption></figure>
       </div>
-      <div id="data"><p>量測會儲存在 iPhone。可選擇保留四張原始 DNG，或從結果畫面匯出 PNG 與 32 位元浮點 TIFF（S₀、S₁、S₂、DoLP、AoLP）。App 需要 iOS 15.6 或更新版本，並使用支援 RAW（DNG）的 iPhone 相機。</p></div>
-      <p>在相機設定中，可降低取樣解析度以加快運算，或調整快門避免亮部過曝。在已儲存量測清單中，向左滑動可分享或刪除單筆量測，也可用「選取」一次管理多筆。</p>
+      <div id="data"><p>量測會儲存在 iPhone。可選擇保留四張原始 DNG，或從結果畫面匯出 PNG 與 32 位元浮點 TIFF（S₀、S₁、S₂、DoLP、AoLP）。App 適用於 iOS 15.6 或更新版本的 iPhone，並以 iPhone 16 Pro 開發與測試。舊款 iPhone 計算一次量測可能需要較長時間。</p></div>
+      <h3>2.0 的拍攝方式</h3>
+      <p>在 Gyro 模式下，先按快門拍第一張。之後轉動轉盤，陀螺儀會偵測轉動，待手機穩定且畫面對齊後自動拍攝第 2 至第 4 張。</p>
+      <ul>
+        <li>虛線量測框內會疊加第一張照片的輪廓，協助後續照片對齊。眼睛按鈕可顯示或隱藏輪廓。</li>
+        <li>每張照片拍完後立即檢查模糊與位置。若檢查失敗，只重拍目前角度，保留先前照片。</li>
+        <li>右下角的「Photos 2–4」可切換 Gyro / Timer。Timer 使用固定間隔，預設為 2 秒。Gyro 模式不使用 Interval，因此該欄位會變暗。</li>
+      </ul>
+      <h3 id="camera">相機畫面：編號說明</h3><figure><img src="../assets/s012cam-camera-numbered.png" alt="iPhone 16 Pro 拍攝第一張之前的實際畫面。藍色編號對照下表。" width="2622" height="1206" loading="lazy"><figcaption>iPhone 16 Pro 拍攝第一張之前的實際畫面。藍色編號對照下表。</figcaption></figure><p><a href="../assets/s012cam-camera-numbered.png">開啟完整尺寸的編號截圖</a></p><div class="camera-reference"><table><thead><tr><th scope="col">編號</th><th scope="col">名稱</th><th scope="col">操作說明</th></tr></thead><tbody><tr><td>1</td><td>使用指南與支援（?）</td><td>點一下，開啟 S012Cam 網站。</td></tr><tr><td>2</td><td>設定（齒輪）</td><td>點一下，開啟設定。</td></tr><tr><td>3</td><td>Interval (s)</td><td>設定 Timer 模式的拍攝間隔，單位為秒。預設為 2 秒。Gyro 模式不使用此設定，欄位會變暗。</td></tr><tr><td>4</td><td>Resolution</td><td>選擇計算用的解析度：Full、1/2、1/3、1/4、1/5、1/6、1/8 或 1/10。較低解析度可加快計算。</td></tr><tr><td>5</td><td>Exposure</td><td>以 1/3 EV 為一級，在 −2 至 +2 EV 間調整曝光補償。紅色或藍色通道訊號偏弱時，可嘗試調整。</td></tr><tr><td>6</td><td>Shutter</td><td>選擇 1/60 至 1/1000 秒，或 Custom。預設 1/200 秒適合手持拍攝。照片反覆被判定模糊時，選擇更快的快門。</td></tr><tr><td>7</td><td>ISO</td><td>顯示 App 選用的 ISO。點按預覽畫面測光時，App 保留所選快門並調整 ISO。出現 ⚠ 表示 ISO 已達限制；影像可能過暗、過亮，或實際快門已延長。</td></tr><tr><td>8</td><td>鏡頭選擇</td><td>點選要使用的鏡頭。所選鏡頭顯示黃色。圖中由上到下為 5、1×、.5。實際按鈕依 iPhone 機型顯示，見下方機型說明。</td></tr><tr><td>9</td><td>快門</td><td>在 0° 位置按一次，拍攝第一張。Gyro 模式下，之後轉動轉盤並持穩，第 2 至第 4 張會自動拍攝。拍攝中也可按快門，立即拍下目前這張。</td></tr><tr><td>10</td><td>已儲存量測</td><td>點一下，開啟已儲存的量測清單。</td></tr><tr><td>11</td><td>Photos 2–4</td><td>選擇 Gyro 或 Timer。Gyro 為預設：轉動轉盤後持穩，等待自動拍攝。Timer 則依第 3 項的固定間隔拍攝。</td></tr><tr><td>12</td><td>虛線量測框</td><td>將要量測的目標保持在框內。拍完第一張後，預覽上會出現第一張的輪廓，協助後續照片對齊。眼睛按鈕可顯示或隱藏輪廓；圖中尚未出現。</td></tr></tbody></table></div>
+<p>鏡頭按鈕依機型顯示：每款皆有 1×；具備超廣角鏡頭者有 0.5×；具備望遠鏡頭者有 2×、3× 或 5×。例如 iPhone 12 Pro 為 2×，13 Pro 和 14 Pro 為 3×，15 Pro Max 和 16 Pro 為 5×。手機沒有的鏡頭不會顯示。</p>
     </section>
     <section id="hardware">
-      <h2>組裝 PolarCam 轉盤</h2>
-      <div class="grid2 assembly-grid">
+      <h2>組裝 S012Cam 轉盤</h2>
+      <div class="assembly-grid">
         <div>
           <p>零件包括底座、轉盤、MagSafe 底板、MagSafe 磁鐵貼片、薄型軸承、12 顆圓磁鐵、3 顆方磁鐵、線性偏光片和 9 片奈米凝膠貼片。組裝時準備尖嘴鉗或小鉗子、美工刀、軟布、細筆與鈍針或牙籤。</p>
           <p class="note warn">套件含小型強力磁鐵，請遠離兒童、寵物、心律調節器及其他植入式醫療裝置。用美工刀修整支撐時，刀口朝外，遠離手部。</p>
-          <p><a href="#assembly-video">觀看組裝影片</a></p>
         </div>
-        <figure><img src="../assets/rotator-exploded.webp" alt="偏光片、轉盤、軸承、底座、磁鐵貼片和 MagSafe 底板的分解圖" width="590" height="900" loading="lazy"><figcaption>轉盤分解圖，取自 PolarCam 使用手冊。</figcaption></figure>
+
       </div>
-      <figure id="assembly-video" class="video"><video controls playsinline preload="metadata" poster="../assets/polarcam-assembly-zh.webp" width="1600" height="1200"><source src="../assets/polarcam-assembly-zh.mp4" type="video/mp4"><a href="../assets/polarcam-assembly-zh.mp4">下載組裝影片（MP4）</a></video><figcaption>組裝影片（2 分 9 秒，無聲）：零件清點、找出偏光片透光軸、磁鐵、軸承、方磁鐵與最後的旋轉檢查。</figcaption></figure>
       <ol class="steps">
         <li><strong>清除列印支撐</strong>用小鉗子移除大塊支撐，再用美工刀修平。確認磁鐵孔與軸承座沒有殘料。</li>
         <li><strong>壓入圓磁鐵</strong>保持 12 顆磁鐵疊在一起，每次從同一端取下一顆，同一面先入孔。底座裝 8 顆，轉盤裝 4 顆，全部壓至與表面齊平。</li>
@@ -87,22 +96,21 @@
     <section id="measure">
       <h2>用 App 和轉盤拍攝</h2>
       <div class="angles" aria-label="四張照片的偏光片角度"><span>Photo 1 <b>0°</b></span><span>Photo 2 <b>45°</b></span><span>Photo 3 <b>90°</b></span><span>Photo 4 <b>135°</b></span></div>
-      <div class="grid2 capture-grid">
+      <div class="capture-grid">
         <ol class="steps">
-        <li><strong>選鏡頭並設定拍攝間隔</strong>橫拿手機，選擇鏡頭並點一下畫面對焦。新手可把 Interval 設成 2 秒或更長。盡量保持光線、場景和手機穩定，拍近物時可用腳架或桌面支撐。</li>
-        <li><strong>從位置 1 開始</strong>讓底座指標對準 1 道凸紋（0°），按一次快門。畫面顯示 Photo 1，等第一張自動拍攝。</li>
-        <li><strong>看到下一張提示就轉一格</strong>看到 Photo 2 時沿箭頭轉到 45°，並保持不動。依序在 Photo 3、Photo 4 出現時轉到 90°、135°，直到第四張拍完。</li>
-        <li><strong>檢查結果</strong>結果畫面可切換顯示模式與色彩通道。若 App 無法確認對齊，或物體邊緣出現大片彩邊，固定好手機後再量一次。</li>
-      </ol>
-        <figure><img src="../assets/rotator-positions.webp" alt="以底座指標讀取轉盤上的一道至四道凸紋" width="866" height="900" loading="lazy"><figcaption>底座指標對準的凸紋數，對應 Photo 1 到 Photo 4。</figcaption></figure>
+          <li><strong>對準量測區並拍第一張</strong>橫拿 iPhone，讓目標位於中央虛線量測框內。選好鏡頭，以位置 1（0°）按快門拍第一張。</li>
+          <li><strong>轉動轉盤並持穩</strong>輪廓出現後，依畫面提示轉到 45°。保持穩定，讓畫面與第一張輪廓對齊，允許位移為影格的 3%。App 會自動拍第二張。</li>
+          <li><strong>依序拍完其餘角度</strong>依提示轉到 90° 和 135°，每次轉動後持穩。若某張模糊或位置不合格，保持目前角度，等 App 重拍。</li>
+          <li><strong>對齊與計算</strong>四張完成後，選 Align and Calculate，或 Calculate Without Aligning。前者可修正輕微位移。</li>
+        </ol>
+
       </div>
-      <div class="note">若沒有轉盤，可用手將線性偏光片放在鏡頭前，依同一順序旋轉。0° 時透光軸沿 iPhone 長邊。將拍攝間隔設長一些，並保持手機穩定。</div>
+      <p class="note">等待時會顯示「Hold still…」。若目標像白牆一樣缺少紋理，App 會提示「Plain area」，此時無法檢查位置，請自行保持手機穩定。</p>
+      <p>提示後約 8 秒仍未拍攝時，可選 Capture now 立即拍攝、Redo previous 重拍上一張，或 Cancel 停止。拍攝期間按快門，也能立即拍下目前這張。</p>
+      <p>Timer 模式會依固定間隔拍攝第 2 至第 4 張。請在下張照片拍下前轉好角度。若反覆被判定模糊，可改用更快的快門。近物與遠物同時入鏡時，視差可能讓對齊失敗，可退後、選擇較平面的場景或使用腳架。也可選 Continue without alignment。</p>
+      <div class="note">若沒有轉盤，可用手將線性偏光片放在鏡頭前，依同一順序旋轉。0° 時透光軸沿 iPhone 長邊。可切換 Timer 模式並延長拍攝間隔，保持手機穩定。</div>
     </section>
-    <section id="manual" class="manual">
-      <h2>PolarCam 使用手冊</h2>
-      <p>PDF 涵蓋零件清單、組裝圖、MagSafe 安裝、偏光片校正、拍攝與故障排除。目前提供英文版。</p>
-      <a class="button" href="../assets/polarcam-user-manual-en.pdf" download>下載英文使用手冊（PDF）</a>
-    </section>
+    <section id="manual" class="manual"><h2>S012Cam 2.0 使用手冊</h2><p>提供英文與繁體中文手冊，包含組裝、MagSafe 安裝、相機照片編號說明、Gyro 與 Timer 拍攝、結果判讀及匯出。</p><div class="actions"><a class="button" href="../assets/s012cam-user-manual-en.pdf" download>English PDF</a><a class="button" href="../assets/s012cam-user-manual-zh.pdf" download>繁體中文 PDF</a></div><p><a href="../manuals/S012Cam-user-manual-en.html">Read in English</a> · <a href="../manuals/S012Cam-user-manual-zh.html">線上閱讀繁體中文</a></p></section>
     <section id="faq">
       <h2>常見問題</h2>
       <details><summary>為什麼有些像素顯示洋紅色？</summary><p>洋紅色標示無法量測的像素。這些像素可能過曝、太暗，或位於四張照片無法對齊的區域。可調整曝光，或將手機放在穩固的支撐物上再拍。</p></details>
@@ -113,8 +121,8 @@
       <h2>支援</h2>
       <p>需要協助時，請提供 iPhone 型號、iOS 版本，並在方便時附上匯出的量測。</p>
       <ul class="support-links">
-        <li><a href="mailto:teyuan@gmail.com?subject=PolarCam%20support">teyuan@gmail.com</a></li>
-        <li><a href="https://github.com/teyuan-lab/polarcam/issues">在 GitHub 提出問題</a></li>
+        <li><a href="mailto:teyuan@gmail.com?subject=S012Cam%20support">teyuan@gmail.com</a></li>
+        <li><a href="https://github.com/teyuan-lab/S012Cam-webpage-manual/issues">在 GitHub 提出問題</a></li>
       </ul>
     </section>
   </main>

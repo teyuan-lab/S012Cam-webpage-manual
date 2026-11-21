@@ -1,0 +1,275 @@
+# S012Cam User Manual
+
+App version 2.0 · 21 November 2026
+
+## 1. Welcome and compatibility
+
+S012Cam turns your iPhone into a polarization camera. It takes four photos through a linear polarizer at 0°, 45°, 90° and 135°. The result shows the degree and angle of linear polarization. Try reflections on glass, blue sky or clear plastic in front of an LCD screen.
+
+S012Cam works on iPhones with iOS 15.6 or later. It was developed and tested on iPhone 16 Pro. Older iPhones may take longer to calculate a measurement.
+
+Every model shows a 1× camera button. Models with an ultra wide camera also show 0.5×. Models with a telephoto camera show 2×, 3× or 5×. For example, iPhone 12 Pro shows 2×; 13 Pro and 14 Pro show 3×; 15 Pro Max and 16 Pro show 5×. Cameras the iPhone does not have are not shown.
+
+You can use the rotator or hold a loose linear polarizer in front of the lens. With a loose polarizer, set its transmission axis along the iPhone's long edge for 0°. Turn it through the same four angles. Timer mode with a longer interval can give you more time to turn it.
+
+## 2. Before you start
+
+Keep the 15 small, strong magnets and the MagSafe magnet sticker away from children, pets, pacemakers and other medical implants. Swallowed magnets are dangerous.
+
+Keep the round magnets in one stack. Insert them without flipping them. Cut printing supports away from your hands. Press the bearing only on its outer ring. Keep dust and sand out of it.
+
+Hold the polarizer by its edges. Leave its protective film on while finding its axis. Remove the film after fitting the polarizer and before taking a measurement.
+
+You will need small pliers, a utility knife, a soft cloth, a fine marker, and a blunt pin or toothpick. Work on a clean table.
+
+## 3. Check the parts
+
+| Part | Quantity | Purpose |
+| --- | --- | --- |
+| Base | 1 | Holds the bearing and carries the MagSafe plate. |
+| Dial | 1 | Holds the polarizer and turns on the bearing. |
+| MagSafe plate | 1 | Holds the magnet sticker and joins the base to the iPhone. |
+| MagSafe magnet sticker | 1 | A ring of magnets with a tail. Outer diameter 54 mm; inner diameter 46 mm. Both sticky sides are covered by blue film. |
+| Thin ball bearing | 1 | 50 × 65 × 7 mm. Lets the dial turn smoothly. |
+| Round magnets | 12 | Eight in the base and four in the dial. They make the dial click into place. |
+| Cube magnets | 3 | 4 × 4 × 4 mm. Hold the bearing's inner ring against the base. |
+| Linear polarizer | 1 | 60 × 60 mm. Filters light along one axis. |
+| Nano gel pads | 9 | 10 × 10 mm. Four hold the polarizer; five join the MagSafe plate to the base. |
+
+The base stays fixed on the iPhone. The dial turns. The base pointer reads the groups of one, two, three or four ridges on the dial. The direction arrows show which way to turn. The double-headed arrows mark the 0° polarizer axis.
+
+| Position | Ridges at the pointer | Angle |
+| --- | --- | --- |
+| 1 | 1 | 0° |
+| 2 | 2 | 45° |
+| 3 | 3 | 90° |
+| 4 | 4 | 135° |
+
+Each ridge count appears twice, on opposite sides. Both give the same polarizer angle. The dial clicks every 45°, eight times in one turn.
+
+## 4. Assemble the rotator
+
+### Step 1. Remove the printing supports
+
+Pull off large supports with small pliers. Trim the rest with a utility knife. Always cut away from your hands. Clear the magnet pockets, bearing recess and cube magnet seats.
+
+### Step 2. Insert the round magnets
+
+Keep all 12 magnets stacked. Slide each magnet off the same end. Always insert the same face first. Press eight into the base and four into the dial until flush. If one is reversed, push it out through the small hole behind its pocket with a blunt pin and flip it.
+
+### Step 3. Fit the bearing
+
+Turn the dial upside down. Put the bearing in its round recess. Press evenly around the outer ring until it reaches the lip.
+
+### Step 4. Join the dial and base
+
+Lower the dial and bearing onto the base. The bearing's inner ring slides over the raised hub.
+
+### Step 5. Insert the cube magnets
+
+Through the centre of the dial, put the three cube magnets in their seats. They hold the bearing's inner ring against the base.
+
+### Step 6. Test the dial
+
+Turn the dial once in the direction of the arrows. It should click and hold every 45°, with no scraping. The gap between dial and base is about 1 mm. The cube magnets stay with the base and inner ring; they do not turn with the dial. If a stop repels the dial, reverse the round magnet at that stop.
+
+## 5. Fit and check the polarizer
+
+### Find its transmission axis
+
+1. Leave the protective film on.
+2. Look at glare on a flat horizontal surface, such as a glass table, from a low angle.
+3. Hold the polarizer in front of one eye. Turn it slowly until the glare is darkest.
+4. Without turning it again, draw a short vertical line near one corner on the film. This marks the transmission axis.
+
+### Fit it to the dial
+
+1. Set the dial to position 1, with one ridge at the pointer.
+2. Put four gel pads in the four dial pockets. Peel the top liners.
+3. Keep the polarizer's protective film facing up. Line up its pen mark with the double-headed arrows. Match its edges to the engraved outline.
+4. Press the four corners onto the pads. Remove the protective film. The corners extending slightly beyond the dial are normal.
+
+## 6. Fit the MagSafe plate and mount the rotator
+
+### Fit the magnet sticker
+
+1. With both blue films still on, try both sides of the magnet sticker against the iPhone. Find the side that holds firmly.
+2. Peel the blue film from that side. Press that side into the ring groove on top of the MagSafe plate. Put the tail in the slot. The two small ears belong to the film and come away with it.
+3. Press firmly around the whole ring. Leave the second film on until joining the plate to the base.
+
+### Join the plate to the base
+
+1. Put the five remaining gel pads in the five square pockets: one at the centre and one at each corner.
+2. Peel the pad liners and the sticker's second blue film.
+3. Align the MagSafe plate with the back of the base, edge to edge. Its flat back faces the iPhone.
+4. Press the plates together for 10 seconds.
+
+### Mount and check
+
+Wipe the back of the iPhone with a soft cloth. Snap on the rotator with the camera window over the lenses. Open S012Cam and check every available camera. If an edge is blocked, lift the rotator off and mount it again.
+
+For the full ultra wide view, remove the iPhone case. A case can block the upper-left corner of this view.
+
+Before the first measurement, hold the iPhone level and measure glare on a flat horizontal surface. The result should show horizontal polarization. If it shows vertical, refit the polarizer after turning it 90°.
+
+## 7. Camera screen
+
+Hold the iPhone sideways. The photograph shows an iPhone 16 Pro before photo 1. Match each blue number to the descriptions below. The version number is no longer shown on the camera screen.
+
+![Camera screen with numbered controls](../assets/s012cam-camera-numbered.png)
+
+Figure 1. S012Cam 2.0 camera screen. The displayed values are examples.
+
+| No. | Control | What to do |
+| --- | --- | --- |
+| 1 | Guide and support (?) | Tap to open the S012Cam website. |
+| 2 | Settings (gear) | Tap to open settings. |
+| 3 | Interval (s) | Set the time between photos in Timer mode. The default is 2 seconds. Gyro mode does not use this setting, so the field is dimmed. |
+| 4 | Resolution | Choose the calculation resolution: Full, 1/2, 1/3, 1/4, 1/5, 1/6, 1/8 or 1/10. Lower resolutions calculate faster. |
+| 5 | Exposure | Adjust exposure compensation from −2 to +2 EV in 1/3 EV steps. Try this when the red or blue channel is weak. |
+| 6 | Shutter | Choose 1/60 to 1/1000 s, or Custom. The default 1/200 s suits handheld use. If photos are repeatedly rejected as blurred, choose a faster shutter. |
+| 7 | ISO | The app chooses ISO. Tap the preview to meter while keeping the selected shutter. ⚠ means ISO reached its limit. The image may be too dark or bright, or the shutter may have been lengthened. |
+| 8 | Camera buttons | Tap to choose a camera; yellow marks the selection. This iPhone shows 5, 1× and .5 from top to bottom. Available cameras depend on the model; see section 1. |
+| 9 | Shutter button | Press at 0° for photo 1. In Gyro mode, turn the dial and hold still for automatic photos 2–4. Press during a set to capture the current photo immediately. |
+| 10 | Saved measurements | Tap to open the saved measurements list. |
+| 11 | Photos 2–4 | Choose Gyro or Timer. Gyro is the default. Turn the dial, hold still and wait for the automatic photo. Timer uses the fixed interval set at number 3. |
+| 12 | Dashed measurement box | Keep the subject inside. After photo 1, its outline helps align the next photos. The eye button shows or hides the outline; it is not yet visible here. |
+
+## 8. Take a four-angle set
+
+### Hold the iPhone
+
+Hold it sideways with both hands, screen facing you. Your right thumb controls the screen. Your left middle finger turns the dial. From your view, the dial turns counterclockwise. Turn one click at a time. Keep your elbows against your body and tap gently.
+
+Choose a still subject under steady light. Keep the subject inside the dashed measurement box (12). Tap the preview to focus and meter. This keeps the selected shutter and changes ISO. The default shutter of 1/200 s suits handheld use.
+
+### Gyro mode: one shutter press
+
+1. Set Photos 2–4 (11) to Gyro, the default. Set the dial to position 1, at 0°.
+2. Press the shutter (9) to take photo 1.
+3. An outline of photo 1 appears over the live view. Follow the next-angle prompt, for example: “Photo 1 ✓ Turn to … · 45°”.
+4. Turn the dial to position 2, at 45°. Hold still and line up the view with the outline. The allowed shift is 3% of the frame. The gyroscope senses the turn. Once the iPhone is steady and the view lines up, photo 2 is taken automatically.
+5. Repeat at position 3 (90°) and position 4 (135°). Hold still after each turn.
+6. After all four photos, choose Align and Calculate or Calculate Without Aligning.
+
+The eye button shows or hides the photo 1 outline. It appears after photo 1, so it is not visible in Figure 1.
+
+### Checks and retakes
+
+Each photo is checked for blur and position immediately. If it fails, the app explains why and asks you to hold still. Keep the dial at the current angle. Only that angle is retaken. Earlier photos are kept.
+
+“Hold still…” means the app is waiting for the iPhone to settle. A plain area, such as a white wall, has too little texture for the position check. The message is: “Plain area: position is not checked — keep the phone steady.” Keep the phone steady yourself.
+
+If no photo is taken for about 8 seconds after the prompt, these buttons appear:
+
+| Button | Action |
+| --- | --- |
+| Capture now | Take the current photo now. |
+| Redo previous | Retake the last photo. |
+| Cancel | Stop the set. |
+
+The shutter button always works. Press it during a set to take the current photo immediately.
+
+### Timer mode
+
+Set Photos 2–4 (11) to Timer. Set Interval (3), 2 seconds by default. Press the shutter for photo 1. Turn the dial to each prompted angle before the next interval ends. Photos 2–4 use the fixed interval. In Gyro mode, Interval is dimmed because it is not used.
+
+### Align and calculate
+
+Align and Calculate corrects small shifts between photos. Calculate Without Aligning uses the photos as captured.
+
+If Alignment Not Confirmed appears, use Retake when the iPhone or subject moved. If Use aligned areas (…%) is offered, you can calculate only the aligned areas. Excluded areas are marked in magenta. Continue without alignment is also offered; the button may read Continue without aligning. Displaced edges can then show false polarization.
+
+Scenes with very near and far objects can fail alignment because of parallax. Step back, choose a flatter scene or use a tripod. If photos are rejected as blurred, choose a faster shutter. Keep people, moving leaves and waves out of the measurement area when possible.
+
+## 9. Read the result
+
+| View | How to read it |
+| --- | --- |
+| **AoLP+DoLP** | Hue shows the polarization angle. Brightness shows the degree of linear polarization. |
+| **DoLP** | Degree of linear polarization. Black is **0** and white is **1**. |
+| **AoLP** | Angle of linear polarization. Match the hue to the legend. The app reports angles from **0° to less than 180°**, measured from the Photo 1 orientation toward Photo 2. Black marks an undefined angle. |
+
+Select **RGB** for the combined result or **R**, **G**, or **B** for one colour channel. The combined result averages the three channels' linear Stokes values before calculating DoLP and AoLP.
+
+Pinch to zoom, drag to move around, and tap **1×** when visible to reset the view. Tap the result image to open it full screen, then tap a point to read its values and see its position on the legend. Angles that differ by **180°** describe the same polarization direction. Treat the angle cautiously where DoLP is very low.
+
+Open **Tap for details** to see the alignment status and any exposure warnings. If you used partial alignment, magenta areas have no usable measurement.
+
+## 10. Save, share and export
+
+### Find and reopen a measurement
+
+1. From the result screen, tap the back arrow to return to the camera. Tap the **Measurements** icon at the lower left.
+2. Find your capture by its date and time. The newest measurements appear first. Each row shows a thumbnail, file size, whether DNGs are present, and sampling and alignment information when available.
+3. Tap a row to reopen its result. If **Done** is showing, tap it first to exit selection mode.
+
+S012Cam saves completed measurements on the iPhone. If the result reports **Save incomplete**, tap **Tap for details** to see which files could not be saved.
+
+### Choose whether to keep the original RAW photos
+
+In **Measurements**, set **Keep original DNGs** before starting a new capture. It is on by default and keeps all four original RAW photos. Turn it off to save space. The app still saves the data needed to reopen the result and export its maps. Each saved measurement keeps the DNG setting used when it was captured.
+
+### Share or back up the whole measurement
+
+1. In **Measurements**, swipe left on the row and tap **Share**.
+2. In the iPhone share sheet, choose a destination such as AirDrop or **Save to Files**, if offered. To save a separate copy, choose a location outside the S012Cam folder.
+3. Open the destination and check that the folder and any files you need are there before deleting the original.
+
+For a new measurement, the folder includes `measurement.json` (capture settings), `input_1.tiff` through `input_4.tiff` (the data used to calculate the result), and `1.dng` through `4.dng` if you kept the originals. If you have already exported the result, it also includes the `export` subfolder. To browse measurement folders directly, open **Files › Browse › On My iPhone › S012Cam**.
+
+### Delete measurements
+
+- **One measurement:** Swipe left on its row, tap **Delete**, then tap **Delete** again in the confirmation.
+- **Several measurements:** Tap **Select**, then tap the rows you want. To choose every entry, tap **Select All**. Tap **Delete (n)** and check the count and storage shown before confirming. Tap **Done** to leave selection mode if you decide to keep the files.
+
+Deleting a measurement in S012Cam permanently removes its entire folder from the iPhone, including its original DNGs and any exports stored inside it. Share or copy the files you want to keep first.
+
+### Export a measurement
+
+1. Open the result and tap **Export**.
+2. When **Export Complete** appears, tap **Share…** and choose a destination in the share sheet. This shares the `export` subfolder with the result maps and export notes. To share the original captures and calculation data too, use **Share** on the measurement row in section 10.
+3. To find the exported files later, open **Files › Browse › On My iPhone › S012Cam**, open the measurement folder, then open **export**.
+
+| File | Use |
+| --- | --- |
+| **PNG** | Display images for **AoLP+DoLP**, **DoLP**, and **AoLP**, for the combined result and individual colour channels. |
+| **32-bit floating-point TIFF** | Per-pixel **S0**, **S1**, **S2**, **DoLP**, and **AoLP** maps for quantitative analysis. AoLP is in degrees. Invalid or undefined values are stored as **NaN**. |
+| **export.json** | File list, map dimensions, and notes on units and pixel values. |
+
+If an older measurement is listed as **Pictures only**, it can show its saved images, but exact values are unavailable for export.
+
+## 11. Remove the rotator and care for it
+
+Hold the iPhone firmly. With the other hand, hold the base near one end of its mounting plate. Tilt it away from that end, like another MagSafe accessory. Do not pull or twist the dial.
+
+The gel pads stay on the rotator. You do not need to remove them to take the rotator off. If you remove the polarizer or MagSafe plate and the pads become dusty, rinse the pads with clean water. Do not use soap, alcohol or tissue. Let them air-dry completely before fitting them again.
+
+Clean the polarizer with a soft dry cloth. Do not use alcohol or solvents. Keep the rotator away from sand and water. Do not leave it in a hot car or in strong direct sun for long periods.
+
+## 12. Troubleshooting
+
+| What you see | What to do |
+| --- | --- |
+| Camera Permission | Open Settings and allow camera access for S012Cam. |
+| An expected camera is absent | Buttons depend on the iPhone model. Wait for startup calibration. Use an available camera. |
+| No automatic photo in Gyro mode | Turn to the prompted angle, then hold still and match the outline. After about 8 seconds, use Capture now, Redo previous or Cancel. The shutter also captures immediately. |
+| Plain area message | Position cannot be checked in a textureless area. Keep the phone steady or frame a textured subject. |
+| Repeated blur rejection | Use a faster shutter and support the iPhone. Keep the current dial angle while the app retries. |
+| Next photo comes too soon in Timer mode | Increase Interval. Follow the angle prompt before each photo. |
+| ISO warning or weak signal | Check ISO (7) and Tap for details. Adjust Exposure (5) or Shutter (6) before retaking a full set. |
+| Coloured fringes or alignment failure | Hold steadier, use a tripod, step back or choose a flatter scene. Try Align and Calculate. |
+| Angles consistently wrong | Check the 0° axis and the order 0°, 45°, 90°, 135°. Repeat the polarizer check in section 6. |
+| A dial stop repels | Push the round magnet out through its rear hole and flip it. |
+| Dial does not click or scrapes | Check all 12 round magnets are flush. Re-seat the bearing and remove support material or dirt. |
+| Dark corners | Re-centre the camera window. Remove the case for the full ultra wide view. |
+| Rotator slips | Check the magnet sticker orientation in section 6. |
+| Plate or polarizer comes loose | Rinse dusty gel pads with water and air-dry them completely. |
+
+Support: https://teyuan-lab.github.io/S012Cam-webpage-manual/
+
+App Store: https://apps.apple.com/app/id6834323253
+
+Contact: teyuan@gmail.com
+
+Department of Optics and Photonics, National Central University, Taiwan.

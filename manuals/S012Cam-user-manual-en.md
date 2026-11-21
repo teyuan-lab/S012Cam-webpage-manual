@@ -49,9 +49,9 @@ Each ridge count appears twice, on opposite sides. Both give the same polarizer 
 
 ## 4. Assemble the rotator
 
-### Step 1. Remove the printing supports
+### Step 1. Check the printed parts
 
-Pull off large supports with small pliers. Trim the rest with a utility knife. Always cut away from your hands. Clear the magnet pockets, bearing recess and cube magnet seats.
+If your print used supports, remove the large pieces with small pliers and carefully trim any residue. Always cut away from your hands. If it was printed without supports, skip removal. Check that the magnet pockets, bearing recess and cube magnet seats are clear.
 
 ### Step 2. Insert the round magnets
 

@@ -28,5 +28,5 @@ def blocks(text):
   para=[s];i+=1
   while i<len(lines) and lines[i].strip() and not re.match(r'^(#|\||!\[|- |\d+\. )',lines[i].strip()):
    para.append(lines[i].strip());i+=1
-  yield 'caption' if re.match(r'^(Figure \d+\.|圖 \d+：)',s) else 'body',' '.join(para)
+  yield 'caption' if re.match(r'^(Fig\. \d+\.|Figure \d+\.|圖 \d+：)',s) else 'body',' '.join(para)
 

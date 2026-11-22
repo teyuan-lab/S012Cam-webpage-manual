@@ -66,6 +66,13 @@ def md_html(text,path):
    tag={'title':'h1','h2':'h2','h3':'h3'}[kind];out.append(f'<{tag}>{inline(data)}</{tag}>')
   elif kind=='image':
    alt,name=data;src=asset(path,Path(name).name);w,h=PILImage.open(ROOT/'assets'/Path(name).name).size;out.append(f'<figure><a href="{src}"><img src="{src}" alt="{html.escape(alt,quote=True)}" width="{w}" height="{h}" loading="lazy"></a></figure>')
+  elif kind=='caption':
+   if out and out[-1].endswith('</figure>'):
+    number=re.match(r'(?:Fig\.|Figure) (\d+)',data)
+    figure=out[-1]
+    if number:figure=figure.replace('<figure>',f'<figure id="manual-fig-{number[1]}">',1)
+    out[-1]=figure[:-9]+'<figcaption>'+inline(data)+'</figcaption></figure>'
+   else:out.append('<p class="caption">'+inline(data)+'</p>')
   elif kind=='table':
    out.append('<div class="table-wrap"><table><thead><tr>'+''.join('<th scope="col">'+inline(c)+'</th>' for c in data[0])+'</tr></thead><tbody>'+''.join('<tr>'+''.join('<td>'+inline(c)+'</td>' for c in row)+'</tr>' for row in data[1:])+'</tbody></table></div>')
   else:out.append('<p'+(' class="caption"' if kind=='caption' else ' class="note"' if data.startswith(('If the phone does not sense movement','如果手機沒有感應到動作')) else '')+'>'+inline(data)+'</p>')

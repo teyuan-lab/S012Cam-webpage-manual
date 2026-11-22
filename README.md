@@ -36,7 +36,7 @@ The static page generator requires Pillow to read image dimensions. PDF generati
 
 ### Polarization lesson
 
-The English and Traditional Chinese polarization pages cover eleven topics, with 21 numbered figures per language, six practical experiments, eighteen application examples and six interactive teaching models. Explanations include links to the supporting optics, instrument-manufacturer and atmospheric-science sources. The source fragments live in `content/en/polarization.html` and `content/zh/polarization.html`; browser interactions are in `polarization.js`.
+The English and Traditional Chinese polarization pages cover eleven topics, with 20 numbered figures per language, six practical experiments, eighteen application examples and six interactive teaching models. Explanations include links to the supporting optics, instrument-manufacturer and atmospheric-science sources. The source fragments live in `content/en/polarization.html` and `content/zh/polarization.html`; browser interactions are in `polarization.js`.
 
 Original vector diagrams and ideal Fresnel, Rayleigh and Malus-law curves can be regenerated with `tools/build_polarization_figures.py` (NumPy, Matplotlib and the configured CJK font). SVG assets are tracked, so ordinary page builds do not require those plotting packages. App pages use Apple's unmodified official App Store download badge and the app record `id6834323253`.
 
@@ -48,4 +48,4 @@ Sky examples compare 15°, 45° and 75° solar elevation with a fixed observer a
 
 The arbitrary fully polarized state uses ellipse azimuth ψ and signed ellipticity χ, with semiaxes cos χ and |sin χ|. Positive χ is left-handed and negative χ is right-handed when viewed from the receiver towards the source (−z), following the linked optical convention. Circular states disable ψ because the major-axis orientation is undefined.
 
-The projector example uses parallel red/blue electric-field axes and an orthogonal green axis. Statistical field samples animate Fig. 3. Fig. 11 uses the ideal vector projection `Eout = (Ein · T)T` for vertical input. LCD observations are grouped in the LCD section with selectable source axes. Applications follow the measurement concepts and include glare reduction, gloss, scattering correction and material detection.
+The projector example uses parallel red/blue electric-field axes and an orthogonal green axis. Statistical field samples animate Fig. 3. Fig. 11 uses the ideal vector projection `Eout = (Ein · T)T` for vertical input. Its field waves reach the sheet plane; Fig. 11(c) includes a synchronized `cos²θ` curve, where θ is the input-field/transmission-axis angle. LCD observations are grouped in the LCD section with selectable source axes. Applications follow the measurement concepts and include glare reduction, gloss, scattering correction and material detection.

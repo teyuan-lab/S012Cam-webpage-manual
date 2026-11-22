@@ -6,7 +6,7 @@ function lessonProjection(p) {
   return [90+130*(p[0]*rx+p[2]*rz),300-130*(p[0]*ux+p[1]*uy+p[2]*uz)];
 }
 function sheetProjection(alpha) {
-  const a=alpha*Math.PI/180,t=[Math.cos(a),Math.sin(a),0],gain=Math.sin(a);
+  const a=alpha*Math.PI/180,t=[Math.sin(a),Math.cos(a),0],gain=Math.cos(a);
   return {axis:t,e:[gain*t[0],gain*t[1],0],amplitude:Math.abs(gain),intensity:gain*gain};
 }
 function statisticalFieldSample(kind,random,frame) {
@@ -70,17 +70,28 @@ document.querySelectorAll('[data-sheet-demo]').forEach(demo=>{
     art+=`<path d="M${pp([0,0,-.15])}L${pp([0,0,5.4])}" stroke="black" stroke-width="1.2" marker-end="url(#${kid})"/>`;
     for(const [end,label] of [[[1.05,0,z0],'x'],[[0,1.05,z0],'y'],[[0,0,5.4],'+z · k']]){const p=lessonProjection(end);if(label.length===1)art+=`<path d="M${pp(centre)}L${pp(end)}" stroke="black" stroke-width=".9" marker-end="url(#${kid})"/>`;art+=`<text x="${p[0]+8}" y="${p[1]-5}">${label}</text>`;}
     art+=`<path d="M${pp(add(centre,t,-1))}L${pp(add(centre,t,1))}" stroke="black" stroke-width="2" stroke-dasharray="4 3"/><text x="${lessonProjection(add(centre,t,1))[0]+8}" y="${lessonProjection(add(centre,t,1))[1]+10}">T</text>`;
-    for(const [start,end,e] of [[0,2.4,[0,1,0]],[2.7,5.1,m.e]]){
+    for(const [start,end,e] of [[0,z0,[0,1,0]],[z0,5.1,m.e]]){
       if(Math.hypot(...e)<1e-8)continue;
       const points=Array.from({length:161},(_,j)=>{const z=start+j/160*(end-start),phase=5.4*(z-z0);return [e[0]*.55*Math.cos(phase),e[1]*.55*Math.cos(phase),z];});
       art+=`<path d="${path(points)}" fill="none" stroke="#175da8" stroke-width="2"/>`;
       for(let j=0;j<=35;j++){const z=start+j/35*(end-start),g=.55*Math.cos(5.4*(z-z0));art+=`<path d="M${pp([0,0,z])}L${pp([e[0]*g,e[1]*g,z])}" stroke="#175da8" stroke-width=".9" marker-end="url(#${eid})"/>`;}
     }
+    // Both limiting fields are explicitly evaluated on the same sheet plane.
+    const einPlane=[0,.55,z0],eoutPlane=[.55*m.e[0],.55*m.e[1],z0];
+    art+=`<path data-sheet-plane-input d="M${pp(centre)}L${pp(einPlane)}" stroke="#175da8" stroke-width="2.2"/><circle cx="${lessonProjection(einPlane)[0]}" cy="${lessonProjection(einPlane)[1]}" r="3" fill="#175da8"/>`;
+    if(m.amplitude>1e-8)art+=`<path data-sheet-plane-output d="M${pp(centre)}L${pp(eoutPlane)}" stroke="#0000ff" stroke-width="2.6"/><circle cx="${lessonProjection(eoutPlane)[0]}" cy="${lessonProjection(eoutPlane)[1]}" r="3" fill="#0000ff"/>`;
     art+=`<text x="100" y="65" fill="#175da8">${T('Vertical input E','垂直入射 E')} · 1.00</text><text x="530" y="65" fill="#175da8">${T('Output E','出射 E')} · ${m.amplitude.toFixed(2)}</text><text x="90" y="400">${T('One fixed-time field snapshot; T is the transmission axis.','固定時刻的場快照；T 為穿透軸。')}</text>`;
     demo.querySelector('[data-sheet-scene]').innerHTML=art;
     const x=150,y=165,r=80,tx=r*t[0],ty=-r*t[1],ex=x+r*m.e[0],ey=y-r*m.e[1],id='sheet-end-'+demo.dataset.lang;
-    demo.querySelector('[data-sheet-end]').innerHTML=`<defs><marker id="${id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10" fill="#175da8"/></marker><marker id="${id}-out" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10" fill="#0000ff"/></marker></defs><rect width="300" height="320" fill="white"/><path d="M25 165H275M150 35V280" stroke="black" stroke-width="1"/><text x="278" y="160">x</text><text x="160" y="33">y</text><circle cx="150" cy="165" r="100" fill="none" stroke="#a8b7c7"/><path d="M${x-tx*1.2} ${y-ty*1.2}L${x+tx*1.2} ${y+ty*1.2}" stroke="black" stroke-width="1.6" stroke-dasharray="4 4"/><text x="${x+tx*1.2+7}" y="${y+ty*1.2-5}">T</text><path d="M150 165V85" stroke="#175da8" stroke-width="2" marker-end="url(#${id})"/><text x="155" y="75" fill="#175da8">Ein</text><path d="M150 85L${ex} ${ey}" stroke="black" stroke-width=".8" stroke-dasharray="3 4"/>${m.amplitude>1e-8?`<path d="M150 165L${ex} ${ey}" stroke="#0000ff" stroke-width="3" marker-end="url(#${id}-out)"/>`:''}<text x="${ex+8}" y="${ey+18}" fill="#0000ff">Eout</text><text x="150" y="310" text-anchor="middle">${T('Look along the beam','沿光束方向看')}</text>`;
+    demo.querySelector('[data-sheet-end]').innerHTML=`<defs><marker id="${id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10" fill="#175da8"/></marker><marker id="${id}-out" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10" fill="#0000ff"/></marker></defs><rect width="300" height="320" fill="white"/><path d="M25 165H275M150 35V280" stroke="black" stroke-width="1"/><text x="278" y="160">x</text><text x="160" y="33">y</text><circle cx="150" cy="165" r="100" fill="none" stroke="#a8b7c7"/><path d="M${x-tx*1.2} ${y-ty*1.2}L${x+tx*1.2} ${y+ty*1.2}" stroke="black" stroke-width="1.6" stroke-dasharray="4 4"/><text x="${x+tx*1.2+7}" y="${y+ty*1.2-5}">T</text>${alpha>0?`<path d="M150 133A32 32 0 0 1 ${150+32*Math.sin(alpha*Math.PI/180)} ${165-32*Math.cos(alpha*Math.PI/180)}" fill="none" stroke="black" stroke-width="1"/><text x="${150+43*Math.sin(alpha*Math.PI/360)}" y="${165-43*Math.cos(alpha*Math.PI/360)}">θ</text>`:''}<path d="M150 165V85" stroke="#175da8" stroke-width="2" marker-end="url(#${id})"/><text x="155" y="75" fill="#175da8">Ein</text><path d="M150 85L${ex} ${ey}" stroke="black" stroke-width=".8" stroke-dasharray="3 4"/>${m.amplitude>1e-8?`<path d="M150 165L${ex} ${ey}" stroke="#0000ff" stroke-width="3" marker-end="url(#${id}-out)"/>`:''}<text x="${ex+8}" y="${ey+18}" fill="#0000ff">Eout</text><text x="150" y="310" text-anchor="middle">${T('Look along the beam','沿光束方向看')}</text>`;
     demo.querySelector('[data-sheet-angle]').textContent=alpha+'°';
+    const xp=d=>60+d/180*540,yp=i=>250-i*210;
+    const curve=Array.from({length:361},(_,j)=>{const d=j/2;return `${j?'L':'M'}${xp(d)} ${yp(Math.cos(d*Math.PI/180)**2)}`;}).join('');
+    let plot='<rect width="640" height="310" fill="white"/>';
+    for(const v of [0,.25,.5,.75,1])plot+=`<path d="M60 ${yp(v)}H600" stroke="#dce3eb" stroke-width=".8"/><text x="48" y="${yp(v)+5}" text-anchor="end">${v}</text>`;
+    for(const d of [0,45,90,135,180])plot+=`<text x="${xp(d)}" y="273" text-anchor="middle">${d}°</text>`;
+    plot+=`<path d="M60 40V250H600" stroke="black" fill="none"/><path d="${curve}" stroke="#175da8" stroke-width="2.5" fill="none"/><path d="M${xp(alpha)} 40V250M60 ${yp(m.intensity)}H${xp(alpha)}" stroke="black" stroke-width=".8" stroke-dasharray="4 4"/><circle data-sheet-curve-point cx="${xp(alpha)}" cy="${yp(m.intensity)}" r="5" fill="#0000ff" stroke="white"/><text x="${Math.max(100,Math.min(550,xp(alpha)))}" y="24" text-anchor="middle" fill="#175da8">θ ${alpha}° · I/Iin ${m.intensity.toFixed(3)}</text><text x="330" y="300" text-anchor="middle">${T('Angle θ between E and T','E 與 T 的夾角 θ')}</text><text transform="translate(17 150) rotate(-90)" text-anchor="middle">Iout / Iin</text>`;
+    demo.querySelector('[data-sheet-malus]').innerHTML=plot;
     demo.querySelector('[data-sheet-reading]').textContent=T(`Output field amplitude ${m.amplitude.toFixed(3)}; relative intensity ${(100*m.intensity).toFixed(1)}%.`,`出射場振幅 ${m.amplitude.toFixed(3)}；相對光強度 ${(100*m.intensity).toFixed(1)}%。`);
   };
   slider.addEventListener('input',update);demo.querySelectorAll('[data-sheet-preset]').forEach(b=>b.addEventListener('click',()=>{slider.value=b.dataset.sheetPreset;update();}));update();

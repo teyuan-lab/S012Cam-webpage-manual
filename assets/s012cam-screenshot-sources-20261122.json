@@ -1,0 +1,16 @@
+{
+  "source_folder": "https://drive.google.com/drive/folders/1f75hYKuHC4O-NJHO8_J8xAC7VI_PeY1f",
+  "date": "2026-11-22",
+  "images": {
+    "IMG_4611.PNG": "s012cam-camera-20261122.jpg",
+    "IMG_4612.PNG": "s012cam-gyro-outline-20261122.jpg",
+    "IMG_4588.PNG": "s012cam-alignment-warning-20261122.jpg",
+    "IMG_4613.PNG": "s012cam-result-overview-20261122.jpg",
+    "IMG_4614.PNG": "s012cam-result-angle-point-20261122.jpg",
+    "IMG_4615.PNG": "s012cam-result-zoom-20261122.jpg",
+    "IMG_4616.PNG": "s012cam-result-dolp-point-20261122.jpg",
+    "IMG_4590.PNG": "s012cam-measurements-selection-20261122.jpg"
+  },
+  "camera_annotation": "Same previously approved 1–12 positions. Only numbered circles added.",
+  "completion_dialog": "IMG_4585.PNG cropped to dialog; background omitted."
+}

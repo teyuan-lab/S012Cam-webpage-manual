@@ -178,9 +178,9 @@ Before the first measurement, hold the iPhone level and measure glare on a flat 
 
 Hold the iPhone sideways. The photograph shows an iPhone 16 Pro before photo 1. Match each blue number to the descriptions below. The version number is no longer shown on the camera screen (Fig. 16).
 
-![Camera screen with numbered controls](../assets/s012cam-camera-numbered.png)
+![Camera screen with numbered controls](../assets/s012cam-camera-numbered-20261122.png)
 
-Fig. 16. S012Cam 2.0 camera screen. The displayed values are examples.
+Fig. 16. Latest supplied camera screenshot (November 2026), with the same 1–12 control numbers. This example shows Full resolution, shutter 1/200 s and ISO 1000. These are captured settings, not a statement that all are defaults.
 
 | No. | Control | What to do |
 | --- | --- | --- |
@@ -234,6 +234,12 @@ If the phone does not sense movement, the prompt may stay at “Turn to XX” in
 
 The eye button shows or hides the photo 1 outline. It appears after photo 1, so it is not visible in the numbered camera-screen photograph.
 
+The white outline inside the dashed measurement box provides the reference while “Hold still…” is displayed (Fig. 17). Keep the actual scene lined up with it. The eye button at the lower left hides or shows the outline; it does not turn alignment checking off. Keep a display scene static during the set, just as you would keep other subjects still.
+
+![Photo 1 outline and Hold still prompt](../assets/s012cam-gyro-outline-20261122.jpg)
+
+Fig. 17. Actual Gyro capture screen after photo 1. The white outline and eye button are visible. “Hold still…” means the app is waiting for steadiness.
+
 ### Checks and retakes
 
 Each photo is checked for blur and position immediately. If it fails, the app explains why and asks you to hold still. Keep the dial at the current angle. Only that angle is retaken. Earlier photos are kept.
@@ -258,32 +264,36 @@ Set Photos 2–4 (11) to Timer. Set Interval (3), 2 seconds by default. Press th
 
 ![Hand-held polarizer with a fixed iPhone and four rotation angles](../assets/s012cam-hand-held-polarizer.png)
 
-Fig. 17. Use a tripod or firm support and select Timer for Photos 2–4. The upper view is from the camera side. The lower views are from the screen side, with a phone screen corner in the foreground. Blue lines mark the transmission axis at 0°, 45°, 90° and 135°. Keep the selected lens's entire field of view within the clear filter at every angle.
+Fig. 18. Use a tripod or firm support and select Timer for Photos 2–4. The upper view is from the camera side. The lower views are from the screen side, with a phone screen corner in the foreground. Blue lines mark the transmission axis at 0°, 45°, 90° and 135°. Keep the selected lens's entire field of view within the clear filter at every angle.
 
 1. Mount the iPhone on a tripod or secure it on a firm support. Choose a still scene.
 2. Hold the linear polarizer by its edges in front of the selected camera. The entire field of view must pass through the clear area of the polarizer at all four angles. Use a large enough sheet and hold it close to the lens without touching it. Keep fingers and the filter frame out of the view. Keep the polarizer roughly parallel to the back of the phone. Check the preview at each angle for blocked edges or dark corners.
 3. Set the transmission axis along the long edge of the landscape iPhone for 0°. The edge of the filter is not necessarily its transmission axis.
 4. Set Photos 2–4 (11) to Timer. The default interval is 2 seconds. Use a longer interval if you need more time to turn and settle.
 5. Press the shutter for photo 1. From the screen side, turn counterclockwise to 45°, 90° and 135°, measured from the starting position. Follow the prompt, reach each angle before the next photo, and hold still.
-6. Do not move the iPhone. If the phone and scene stayed fixed, choose Calculate Without Aligning after photo 4 (Fig. 17).
+6. Do not move the iPhone. If the phone and scene stayed fixed, choose Calculate Without Aligning after photo 4 (Fig. 18).
 
 Hand rotation makes the angle, tilt and position hard to repeat. This method can show polarization patterns, but its values are not a quantitative reference. Securing the phone and using Timer reduce handling disturbance; they do not remove polarizer angle errors. This limitation applies only to a hand-held polarizer with hand-estimated angles. With a correctly fitted and calibrated Polarizer Rotator, captured at its indexed positions, the measurement values can be used as a reference.
 
 ### Align and calculate
 
-![Calculation choices after four photos](../assets/s012cam-align-dialog.png)
+![Calculation choices after four photos](../assets/s012cam-capture-complete-20261122.png)
 
-Fig. 18. The actual four-photo completion dialog. Align and Calculate is above Calculate Without Aligning. Cropped from the supplied screenshot.
+Fig. 19. The actual four-photo completion dialog. Align and Calculate is above Calculate Without Aligning. Cropped from the supplied screenshot.
 
-For a handheld iPhone, choose Align and Calculate to correct small shifts. With a tripod or a secured iPhone, choose Calculate Without Aligning if both the phone and scene stayed fixed for all four photos. It calculates from the photos as captured (Fig. 18).
+For a handheld iPhone, choose Align and Calculate to correct small shifts. With a tripod or a secured iPhone, choose Calculate Without Aligning if both the phone and scene stayed fixed for all four photos. It calculates from the photos as captured (Fig. 19).
 
-If Alignment Not Confirmed appears, use Retake when the iPhone or subject moved. If Use aligned areas (…%) is offered, you can calculate only the aligned areas. Excluded areas are marked in magenta. Continue without alignment is also offered; the button may read Continue without aligning. Displaced edges can then show false polarization.
+If “Photos Don’t Line Up” appears, check the percentage of the measurement box that lines up in all four photos (Fig. 20). In this example only 10% lines up; the magenta overlay identifies areas that do not line up. Moving leaves, water, people, shadows or parallax between near and far objects can cause this. Choose Retake to capture a new set after correcting the cause. Continue without aligning calculates from displaced photos and may create false polarization along edges; use it only when you understand that limitation. If the app offers Use aligned areas (…%) in another case, only the accepted area is used.
 
-Scenes with very near and far objects can fail alignment because of parallax. Step back, choose a flatter scene or use a tripod. If photos are rejected as blurred, choose a faster shutter. Keep people, moving leaves and waves out of the measurement area when possible (Fig. 19).
+![Photos Don’t Line Up warning with a magenta alignment overlay](../assets/s012cam-alignment-warning-20261122.jpg)
+
+Fig. 20. Actual alignment warning. Only 10% of this measurement box lines up. The visible choices are Retake and Continue without aligning. The percentage belongs to this example, not a fixed acceptance threshold.
+
+Scenes with very near and far objects can fail alignment because of parallax. Step back, choose a flatter scene or use a tripod. If photos are rejected as blurred, choose a faster shutter. Keep people, moving leaves and waves out of the measurement area when possible (Fig. 21).
 
 ![The same scene with aligned photos (left) and displaced photos (right). Displaced edges can create false polarization colours.](../assets/s012cam-alignment-comparison.jpg)
 
-Fig. 19. The same scene with aligned photos (left) and displaced photos (right). Displaced edges can create false polarization colours.
+Fig. 21. The same scene with aligned photos (left) and displaced photos (right). Displaced edges can create false polarization colours.
 
 ## 9. Read the result
 
@@ -301,41 +311,51 @@ Open **Tap for details** to see the alignment status and any exposure warnings. 
 
 ### Example 1. Read the result screen
 
-![AoLP+DoLP result screen](../assets/s012cam-result-overview.png)
+Compare the laptop and table scene across display modes and colour channels (Fig. 22). The main view is AoLP+DoLP (RGB): hue encodes linear-polarization angle and brightness encodes linear-polarization degree. These are not the objects’ original colours.
 
-Fig. 20. An actual saved measurement of a monitor displaying a landscape photograph. This is the polarization of the monitor light, not a direct measurement of the outdoor scene in that photograph.
+![Laptop and table AoLP+DoLP overview](../assets/s012cam-result-overview-20261122.jpg)
 
-The main image is AoLP+DoLP (RGB). Colour shows polarization angle. Brightness shows degree of linear polarization. These colours are not the original colours of the objects (Fig. 20).
+Fig. 22. Latest supplied result overview. The display, keyboard, palm rest and table show different polarization patterns. The bottom status reads Aligned | Perspective; the upper-right warning is Low-signal areas.
 
-Use the lower-left buttons to choose RGB, R, G or B. Use the lower-right buttons to choose AoLP+DoLP, DoLP or AoLP. Export is at the top. Tap the result image to open the point-reading view shown in Fig. 21.
+Use the lower-left buttons for RGB, R, G or B, and the lower-right buttons for AoLP+DoLP, DoLP or AoLP. Aligned | Perspective describes this result’s alignment state; it does not guarantee that every pixel is free of error. Export is at the top.
 
-The upper-right message reports overexposed and low-signal areas. Tap for details before interpreting values. A bright or colourful result alone does not show that every pixel is reliable.
+Open Tap for details to inspect low-signal, overexposure or other warnings for that measurement. This example shows Low-signal areas only; every warning does not appear on every capture. Coloured speckles in dark areas should not be treated as reliable polarization detail.
 
 ### Example 2. Read angle and degree at a point
 
-![Point reading and polarization colour wheel](../assets/s012cam-result-angle-point.png)
+Tap the result to open the full-screen reading view, then tap a location. The cross and the numbers at the top refer to the same sampled point (Fig. 23). Here the cross is on the laptop palm rest, not the LCD.
 
-Fig. 21. The cross marks the selected point. Its reading is AoLP = 173.9° (equivalently −6.1°) and DoLP = 0.969.
+![Palm-rest point reading and polarization colour wheel](../assets/s012cam-result-angle-point-20261122.jpg)
 
-Tap a point to move the cross. Read its values at the top. Angles 180° apart describe the same polarization direction, so 173.9° and −6.1° are equivalent (Fig. 21).
+Fig. 23. The selected palm-rest point reads AoLP = 179.7°, equivalently −0.3°, and DoLP = 0.409. The values describe only the location marked by the cross.
 
-The yellow marker on the wheel shows the selected point. Its direction indicates AoLP. Its distance from the centre indicates DoLP. The outer edge is 1 and the centre is 0. A value of 0.969 indicates strongly linearly polarized light at this point. It does not describe every point in the image.
+179.7° and −0.3° differ by 180° and describe the same linear-polarization axis. The yellow marker’s direction on the wheel indicates AoLP; its radius indicates DoLP. The centre is 0 and the rim is 1. A DoLP of 0.409 is about 40.9% at this point; it does not describe the entire palm rest or display.
+
+### Zoom before selecting a point
+
+Pinch to zoom and drag to pan in the full-screen view, then tap a detail. When 1× appears at the upper right, tap it to reset the view (Fig. 24). Touch navigation is available in AoLP+DoLP, DoLP and AoLP, and in RGB, R, G and B.
+
+![Zoomed palm-rest point-reading view](../assets/s012cam-result-zoom-20261122.jpg)
+
+Fig. 24. The same example after zooming, with the 1× reset button. The reading remains AoLP = 179.7° / −0.3°, DoLP = 0.409. Display zoom does not increase measurement resolution or change the value at the same sampled point.
 
 ### Example 3. Read the DoLP view
 
-![Grayscale DoLP result with a point reading](../assets/s012cam-result-dolp-point.png)
+Black means DoLP = 0 and white means DoLP = 1. The grayscale represents linear-polarization degree, not ordinary photographic brightness. Tap a location, read its value at the top and find the yellow marker on the grayscale bar (Fig. 25).
 
-Fig. 22. The DoLP view of the same monitor scene. This selected point reads 0.855. It is a different point from Fig. 21, so the two readings need not match.
+![Laptop palm-rest DoLP reading and grayscale legend](../assets/s012cam-result-dolp-point-20261122.jpg)
 
-Black means DoLP = 0. White means DoLP = 1. The grayscale shows the degree of linear polarization, not the ordinary brightness of the scene. Tap a point and read its DoLP at the top; the yellow marker locates it on the grayscale bar (Fig. 22).
+Fig. 25. Latest supplied DoLP (RGB) view. The selected palm-rest point reads 0.471. Its location differs from Fig. 23, so the readings need not match; being in the same scene does not make the points interchangeable.
+
+The display is brighter in this DoLP map, while the palm rest and table have other grayscale levels. Sample each region and inspect quality warnings before comparing values. False colour or brightness alone does not establish reliability.
 
 ## 10. Save, share and export
 
-![Saved measurements list](../assets/s012cam-measurements-list.png)
+![Saved measurements list](../assets/s012cam-measurements-selection-20261122.jpg)
 
-Fig. 23. The Measurements list. The saved count, storage size and dates are examples from this iPhone and change as measurements are added or removed.
+Fig. 26. Latest supplied Measurements screen, already in selection mode. It shows 36 saved measurements and 3.98 GB on this iPhone, with one row selected. These counts and sizes are examples.
 
-Keep original DNGs is at the top right; it is on in this example. Select starts multiple selection. Tap a measurement row to reopen its result. Each row shows its date, sampling, alignment status, whether DNGs were kept, and file size. See the steps below for sharing and deletion (Fig. 23).
+Keep original DNGs is on at the top right. The checked blue circle marks one selected measurement, so the action reads Delete (1). Select All selects every row; Done exits selection mode. Tap Done before tapping a row to reopen it. Each row shows the capture date, sampling, alignment, DNG status and size. Check the selection before deleting; sharing and deletion are explained below (Fig. 26).
 
 ### Find and reopen a measurement
 

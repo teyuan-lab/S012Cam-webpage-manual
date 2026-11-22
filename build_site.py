@@ -96,7 +96,7 @@ def chapter_sources(text,lang):
 def manual_hub(lang,path):
  zh=lang=='zh';a=lambda key:rel(path,chapter_path(lang,key))
  body=heading(TITLES[lang]['manual'],DESCS[lang]['manual'],'S012Cam 2.0')
- body+='<figure class="manual-cover"><a href="'+a('camera')+'"><img src="'+asset(path,'s012cam-camera-numbered.png')+'" alt="'+('實際相機畫面與十二個控制位置' if zh else 'Actual camera screen with twelve numbered controls')+'"></a><figcaption>'+('從實際畫面認識按鈕，再跟著組裝圖與動畫開始量測。' if zh else 'Learn the controls on the actual screen, then follow the assembly illustrations and animation.')+'</figcaption></figure>'
+ body+='<figure class="manual-cover"><a href="'+a('camera')+'"><img src="'+asset(path,'s012cam-camera-numbered-20261122.png')+'" alt="'+('實際相機畫面與十二個控制位置' if zh else 'Actual camera screen with twelve numbered controls')+'"></a><figcaption>'+('從實際畫面認識按鈕，再跟著組裝圖與動畫開始量測。' if zh else 'Learn the controls on the actual screen, then follow the assembly illustrations and animation.')+'</figcaption></figure>'
  body+='<div class="manual-jump"><h2>'+('第一次使用？' if zh else 'First measurement?')+'</h2><p>'+('先安裝並檢查偏光片，再選操作方式與拍攝模式。' if zh else 'Fit and check the polarizer, then choose a setup and a capture mode.')+'</p><a class="button" href="'+a('start')+'">'+('從快速開始閱讀' if zh else 'Start with the quick guide')+'</a></div>'
  for title,cards in [(('選擇操作方式' if zh else 'Choose how to support the iPhone'),['handheld','fixed']),(('選擇拍攝模式' if zh else 'Choose a capture mode'),['gyro','timer'])]:
   body+='<section><h2>'+title+'</h2><div class="grid2">'
@@ -132,7 +132,7 @@ for lang in ('en','zh'):
   # The section label is semantic and stable across both languages.
   if key=='gyro':source=source.replace('### '+('檢查與重拍' if lang=='zh' else 'Checks and retakes'),'### '+('檢查與重拍' if lang=='zh' else 'Checks and retakes'))
   body+=(assembly_video(lang,path) if key=='assembly' else capture_visual(lang,path,key) if key in ('gyro','timer') else '')+md_html(source,path)
-  if key in ('handheld','fixed'):body+='<figure><img src="'+asset(path,'s012cam-camera-numbered.png')+'" alt="'+('操作前確認相機控制與量測框' if lang=='zh' else 'Check the camera controls and measurement box before capture')+'"><figcaption>'+('固定構圖，將量測主體保持在虛線框內。' if lang=='zh' else 'Keep the framing fixed and the subject inside the dashed box.')+'</figcaption></figure>'
+  if key in ('handheld','fixed'):body+='<figure><img src="'+asset(path,'s012cam-camera-numbered-20261122.png')+'" alt="'+('操作前確認相機控制與量測框' if lang=='zh' else 'Check the camera controls and measurement box before capture')+'"><figcaption>'+('固定構圖，將量測主體保持在虛線框內。' if lang=='zh' else 'Keep the framing fixed and the subject inside the dashed box.')+'</figcaption></figure>'
   if key=='gyro':body=body.replace('<h3>'+('檢查與重拍' if lang=='zh' else 'Checks and retakes')+'</h3>','<h3 id="checks">'+('檢查與重拍' if lang=='zh' else 'Checks and retakes')+'</h3>')
   if key in ('handheld','fixed','hand-polarizer'):
    body+='<div class="note"><p>'+('下一步：選擇拍攝模式，再決定計算方式。' if lang=='zh' else 'Next: choose a capture mode, then the calculation method.')+'</p><p><a href="'+rel(path,chapter_path(lang,'gyro'))+'">Gyro</a> · <a href="'+rel(path,chapter_path(lang,'timer'))+'">Timer</a> · <a href="'+rel(path,chapter_path(lang,'alignment'))+'">'+('對齊與計算' if lang=='zh' else 'Align and calculate')+'</a></p></div>'

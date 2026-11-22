@@ -155,3 +155,11 @@
 .wave-explanation { min-height:3.5em; margin-bottom:8px; }
 .figure-ray-scene { background:white; border:1px solid var(--line); border-radius:10px; }
 @media(max-width:650px) { .wave-views { grid-template-columns:1fr; } .wave-views > div:last-child { max-width:300px; justify-self:center; width:100%; } .wave-interactive { padding:14px; } }
+
+.arbitrary-controls { display:grid; grid-template-columns:1fr 1fr; gap:10px 26px; margin:20px 0; padding:16px; background:white; border:1px solid var(--line); border-radius:8px; }
+.arbitrary-controls[hidden] { display:none; }
+.arbitrary-controls label { font-weight:600; }
+.arbitrary-controls input { display:block; width:100%; margin:14px 0 4px; accent-color:#175da8; }
+.arbitrary-controls p { grid-column:1/-1; margin:0; }
+.arbitrary-controls input:disabled { opacity:.4; }
+@media(max-width:540px) { .arbitrary-controls { grid-template-columns:1fr; } }

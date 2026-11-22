@@ -10,8 +10,34 @@ The site is static HTML/CSS/JavaScript, published by GitHub Pages from main at t
 
 English and Traditional Chinese manual sources are in `manuals/`. Published PDFs are in `assets/`. The camera reference uses the approved original iPhone 16 Pro screenshot with numbered document annotations.
 
-To rebuild the manuals, run `python3 manuals/build_manuals.py` with ReportLab installed. The script uses macOS Arial Unicode and embeds its glyphs. It also writes the browser-readable HTML manuals. Update the font path when building on another operating system.
+To rebuild the manuals, run `python3 manuals/build_manuals.py` with ReportLab installed. The script uses macOS Arial Unicode and embeds its glyphs. Run `python3 build_site.py` to rebuild the web manuals and chapter pages. Update the font path when building on another operating system.
 
 Contact: teyuan@gmail.com
 
 Department of Optics and Photonics, National Central University, Taiwan.
+
+## Preview the multipage website
+
+The bilingual pages share `site_shell.py` and `style.css`. Main page content is in `content/en/` and `content/zh/`. Update the Markdown sources in `manuals/` for the full manual and chapter pages.
+
+Run `python3 build_site.py` to build all static website pages, manual chapter pages and the complete web manuals. Run `python3 manuals/build_manuals.py` with ReportLab and the documented font to update the PDF downloads. Rebuild both when manual content changes.
+
+The main navigation links to polarization, app, Rotator, manual, buying and support pages. The manual separately groups iPhone support (handheld/fixed) and capture modes (Gyro/Timer). The buying page offers email enquiries for the DIY and fully assembled versions; no price, stock or checkout service is assumed.
+
+The old complete manual HTML and PDF URLs are preserved. Former home-page section links redirect to the corresponding new pages via `language.js`.
+
+### Instruction media
+
+The illustrated manuals retain 16 reusable diagrams and comparison photographs from the supplied earlier manuals, alongside the current 2.0 camera and results screenshots. The MagSafe drawing shows the current five-pad plate; old direct-to-phone pad instructions are not used.
+
+`assets/s012cam-assembly-guide-en.mp4` and `-zh.mp4` are selected animation excerpts for transmission-axis calibration, bearing fitting and MagSafe sticker/plate preparation. They are not the complete assembly sequence. The current written steps cover the remaining operations. Video chapter controls and the four-position Gyro/Timer walkthrough use `guide-media.js`. Nothing autoplays.
+
+The static page generator requires Pillow to read image dimensions. PDF generation also requires ReportLab and the configured CJK font.
+
+### Polarization lesson
+
+The English and Traditional Chinese polarization pages cover ten topics, with 19 numbered figures per language, six practical experiments, twelve application examples and two interactive ideal-physics models. Explanations include links to the supporting optics, instrument-manufacturer and atmospheric-science sources. The source fragments live in `content/en/polarization.html` and `content/zh/polarization.html`; browser interactions are in `polarization.js`.
+
+Original vector diagrams and ideal Fresnel, Rayleigh and Malus-law curves can be regenerated with `tools/build_polarization_figures.py` (NumPy, Matplotlib and the configured CJK font). SVG assets are tracked, so ordinary page builds do not require those plotting packages. App pages use Apple's unmodified official App Store download badge and the app record `id6834323253`.
+
+The app page introduces purpose, features and actual result examples. Detailed capture workflows, controls and file instructions belong to the user manual.

@@ -12,6 +12,12 @@ Every model shows a 1× camera button. Models with an ultra wide camera also sho
 
 You can use the S012Cam Polarizer Rotator accessory or hold a hand-held linear polarizer in front of the lens and turn it through four angles. With a hand-held polarizer, mount or secure the iPhone and use Timer. Estimated angles, tilt and position changes affect the result. Do not use the values from this method as a quantitative reference. See section 8.
 
+
+
+![Rotator mounted on the iPhone. The base stays fixed; the dial carries the polarizer.](../assets/s012cam-rotator-mounted.png)
+
+Figure 1. Rotator mounted on the iPhone. The base stays fixed; the dial carries the polarizer.
+
 ## 2. Before you start
 
 Keep the 15 small, strong magnets and the MagSafe magnet sticker away from children, pets, pacemakers and other medical implants. Swallowed magnets are dangerous.
@@ -47,7 +53,21 @@ The base stays fixed on the iPhone. The dial turns. The base pointer reads the g
 
 Each ridge count appears twice, on opposite sides. Both give the same polarizer angle. The dial clicks every 45°, eight times in one turn.
 
+
+
+![Dial guide: four pad pockets, direction arrows, axis arrows and groups of one to four ridges.](../assets/s012cam-dial-guide.png)
+
+Figure 2. Dial guide: four pad pockets, direction arrows, axis arrows and groups of one to four ridges.
+
+
+
+![Positions 1–4 correspond to 0°, 45°, 90° and 135°. Read the ridge group at the base pointer.](../assets/s012cam-rotator-positions.png)
+
+Figure 3. Positions 1–4 correspond to 0°, 45°, 90° and 135°. Read the ridge group at the base pointer.
+
 ## 4. Assemble the rotator
+
+Watch the calibration, bearing and MagSafe installation animation online: https://teyuan-lab.github.io/S012Cam-webpage-manual/rotator.html#assembly-movie
 
 ### Step 1. Check the printed parts
 
@@ -57,21 +77,57 @@ If your print used supports, remove the large pieces with small pliers and caref
 
 Keep all 12 magnets stacked. Slide each magnet off the same end. Always insert the same face first. Press eight into the base and four into the dial until flush. If one is reversed, push it out through the small hole behind its pocket with a blunt pin and flip it.
 
+
+
+![Keep the same face up on every round magnet. Slide each magnet from the same end of the stack.](../assets/s012cam-magnet-insertion.png)
+
+Figure 4. Keep the same face up on every round magnet. Slide each magnet from the same end of the stack.
+
+
+
+![Eight round magnets go in the base; four go in the dial.](../assets/s012cam-magnet-pockets.png)
+
+Figure 5. Eight round magnets go in the base; four go in the dial.
+
 ### Step 3. Fit the bearing
 
 Turn the dial upside down. Put the bearing in its round recess. Press evenly around the outer ring until it reaches the lip.
+
+
+
+![Press evenly on the bearing outer ring only.](../assets/s012cam-bearing-fit.png)
+
+Figure 6. Press evenly on the bearing outer ring only.
 
 ### Step 4. Join the dial and base
 
 Lower the dial and bearing onto the base. The bearing's inner ring slides over the raised hub.
 
+
+
+![Lower the dial and bearing together onto the base hub.](../assets/s012cam-dial-on-base.png)
+
+Figure 7. Lower the dial and bearing together onto the base hub.
+
 ### Step 5. Insert the cube magnets
 
 Through the centre of the dial, put the three cube magnets in their seats. They hold the bearing's inner ring against the base.
 
+
+
+![The three blue circles show the cube magnet seats.](../assets/s012cam-cube-magnets.png)
+
+Figure 8. The three blue circles show the cube magnet seats.
+
 ### Step 6. Test the dial
 
 Turn the dial once in the direction of the arrows. It should click and hold every 45°, with no scraping. The gap between dial and base is about 1 mm. The cube magnets stay with the base and inner ring; they do not turn with the dial. If a stop repels the dial, reverse the round magnet at that stop.
+
+
+
+![Check the assembled rotator before fitting the polarizer. The dial must turn without scraping.](../assets/s012cam-rotator-assembled.png)
+
+Figure 9. Check the assembled rotator before fitting the polarizer. The dial must turn without scraping.
 
 ## 5. Fit and check the polarizer
 
@@ -82,12 +138,42 @@ Turn the dial once in the direction of the arrows. It should click and hold ever
 3. Hold the polarizer in front of one eye. Turn it slowly until the glare is darkest.
 4. Without turning it again, draw a short vertical line near one corner on the film. This marks the transmission axis.
 
+
+
+![Look at glare through the polarizer and turn it until the reflection is darkest.](../assets/s012cam-axis-glare-test.png)
+
+Figure 10. Look at glare through the polarizer and turn it until the reflection is darkest.
+
+
+
+![The same glass table: bright glare on the left; glare suppressed on the right.](../assets/s012cam-axis-glare-photo.jpg)
+
+Figure 11. The same glass table: bright glare on the left; glare suppressed on the right.
+
+
+
+![Mark the vertical transmission axis on the protective film while the glare is darkest.](../assets/s012cam-axis-mark.png)
+
+Figure 12. Mark the vertical transmission axis on the protective film while the glare is darkest.
+
 ### Fit it to the dial
 
 1. Set the dial to position 1, with one ridge at the pointer.
 2. Put four gel pads in the four dial pockets. Peel the top liners.
 3. Keep the polarizer's protective film facing up. Line up its pen mark with the double-headed arrows. Match its edges to the engraved outline.
 4. Press the four corners onto the pads. Remove the protective film. The corners extending slightly beyond the dial are normal.
+
+
+
+![Four gel pads hold the polarizer in the dial pockets.](../assets/s012cam-polarizer-pads.png)
+
+Figure 13. Four gel pads hold the polarizer in the dial pockets.
+
+
+
+![Align the transmission-axis mark with the double-headed arrows at position 1.](../assets/s012cam-polarizer-fit.png)
+
+Figure 14. Align the transmission-axis mark with the double-headed arrows at position 1.
 
 ## 6. Fit the MagSafe plate and mount the rotator
 
@@ -104,6 +190,12 @@ Turn the dial once in the direction of the arrows. It should click and hold ever
 3. Align the MagSafe plate with the back of the base, edge to edge. Its flat back faces the iPhone.
 4. Press the plates together for 10 seconds.
 
+
+
+![MagSafe plate: the ring and tail hold the magnet sticker. Five gel pads join the plate to the base.](../assets/s012cam-magsafe-plate.png)
+
+Figure 15. MagSafe plate: the ring and tail hold the magnet sticker. Five gel pads join the plate to the base.
+
 ### Mount and check
 
 Wipe the back of the iPhone with a soft cloth. Snap on the rotator with the camera window over the lenses. Open S012Cam and check every available camera. If an edge is blocked, lift the rotator off and mount it again.
@@ -118,7 +210,7 @@ Hold the iPhone sideways. The photograph shows an iPhone 16 Pro before photo 1. 
 
 ![Camera screen with numbered controls](../assets/s012cam-camera-numbered.png)
 
-Figure 1. S012Cam 2.0 camera screen. The displayed values are examples.
+Figure 16. S012Cam 2.0 camera screen. The displayed values are examples.
 
 | No. | Control | What to do |
 | --- | --- | --- |
@@ -137,6 +229,14 @@ Figure 1. S012Cam 2.0 camera screen. The displayed values are examples.
 
 ## 8. Take a four-angle set
 
+First choose how to support the iPhone, then choose how photos 2–4 are triggered. These are separate choices.
+
+| Setup | Suggested capture mode | Calculation |
+| --- | --- | --- |
+| Handheld iPhone + Rotator | Gyro; Timer is also available | Align and Calculate. |
+| Tripod or secured iPhone + Rotator | Timer is convenient; Gyro is also available | Calculate Without Aligning if the phone and scene stayed fixed. |
+| Secured iPhone + hand-held polarizer | Timer | Calculate Without Aligning if fixed. Hand-estimated angles are not a quantitative reference. |
+
 ### Case 1. Hold the iPhone and use the Polarizer Rotator
 
 Hold it sideways with both hands, screen facing you. Your right thumb controls the screen. Your left middle finger turns the dial. From your view, the dial turns counterclockwise. Turn one click at a time. Keep your elbows against your body and tap gently.
@@ -151,22 +251,6 @@ You can use Gyro or Timer. With a firmly mounted phone, turning the polarizer ma
 
 A tripod does not guarantee alignment if the phone, subject or framing moved. Choose Align and Calculate or retake the set in that case.
 
-### Without a Rotator: use a hand-held polarizer
-
-![Hand-held polarizer with a fixed iPhone and four rotation angles](../assets/s012cam-hand-held-polarizer.png)
-
-Figure 2. Use a tripod or firm support and select Timer for Photos 2–4. The upper view is from the camera side. The lower views are from the screen side, with a phone screen corner in the foreground. Blue lines mark the transmission axis at 0°, 45°, 90° and 135°. Keep the selected lens's entire field of view within the clear filter at every angle.
-
-
-1. Mount the iPhone on a tripod or secure it on a firm support. Choose a still scene.
-2. Hold the linear polarizer by its edges in front of the selected camera. The entire field of view must pass through the clear area of the polarizer at all four angles. Use a large enough sheet and hold it close to the lens without touching it. Keep fingers and the filter frame out of the view. Keep the polarizer roughly parallel to the back of the phone. Check the preview at each angle for blocked edges or dark corners.
-3. Set the transmission axis along the long edge of the landscape iPhone for 0°. The edge of the filter is not necessarily its transmission axis.
-4. Set Photos 2–4 (11) to Timer. The default interval is 2 seconds. Use a longer interval if you need more time to turn and settle.
-5. Press the shutter for photo 1. From the screen side, turn counterclockwise to 45°, 90° and 135°, measured from the starting position. Follow the prompt, reach each angle before the next photo, and hold still.
-6. Do not move the iPhone. If the phone and scene stayed fixed, choose Calculate Without Aligning after photo 4.
-
-Hand rotation makes the angle, tilt and position hard to repeat. This method can show polarization patterns, but its values are not a quantitative reference. Securing the phone and using Timer reduce handling disturbance; they do not remove polarizer angle errors. This limitation applies only to a hand-held polarizer with hand-estimated angles. With a correctly fitted and calibrated Polarizer Rotator, captured at its indexed positions, the measurement values can be used as a reference.
-
 ### Gyro mode: one shutter press
 
 1. Set Photos 2–4 (11) to Gyro, the default. Set the dial to position 1, at 0°.
@@ -176,7 +260,9 @@ Hand rotation makes the angle, tilt and position hard to repeat. This method can
 5. Repeat at position 3 (90°) and position 4 (135°). Hold still after each turn.
 6. After all four photos, choose Align and Calculate or Calculate Without Aligning.
 
-The eye button shows or hides the photo 1 outline. It appears after photo 1, so it is not visible in Figure 1.
+If the phone does not sense movement, the prompt may stay at “Turn to XX” instead of changing to “Hold still”. After turning the polarizer to the requested angle, lightly touch or gently tap the phone once, then hold it steady. The app can then continue waiting for steadiness and capture. Keep the framing unchanged.
+
+The eye button shows or hides the photo 1 outline. It appears after photo 1, so it is not visible in the numbered camera-screen photograph.
 
 ### Checks and retakes
 
@@ -198,17 +284,39 @@ The shutter button always works. Press it during a set to take the current photo
 
 Set Photos 2–4 (11) to Timer. Set Interval (3), 2 seconds by default. Press the shutter for photo 1. Turn the dial to each prompted angle before the next interval ends. Photos 2–4 use the fixed interval. In Gyro mode, Interval is dimmed because it is not used.
 
+### Without a Rotator: use a hand-held polarizer
+
+![Hand-held polarizer with a fixed iPhone and four rotation angles](../assets/s012cam-hand-held-polarizer.png)
+
+Figure 17. Use a tripod or firm support and select Timer for Photos 2–4. The upper view is from the camera side. The lower views are from the screen side, with a phone screen corner in the foreground. Blue lines mark the transmission axis at 0°, 45°, 90° and 135°. Keep the selected lens's entire field of view within the clear filter at every angle.
+
+
+1. Mount the iPhone on a tripod or secure it on a firm support. Choose a still scene.
+2. Hold the linear polarizer by its edges in front of the selected camera. The entire field of view must pass through the clear area of the polarizer at all four angles. Use a large enough sheet and hold it close to the lens without touching it. Keep fingers and the filter frame out of the view. Keep the polarizer roughly parallel to the back of the phone. Check the preview at each angle for blocked edges or dark corners.
+3. Set the transmission axis along the long edge of the landscape iPhone for 0°. The edge of the filter is not necessarily its transmission axis.
+4. Set Photos 2–4 (11) to Timer. The default interval is 2 seconds. Use a longer interval if you need more time to turn and settle.
+5. Press the shutter for photo 1. From the screen side, turn counterclockwise to 45°, 90° and 135°, measured from the starting position. Follow the prompt, reach each angle before the next photo, and hold still.
+6. Do not move the iPhone. If the phone and scene stayed fixed, choose Calculate Without Aligning after photo 4.
+
+Hand rotation makes the angle, tilt and position hard to repeat. This method can show polarization patterns, but its values are not a quantitative reference. Securing the phone and using Timer reduce handling disturbance; they do not remove polarizer angle errors. This limitation applies only to a hand-held polarizer with hand-estimated angles. With a correctly fitted and calibrated Polarizer Rotator, captured at its indexed positions, the measurement values can be used as a reference.
+
 ### Align and calculate
 
 ![Calculation choices after four photos](../assets/s012cam-align-dialog.png)
 
-Figure 3. The actual four-photo completion dialog. Align and Calculate is above Calculate Without Aligning. Cropped from the supplied screenshot.
+Figure 18. The actual four-photo completion dialog. Align and Calculate is above Calculate Without Aligning. Cropped from the supplied screenshot.
 
 For a handheld iPhone, choose Align and Calculate to correct small shifts. With a tripod or a secured iPhone, choose Calculate Without Aligning if both the phone and scene stayed fixed for all four photos. It calculates from the photos as captured.
 
 If Alignment Not Confirmed appears, use Retake when the iPhone or subject moved. If Use aligned areas (…%) is offered, you can calculate only the aligned areas. Excluded areas are marked in magenta. Continue without alignment is also offered; the button may read Continue without aligning. Displaced edges can then show false polarization.
 
 Scenes with very near and far objects can fail alignment because of parallax. Step back, choose a flatter scene or use a tripod. If photos are rejected as blurred, choose a faster shutter. Keep people, moving leaves and waves out of the measurement area when possible.
+
+
+
+![The same scene with aligned photos (left) and displaced photos (right). Displaced edges can create false polarization colours.](../assets/s012cam-alignment-comparison.jpg)
+
+Figure 19. The same scene with aligned photos (left) and displaced photos (right). Displaced edges can create false polarization colours.
 
 ## 9. Read the result
 
@@ -228,11 +336,11 @@ Open **Tap for details** to see the alignment status and any exposure warnings. 
 
 ![AoLP+DoLP result screen](../assets/s012cam-result-overview.png)
 
-Figure 4. An actual saved measurement of a monitor displaying a landscape photograph. This is the polarization of the monitor light, not a direct measurement of the outdoor scene in that photograph.
+Figure 20. An actual saved measurement of a monitor displaying a landscape photograph. This is the polarization of the monitor light, not a direct measurement of the outdoor scene in that photograph.
 
 The main image is AoLP+DoLP (RGB). Colour shows polarization angle. Brightness shows degree of linear polarization. These colours are not the original colours of the objects.
 
-Use the lower-left buttons to choose RGB, R, G or B. Use the lower-right buttons to choose AoLP+DoLP, DoLP or AoLP. Export is at the top. Tap the result image to open the point-reading view shown in Figure 5.
+Use the lower-left buttons to choose RGB, R, G or B. Use the lower-right buttons to choose AoLP+DoLP, DoLP or AoLP. Export is at the top. Tap the result image to open the point-reading view shown in Figure 21.
 
 The upper-right message reports overexposed and low-signal areas. Tap for details before interpreting values. A bright or colourful result alone does not show that every pixel is reliable.
 
@@ -240,7 +348,7 @@ The upper-right message reports overexposed and low-signal areas. Tap for detail
 
 ![Point reading and polarization colour wheel](../assets/s012cam-result-angle-point.png)
 
-Figure 5. The cross marks the selected point. Its reading is AoLP = 173.9° (equivalently −6.1°) and DoLP = 0.969.
+Figure 21. The cross marks the selected point. Its reading is AoLP = 173.9° (equivalently −6.1°) and DoLP = 0.969.
 
 Tap a point to move the cross. Read its values at the top. Angles 180° apart describe the same polarization direction, so 173.9° and −6.1° are equivalent.
 
@@ -250,7 +358,7 @@ The yellow marker on the wheel shows the selected point. Its direction indicates
 
 ![Grayscale DoLP result with a point reading](../assets/s012cam-result-dolp-point.png)
 
-Figure 6. The DoLP view of the same monitor scene. This selected point reads 0.855. It is a different point from Figure 5, so the two readings need not match.
+Figure 22. The DoLP view of the same monitor scene. This selected point reads 0.855. It is a different point from Figure 21, so the two readings need not match.
 
 Black means DoLP = 0. White means DoLP = 1. The grayscale shows the degree of linear polarization, not the ordinary brightness of the scene. Tap a point and read its DoLP at the top; the yellow marker locates it on the grayscale bar.
 
@@ -258,7 +366,7 @@ Black means DoLP = 0. White means DoLP = 1. The grayscale shows the degree of li
 
 ![Saved measurements list](../assets/s012cam-measurements-list.png)
 
-Figure 7. The Measurements list. The saved count, storage size and dates are examples from this iPhone and change as measurements are added or removed.
+Figure 23. The Measurements list. The saved count, storage size and dates are examples from this iPhone and change as measurements are added or removed.
 
 Keep original DNGs is at the top right; it is on in this example. Select starts multiple selection. Tap a measurement row to reopen its result. Each row shows its date, sampling, alignment status, whether DNGs were kept, and file size. See the steps below for sharing and deletion.
 
@@ -317,6 +425,7 @@ Clean the polarizer with a soft dry cloth. Do not use alcohol or solvents. Keep 
 | --- | --- |
 | Camera Permission | Open Settings and allow camera access for S012Cam. |
 | An expected camera is absent | Buttons depend on the iPhone model. Wait for startup calibration. Use an available camera. |
+| Stays at “Turn to XX”, not “Hold still” | Turn to the requested angle, lightly touch or gently tap the phone once, then hold still without changing the framing. |
 | No automatic photo in Gyro mode | Turn to the prompted angle, then hold still and match the outline. After about 8 seconds, use Capture now, Redo previous or Cancel. The shutter also captures immediately. |
 | Plain area message | Position cannot be checked in a textureless area. Keep the phone steady or frame a textured subject. |
 | Repeated blur rejection | Use a faster shutter and support the iPhone. Keep the current dial angle while the app retries. |

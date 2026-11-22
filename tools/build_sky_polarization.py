@@ -5,6 +5,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib import font_manager
+from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 out=Path(__file__).resolve().parents[1]/'assets/polarization'
 font_manager.fontManager.addfont('/System/Library/Fonts/Supplemental/Arial Unicode.ttf')
 plt.rcParams.update({'font.family':'Arial Unicode MS','svg.fonttype':'path','font.size':13})
@@ -32,7 +33,18 @@ for lang in ('en','zh'):
     front=np.dot(r,camera)>0
     ax.plot(v[:,0],v[:,1],v[:,2],color='#175da8' if front else '#8eaed0',alpha=1 if front else .38,lw=2.3 if front else 1.1,zorder=4 if front else 1.5)
   u=np.array([0,1,0]);v=np.cross(s,u);a=np.linspace(0,np.pi,180);band=u[:,None]*np.cos(a)+v[:,None]*np.sin(a)
+  # The upper half-disc is perpendicular to the observer-to-Sun vector s.
+  # Its diameter passes through the observer and its rim is 90 degrees from the Sun.
+  assert np.max(np.abs(s @ band)) < 1e-12
+  assert np.min(band[2]) >= -1e-12
+  vertices=np.vstack((np.zeros(3),band.T,np.zeros(3)))
+  plane=Poly3DCollection([vertices],facecolor='#e4ac47',edgecolor='none',alpha=.26,zorder=2)
+  ax.add_collection3d(plane)
   ax.plot(*band,color='#1675b6',lw=2,zorder=3)
+  ax.plot([0,0],[-1,1],[0,0],color='#b3842c',lw=1,alpha=.7,zorder=3)
+  ax.quiver(0,0,0,*(s*.94),color='black',linewidth=1.5,arrow_length_ratio=.12,zorder=9)
+  ax.text(*(s*.53+np.array([.02,.06,.04])),T('normal n','法向量 n'),fontsize=12,color='black',zorder=10)
+
   ax.scatter(*s,s=140,color='#db4f36',edgecolors='white',linewidth=1,zorder=8)
   ax.text(*(s+np.array([.07,.02,.03])),T('Sun','太陽'),fontsize=17,color='#ba3926',zorder=10)
   # Observer centred at the origin: head, torso, arms and legs share world coordinates.

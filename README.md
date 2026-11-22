@@ -52,4 +52,4 @@ The projector example uses parallel red/blue electric-field axes and an orthogon
 
 Rayleigh Fig. 8 is interactive in `lesson-demos.js`. Incident propagation is +z. Readers can select unpolarized input or linear input with direction α in x–y, then vary scattering angle Θ and azimuth φ. Linear output is the coherent transverse field projection, with DoLP 1 except at zero-intensity radiation nulls where polarization is undefined. The field views, intensity and DoLP curve markers share this model.
 
-The bilingual purchase pages link to the public Google order form. Prices: polarizer NT$50, DIY kit NT$400, fully assembled NT$700; shipping is confirmed separately. Only the responder URL is published. The form editor, Drive folder and order responses are private administration resources.
+The bilingual purchase pages link to the public Google order form. Prices: polarizer NT$20, DIY kit NT$400, fully assembled NT$600; shipping is confirmed separately. Only the responder URL is published. The form editor, Drive folder and order responses are private administration resources.

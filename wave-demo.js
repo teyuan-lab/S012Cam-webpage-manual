@@ -60,12 +60,20 @@ document.querySelectorAll('[data-wave-demo]').forEach(demo=>{
     art+=`<circle cx="${location[0]}" cy="${location[1]}" r="3" fill="#536479"/><text x="${location[0]-10}" y="${location[1]+100}" text-anchor="middle">${T('Fixed position → panel (b)','固定位置 → (b)')}</text>`;
     art+=`<text x="690" y="40" fill="#175da8">E</text><text x="690" y="70" fill="#c03941">cB</text><text x="690" y="160">E ⊥ B</text><text x="690" y="190">E ⊥ z</text><text x="690" y="220">B ⊥ z</text>`;
     scene.innerHTML=art;
-    const trajectory=Array.from({length:121},(_,j)=>{
-      const e=waveComponents(state.value,j/120*2*Math.PI).e;
-      return `${j?'L':'M'}${150+85*e[0]} ${160-85*e[1]}`;
+    const trajectory=kind=>Array.from({length:121},(_,j)=>{
+      const vector=waveComponents(state.value,j/120*2*Math.PI)[kind];
+      return `${j?'L':'M'}${150+85*vector[0]} ${160-85*vector[1]}`;
     }).join('');
-    const ex=150+85*f.e[0],ey=160-85*f.e[1];
-    tip.innerHTML=`<rect width="300" height="320" fill="white"/><path d="M25 160H275M150 35V285" stroke="#acbac8" stroke-width="1"/><text x="279" y="153">x</text><text x="160" y="32">y</text><path d="${trajectory}" stroke="#9eb1c4" stroke-width="1.4" fill="none"/><path d="M150 160L${ex} ${ey}" stroke="#175da8" stroke-width="2"/><circle cx="${ex}" cy="${ey}" r="5" fill="#175da8"/><text x="150" y="310" text-anchor="middle">${T('E tip over time','電場末端的時間軌跡')}</text>`;
+    const ex=150+85*f.e[0],ey=160-85*f.e[1],bx=150+85*f.b[0],by=160-85*f.b[1];
+    const tipMarkers=[['e','#175da8'],['b','#c03941']].map(([kind,color])=>`<marker id="wave-tip-${kind}-${demo.dataset.lang}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10" fill="${color}"/></marker>`).join('');
+    tip.innerHTML=`<defs>${tipMarkers}</defs><rect width="300" height="320" fill="white"/><path d="M25 160H275M150 35V285" stroke="#acbac8" stroke-width="1"/><text x="279" y="153">x</text><text x="160" y="32">y</text>
+      <path d="${trajectory('e')}" stroke="#175da8" stroke-opacity=".35" stroke-width="1.2" fill="none"/>
+      <path d="${trajectory('b')}" stroke="#c03941" stroke-opacity=".45" stroke-dasharray="4 4" stroke-width="1.2" fill="none"/>
+      <path data-tip-field="E" d="M150 160L${ex} ${ey}" stroke="#175da8" stroke-width="2" marker-end="url(#wave-tip-e-${demo.dataset.lang})"/>
+      <path data-tip-field="cB" d="M150 160L${bx} ${by}" stroke="#c03941" stroke-width="2" marker-end="url(#wave-tip-b-${demo.dataset.lang})"/>
+      <circle cx="${ex}" cy="${ey}" r="3.5" fill="#175da8"/><circle cx="${bx}" cy="${by}" r="3.5" fill="#c03941"/>
+      <text x="${ex+8}" y="${ey-8}" fill="#175da8">E</text><text x="${bx+8}" y="${by+19}" fill="#c03941">cB</text>
+      <text x="150" y="310" text-anchor="middle">${T('E and cB at the same instant','同一時刻的 E 與 cB')}</text>`;
     const degrees=Math.round(phase/(2*Math.PI)*360)%360;slider.value=degrees;
     demo.querySelector('[data-wave-phase-label]').textContent=degrees+'°';
   };

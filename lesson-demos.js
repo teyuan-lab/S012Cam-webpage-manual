@@ -96,3 +96,45 @@ document.querySelectorAll('[data-sheet-demo]').forEach(demo=>{
   };
   slider.addEventListener('input',update);demo.querySelectorAll('[data-sheet-preset]').forEach(b=>b.addEventListener('click',()=>{slider.value=b.dataset.sheetPreset;update();}));update();
 });
+
+function rayleighState(theta,phi) {
+  const t=theta*Math.PI/180,p=phi*Math.PI/180,c=Math.cos(t);
+  return {n:[Math.sin(t)*Math.cos(p),Math.sin(t)*Math.sin(p),c],te:[-Math.sin(p),Math.cos(p),0],tm:[c*Math.cos(p),c*Math.sin(p),-Math.sin(t)],tmAmplitude:Math.abs(c),teIntensity:1,tmIntensity:c*c,intensity:(1+c*c)/2,dolp:(1-c*c)/(1+c*c)};
+}
+document.querySelectorAll('[data-rayleigh-demo]').forEach(demo=>{
+  const zh=demo.dataset.lang==='zh',T=(en,cn)=>zh?cn:en,theta=demo.querySelector('[data-rayleigh-theta]'),phi=demo.querySelector('[data-rayleigh-phi]');
+  const add=(a,b)=>a.map((x,i)=>x+b[i]),mul=(a,k)=>a.map(x=>x*k),dot=(a,b)=>a.reduce((sum,x,i)=>sum+x*b[i],0);
+  const P=v=>[430+90*dot(v,[-.6,0,.8]),235-90*dot(v,[-.273616,.939693,-.205212])];
+  const xy=p=>P(p).map(x=>x.toFixed(2)).join(' ');
+  const update=()=>{
+    const t=Number(theta.value),p=Number(phi.value),m=rayleighState(t,p),o=[0,0,0],observer=mul(m.n,1.65),prefix='rayleigh-'+demo.dataset.lang;
+    const line=(a,b,color='black',w=1.2,double=false)=>`<path d="M${xy(a)}L${xy(b)}" stroke="${color}" stroke-width="${w}" fill="none" marker-end="url(#${prefix}-${color==='black'?'k':color==='#175da8'?'te':'tm'})" ${double?`marker-start="url(#${prefix}-${color==='#175da8'?'te':'tm'})"`:''}/>`;
+    let art='<defs>';
+    for(const [key,color] of [['k','black'],['te','#175da8'],['tm','#0000ff']])art+=`<marker id="${prefix}-${key}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="${color}"/></marker>`;
+    art+='</defs><rect width="900" height="530" fill="white"/>';
+    if(Math.abs(Math.sin(t*Math.PI/180))>.01){const corners=[o,[0,0,2.9],add([0,0,2.9],mul([Math.cos(p*Math.PI/180),Math.sin(p*Math.PI/180),0],2)),mul([Math.cos(p*Math.PI/180),Math.sin(p*Math.PI/180),0],2)];art+=`<path d="${corners.map((v,i)=>(i?'L':'M')+xy(v)).join('')}Z" fill="#e9eff5" fill-opacity=".6"/>`;}
+    art+=line([0,0,-3.5],o,'black',1.8)+line(o,[0,0,3.2]);
+    for(const [v,label] of [[[1.25,0,0],'x'],[[0,1.25,0],'y'],[[0,0,3.2],'+z · kᵢₙ']]){if(label.length===1)art+=line(o,v);const a=P(v);art+=`<text x="${a[0]+8}" y="${a[1]+(label.length===1?-8:24)}" fill="black">${label}</text>`;}
+    art+=line(o,mul(m.n,2.4),'black',2);
+    const obs=P(mul(m.n,2.4));art+=`<circle cx="${obs[0]}" cy="${obs[1]}" r="6" fill="white" stroke="black"/><text x="${Math.min(760,Math.max(80,obs[0]+12))}" y="${obs[1]-12}" fill="black">kₛ · Θ ${t}°</text>`;
+    const centre=P(o);art+=`<circle cx="${centre[0]}" cy="${centre[1]}" r="6" fill="#175da8"/>`;
+    // Independent transverse input components; output is a projection onto k_s perpendicular.
+    for(const [axis,gain,color] of [[m.te,1,'#175da8'],[m.tm,m.tmAmplitude,'#0000ff']])if(gain>1e-8)art+=line(add(observer,mul(axis,-.55*gain)),add(observer,mul(axis,.55*gain)),color,2.5,true);
+    for(let j=0;j<8;j++){const a=j*Math.PI/8,e=[Math.cos(a)*.42,Math.sin(a)*.42,0];art+=`<path d="M${xy(add([0,0,-2.55],mul(e,-1)))}L${xy(add([0,0,-2.55],e))}" stroke="#175da8" stroke-width="1.2"/>`;}
+    const arc=Array.from({length:61},(_,j)=>{const a=t*Math.PI/180*j/60;return [Math.sin(a)*Math.cos(p*Math.PI/180)*.65,Math.sin(a)*Math.sin(p*Math.PI/180)*.65,Math.cos(a)*.65];});art+=`<path d="${arc.map((v,i)=>(i?'L':'M')+xy(v)).join('')}" fill="none" stroke="black" stroke-width="1"/>`;
+    art+=`<text x="25" y="35">${T('Input: unpolarized · kᵢₙ along +z','入射：非偏振光 · kᵢₙ 沿 +z')}</text><text x="25" y="475" fill="#175da8">${T('TE: perpendicular to scattering plane','TE：垂直散射面')} · |E| = 1</text><text x="25" y="507" fill="#0000ff">${T('TM: in the plane, perpendicular to kₛ','TM：位於散射面內，垂直 kₛ')} · |E| = ${m.tmAmplitude.toFixed(3)}</text>`;
+    demo.querySelector('[data-rayleigh-scene]').innerHTML=art;
+    const pre=`<defs><marker id="${prefix}-end-te" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#175da8"/></marker><marker id="${prefix}-end-tm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#0000ff"/></marker></defs>`;
+    demo.querySelector('[data-rayleigh-end]').innerHTML=pre+`<rect width="320" height="330" fill="white"/><circle cx="160" cy="155" r="94" fill="none" stroke="#d1dae4"/><path d="M45 155H275M160 40V270" stroke="black" stroke-width=".8"/><path d="M80 155H240" stroke="#175da8" stroke-width="2.5" marker-start="url(#${prefix}-end-te)" marker-end="url(#${prefix}-end-te)"/>${m.tmAmplitude>1e-8?`<path d="M160 ${155-80*m.tmAmplitude}V${155+80*m.tmAmplitude}" stroke="#0000ff" stroke-width="3" marker-start="url(#${prefix}-end-tm)" marker-end="url(#${prefix}-end-tm)"/>`:''}<text x="265" y="146" fill="#175da8">TE</text><text x="170" y="45" fill="#0000ff">TM</text><text x="160" y="310" text-anchor="middle">${T('Look along scattered kₛ','沿散射方向 kₛ 看')}</text>`;
+    const X=a=>55+a/180*570,Y=v=>250-210*v;
+    let plot='<rect width="670" height="320" fill="white"/>';
+    for(const v of [0,.5,1])plot+=`<path d="M55 ${Y(v)}H625" stroke="#dce3eb"/><text x="42" y="${Y(v)+5}" text-anchor="end">${v}</text>`;
+    for(const a of [0,45,90,135,180])plot+=`<text x="${X(a)}" y="277" text-anchor="middle">${a}°</text>`;
+    for(const [key,color] of [['dolp','#175da8'],['intensity','#606974']]){const points=Array.from({length:181},(_,a)=>(a?'L':'M')+X(a)+' '+Y(rayleighState(a,p)[key])).join('');plot+=`<path d="${points}" fill="none" stroke="${color}" stroke-width="2.5"/><circle data-rayleigh-point="${key}" cx="${X(t)}" cy="${Y(m[key])}" r="5" fill="${color}"/>`;}
+    plot+=`<path d="M55 40V250H625M${X(t)} 40V250" fill="none" stroke="black" stroke-width="1" stroke-dasharray="4 3"/><text x="335" y="310" text-anchor="middle">${T('Scattering angle Θ from +z','散射角 Θ，由 +z 量起')}</text>`;
+    demo.querySelector('[data-rayleigh-plot]').innerHTML=plot;
+    demo.querySelector('[data-rayleigh-theta-label]').textContent=t+'°';demo.querySelector('[data-rayleigh-phi-label]').textContent=p+'°';
+    demo.querySelector('[data-rayleigh-reading]').textContent=T(`TE intensity ${m.teIntensity.toFixed(3)} · TM intensity ${m.tmIntensity.toFixed(3)} · Total / forward ${m.intensity.toFixed(3)} · DoLP ${m.dolp.toFixed(3)}`,`TE 強度 ${m.teIntensity.toFixed(3)} · TM 強度 ${m.tmIntensity.toFixed(3)} · 總強度／前向 ${m.intensity.toFixed(3)} · DoLP ${m.dolp.toFixed(3)}`);
+  };
+  theta.addEventListener('input',update);phi.addEventListener('input',update);demo.querySelectorAll('[data-rayleigh-preset]').forEach(b=>b.addEventListener('click',()=>{theta.value=b.dataset.rayleighPreset;update();}));update();
+});

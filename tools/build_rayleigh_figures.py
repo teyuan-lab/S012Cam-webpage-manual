@@ -85,7 +85,7 @@ def geometry(lang):
 
 def patterns(lang):
  zh=lang=='zh';T=lambda en,cn:cn if zh else en
- s=SVG(1100,900,T('Dipole radiation and unpolarized Rayleigh phase function','偶極輻射與非偏振光的 Rayleigh 角分布'))
+ s=SVG(1100,960,T('Dipole radiation and unpolarized Rayleigh phase function','偶極輻射與非偏振光的 Rayleigh 角分布'))
  cases=[((275,235),(0,1,0),'(a) '+T('Dipole along y','偶極沿 y'),'Iᵧ(n) ∝ 1 − nᵧ²'),((825,235),(1,0,0),'(b) '+T('Dipole along x','偶極沿 x'),'Iₓ(n) ∝ 1 − nₓ²'),((275,655),None,'(c) '+T('Equal incoherent average','等強度、不相干平均'),'I(Θ) ∝ (1 + cos²Θ) / 2')]
  for centre,d,title,formula in cases:
   cx,cy=centre;s.text(cx,cy-190,title,23,INK,'middle')
@@ -101,9 +101,28 @@ def patterns(lang):
     quads.append((sum(dot(v,DEPTH) for v in vs)/4,vs))
   for depth,vs in sorted(quads,key=lambda p:p[0]):
    shade=max(0,min(1,(depth+1)/2));b=int(243-35*shade);r=int(236-57*shade);g=int(243-42*shade)
-   s.poly([project(v,centre,125) for v in vs],f'#{r:02x}{g:02x}{b:02x}','#71869a',.45)
+   s.poly([project(v,centre,125) for v in vs],f'#{r:02x}{g:02x}{b:02x}',f'#{r:02x}{g:02x}{b:02x}',.3)
+  # Explicit spherical-coordinate isolines; theta is ALWAYS from +z.
+  # The fill tessellation above has no visible mesh edges.
+  def front(t,p):
+   eps=1e-4
+   a=add(point(t+eps,p),mul(point(t-eps,p),-1))
+   b=add(point(t,p+eps),mul(point(t,p-eps),-1))
+   normal=(a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0])
+   return dot(normal,DEPTH)>0
+  def isoline(samples,color,width):
+   for (t,p),(u,q) in zip(samples,samples[1:]):
+    if front((t+u)/2,(p+q)/2):s.line(project(point(t,p),centre,125),project(point(u,q),centre,125),color,width)
+  for deg in range(15,180,15):
+   isoline([(deg*pi/180,j*2*pi/240) for j in range(241)],'#536878',.85)
+  for deg in range(0,360,15):
+   isoline([(max(.0001,min(pi-.0001,j*pi/180)),deg*pi/180) for j in range(181)],'#8296a4',.7)
+  # One radial coordinate line; r is distance from the common origin.
+  n=(sin(pi/3)*cos(pi/4),sin(pi/3)*sin(pi/4),cos(pi/3))
+  endpoint=project(mul(n,1.2),centre,125)
+  s.line(centre,endpoint,'black',.9,dash=True);s.text(endpoint[0]+8,endpoint[1]+4,'r',17,'black')
   for v,label in [((1.43,0,0),'x'),((0,1.43,0),'y'),((0,0,1.43),'z')]:
-   p=project(v,centre,125);s.line(centre,p,'black',1.1,True);s.text(p[0]+8,p[1]-5,label,18,'black')
+   p=project(v,centre,125);s.line(centre,p,'black',1.1,True);s.text(p[0]+8,p[1]-5,('+z (θ=0)' if label=='z' else label),18,'black')
   if d:
    s.line(project(mul(d,-1.2),centre,125),project(mul(d,1.2),centre,125),BLUE,2,double=True)
    p=project(mul(d,1.25),centre,125);s.text(p[0]-10,p[1]-12,'Eᵢₙ',18,BLUE,'end')
@@ -122,8 +141,10 @@ def patterns(lang):
  s.text(825,790,T('Scattering angle Θ (from +z)','散射角 Θ（由 +z 量起）'),19,INK,'middle')
  s.line((650,817),(690,817),BLUE,2.8);s.text(700,823,'DoLP = sin²Θ / (1 + cos²Θ)',18,BLUE)
  s.line((650,848),(690,848),'#606974',2);s.text(700,854,T('Intensity / forward intensity','光強度／前向光強度'),18,'#606974')
- s.text(550,890,T('Surface radius = relative intensity, not E amplitude; all three surfaces use the same radial scale.','曲面半徑表示相對光強度，不是電場振幅；三個立體圖使用相同徑向尺度。'),18,INK,'middle')
- s.save(f'rayleigh-dipoles-v2-{lang}.svg')
+ s.text(550,890,T('Spherical mesh: θ from +z; φ from +x toward +y. r = relative intensity.','球座標網格：θ 從 +z 量起；φ 從 +x 朝 +y 量起。r 為相對光強度。'),19,INK,'middle')
+ s.text(550,920,'(x, y, z) = r (sin θ cos φ, sin θ sin φ, cos θ)',20,INK,'middle')
+ s.text(550,947,T('Dark curves: constant θ · light curves: constant φ · same radial scale in (a–c).','深色曲線：固定 θ · 淺色曲線：固定 φ · (a–c) 徑向尺度相同。'),18,INK,'middle')
+ s.save(f'rayleigh-dipoles-v3-{lang}.svg')
 
 if __name__=='__main__':
  for lang in ('en','zh'):geometry(lang);patterns(lang)

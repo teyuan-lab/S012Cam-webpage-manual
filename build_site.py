@@ -25,10 +25,11 @@ DESCS={'en':{'home':'Explore light with S012Cam. Learn the app, use the Rotator,
 
 def assembly_video(lang,path):
  zh=lang=='zh'
- title='組裝動畫：校正、軸承與 MagSafe' if zh else 'Assembly animation: calibration, bearing and MagSafe'
- note='原組裝動畫節選。下方圖文包含其餘步驟；請依目前的零件表與順序組裝。可播放、暫停或直接跳到要看的部分。' if zh else 'Selected parts of the original assembly animation. The illustrated guide below covers the remaining steps. Follow the current parts list and assembly order. Play, pause or jump to a section.'
- labels=['找出透光軸','安裝軸承','MagSafe 磁貼與底板'] if zh else ['Find the transmission axis','Fit the bearing','MagSafe sticker and plate']
- return '<section class="animation-panel" aria-label="'+title+'"><h2>'+title+'</h2><p>'+note+'</p><video id="assembly-movie" controls playsinline preload="metadata" poster="'+asset(path,'s012cam-assembly-poster-'+lang+'.jpg')+'"><source src="'+asset(path,'s012cam-assembly-guide-'+lang+'.mp4')+'" type="video/mp4">'+('你的瀏覽器無法播放此影片。' if zh else 'Your browser does not support this video.')+'</video><div class="video-chapters">'+''.join('<button type="button" data-video="assembly-movie" data-time="'+str(t)+'">'+label+'</button>' for t,label in zip([0,15,19.5],labels))+'</div></section><script src="'+rel(path,'guide-media.js')+'" defer></script>'
+ title='Polarizer Rotator 3D 組裝動畫' if zh else 'Polarizer Rotator 3D assembly animation'
+ note='播放 3D 動畫查看零件位置與組裝順序，可隨時暫停或拖動進度條。各步驟的操作細節與校正方式見下方圖文說明。' if zh else 'Watch the 3D animation to see the parts and assembly order. Pause or seek at any time. The illustrated instructions below explain each step and calibration.'
+ movie='s012cam-rotator-assembly-3d-'+lang+'.mp4'
+ poster='s012cam-rotator-assembly-3d-poster-'+lang+'.jpg'
+ return '<section class="animation-panel" aria-label="'+title+'"><h2>'+title+'</h2><p>'+note+'</p><video id="assembly-movie" controls playsinline preload="metadata" poster="'+asset(path,poster)+'"><source src="'+asset(path,movie)+'" type="video/mp4">'+('你的瀏覽器無法播放此影片。' if zh else 'Your browser does not support this video.')+'</video></section>'
 
 def capture_visual(lang,path,mode):
  zh=lang=='zh';title=('Gyro：轉動後持穩，自動拍攝' if mode=='gyro' else 'Timer：在間隔結束前轉好角度') if zh else ('Gyro: turn, hold still, capture automatically' if mode=='gyro' else 'Timer: reach each angle before the interval ends')

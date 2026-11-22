@@ -30,7 +30,7 @@ The old complete manual HTML and PDF URLs are preserved. Former home-page sectio
 
 The illustrated manuals retain 16 reusable diagrams and comparison photographs from the supplied earlier manuals, alongside the current 2.0 camera and results screenshots. The MagSafe drawing shows the current five-pad plate; old direct-to-phone pad instructions are not used.
 
-`assets/s012cam-assembly-guide-en.mp4` and `-zh.mp4` are selected animation excerpts for transmission-axis calibration, bearing fitting and MagSafe sticker/plate preparation. They are not the complete assembly sequence. The current written steps cover the remaining operations. Video chapter controls and the four-position Gyro/Timer walkthrough use `guide-media.js`. Nothing autoplays.
+The Rotator pages, assembly chapters and complete web manuals use `assets/s012cam-rotator-assembly-3d-en.mp4` and `assets/s012cam-rotator-assembly-3d-zh.mp4`, matched to the page language. Their posters are frames from the corresponding videos. Native video controls support pause and seeking; the written instructions provide operation and calibration details. The four-position Gyro/Timer walkthrough uses `guide-media.js`. Nothing autoplays.
 
 The static page generator requires Pillow to read image dimensions. PDF generation also requires ReportLab and the configured CJK font.
 

@@ -30,7 +30,7 @@ for lang in ('en','zh'):
     if p<.035:continue
     d=.065*p;ends=[r*np.cos(d)+electric*np.sin(d),r*np.cos(d)-electric*np.sin(d)];v=np.array(ends)
     front=np.dot(r,camera)>0
-    ax.plot(v[:,0],v[:,1],v[:,2],color='#132b43' if front else '#8295a8',alpha=1 if front else .38,lw=2.3 if front else 1.1,zorder=4 if front else 1.5)
+    ax.plot(v[:,0],v[:,1],v[:,2],color='#175da8' if front else '#8eaed0',alpha=1 if front else .38,lw=2.3 if front else 1.1,zorder=4 if front else 1.5)
   u=np.array([0,1,0]);v=np.cross(s,u);a=np.linspace(0,np.pi,180);band=u[:,None]*np.cos(a)+v[:,None]*np.sin(a)
   ax.plot(*band,color='#1675b6',lw=2,zorder=3)
   ax.scatter(*s,s=140,color='#db4f36',edgecolors='white',linewidth=1,zorder=8)

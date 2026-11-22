@@ -31,8 +31,8 @@ def draw(ax,on):
  # Backlight, rear analyzer and front analyzer are ALL parallel x-y planes.
  plane(ax,-4.1,'#fff4cc',.95,depth=1);plane(ax,-2.7,'#a5afbe',.45,depth=2)
  # Crossed transmission axes, drawn on the actual surfaces: rear y, front x.
- rear=np.array([-.5,-.62,-2.66]);arrow(ax,rear,rear+Y*1.18,'#bf3444',1.8,4)
- px,py=P(rear+Y*1.35)[0];ax.text(px,py,'y',color='#a12737',fontsize=11,zorder=8)
+ rear=np.array([-.5,-.62,-2.66]);arrow(ax,rear,rear+Y*1.18,'#000000',1.8,4)
+ px,py=P(rear+Y*1.35)[0];ax.text(px,py,'y',color='#000000',fontsize=11,zorder=8)
  # The LC cell is a rectangular transparent volume; directors vary THROUGH z.
  low=-1.55;high=1.55;w=.74;h=.83
  faces=[[[x,-h,low],[x,h,low],[x,h,high],[x,-h,high]] for x in [-w,w]]+[[[-w,y,low],[w,y,low],[w,y,high],[-w,y,high]] for y in [-h,h]]
@@ -41,8 +41,8 @@ def draw(ax,on):
   theta=(z+1.35)/2.7*np.pi/2;d=k if on else np.cos(theta)*Y+np.sin(theta)*X
   for x,y in [(-.3,-.36),(.3,.28)]:rod(ax,np.array([x,y,z]),d)
  plane(ax,2.7,'#a5afbe',.52,depth=7)
- front=np.array([-.6,-.52,2.74]);arrow(ax,front,front+X*1.25,'#145eae',1.8,8)
- px,py=P(front+X*1.38)[0];ax.text(px,py,'x',color='#145eae',fontsize=11,zorder=8)
+ front=np.array([-.6,-.52,2.74]);arrow(ax,front,front+X*1.25,'#000000',1.8,8)
+ px,py=P(front+X*1.38)[0];ax.text(px,py,'x',color='#000000',fontsize=11,zorder=8)
  # Blue optical E has no z component, even when the molecular director is along z.
  zz=np.linspace(-2.6,2.61,430);t=np.clip((zz-low)/(high-low),0,1)*np.pi/2
  dirs=np.tile(Y,(len(zz),1)) if on else np.cos(t)[:,None]*Y+np.sin(t)[:,None]*X
@@ -58,7 +58,7 @@ def draw(ax,on):
   hit=P([0,0,2.74])[0];ax.plot(*hit,marker='x',color='#b62d3c',ms=9,mew=1.8,zorder=10)
  # An output viewing swatch, separated from the optics (not a fifth polarizer).
  # No extra optical plate: a transmitted wave or the red stop marks the output.
- arrow(ax,-4.65*k,(2.62 if on else 4.0)*k,'#b48322',.65,11)
+ arrow(ax,-4.65*k,(2.62 if on else 4.0)*k,'#000000',.85,11)
  for i,z in enumerate([-4.1,-2.7,0,2.7]):
   p=P([0,-1.04,z])[0];ax.text(*p,str(i+1),ha='center',va='top',fontsize=12,color='#182238',zorder=12,bbox={'facecolor':'white','edgecolor':'none','pad':1})
  bounds=P([[x,y,z] for x in [-1.1,1.1] for y in [-1.2,1.25] for z in [-4.9,4.9]])

@@ -36,7 +36,7 @@ The static page generator requires Pillow to read image dimensions. PDF generati
 
 ### Polarization lesson
 
-The English and Traditional Chinese polarization pages cover eleven topics, with 21 numbered figures per language, six practical experiments, twelve application examples and two interactive ideal-physics models. Explanations include links to the supporting optics, instrument-manufacturer and atmospheric-science sources. The source fragments live in `content/en/polarization.html` and `content/zh/polarization.html`; browser interactions are in `polarization.js`.
+The English and Traditional Chinese polarization pages cover eleven topics, with 21 numbered figures per language, six practical experiments, eighteen application examples and six interactive teaching models. Explanations include links to the supporting optics, instrument-manufacturer and atmospheric-science sources. The source fragments live in `content/en/polarization.html` and `content/zh/polarization.html`; browser interactions are in `polarization.js`.
 
 Original vector diagrams and ideal Fresnel, Rayleigh and Malus-law curves can be regenerated with `tools/build_polarization_figures.py` (NumPy, Matplotlib and the configured CJK font). SVG assets are tracked, so ordinary page builds do not require those plotting packages. App pages use Apple's unmodified official App Store download badge and the app record `id6834323253`.
 
@@ -47,3 +47,5 @@ Sky examples compare 15°, 45° and 75° solar elevation with a fixed observer a
 `wave-demo.js` implements Fig. 1 as a vacuum plane wave with `cB = z-hat × E`, a single orthographic camera, state selection, pause/reset and time-phase control. It respects reduced-motion preferences and stops rendering off screen. Fig. 4 and the reflection experiment share `drawReflectionGeometry` in `polarization.js`; their field amplitudes follow the same Fresnel model and 0–89° slider.
 
 The arbitrary fully polarized state uses ellipse azimuth ψ and signed ellipticity χ, with semiaxes cos χ and |sin χ|. Positive χ is left-handed and negative χ is right-handed when viewed from the receiver towards the source (−z), following the linked optical convention. Circular states disable ψ because the major-axis orientation is undefined.
+
+The projector example uses parallel red/blue electric-field axes and an orthogonal green axis. Statistical field samples animate Fig. 3. Fig. 11 uses the ideal vector projection `Eout = (Ein · T)T` for vertical input. LCD observations are grouped in the LCD section with selectable source axes. Applications follow the measurement concepts and include glare reduction, gloss, scattering correction and material detection.

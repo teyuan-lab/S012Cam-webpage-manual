@@ -14,12 +14,12 @@ for lang in ['en','zh']:
  fig,axes=plt.subplots(1,3,figsize=(12,3.6),layout='constrained')
  for i,(ax,deg) in enumerate(zip(axes,[0,45,90])):
   a=np.radians(deg);ax.set(xlim=(-1.3,1.5),ylim=(-1.2,1.5),aspect='equal');ax.axis('off')
-  ax.annotate('',xy=(1.2,0),xytext=(-1.15,0),arrowprops={'arrowstyle':'->','color':'#9aa8b7','lw':1})
-  ax.annotate('',xy=(0,1.15),xytext=(0,-1.1),arrowprops={'arrowstyle':'->','color':'#9aa8b7','lw':1})
+  ax.annotate('',xy=(1.2,0),xytext=(-1.15,0),arrowprops={'arrowstyle':'->','color':'#000000','lw':1})
+  ax.annotate('',xy=(0,1.15),xytext=(0,-1.1),arrowprops={'arrowstyle':'->','color':'#000000','lw':1})
   ax.annotate('',xy=(np.cos(a),np.sin(a)),xytext=(-np.cos(a),-np.sin(a)),arrowprops={'arrowstyle':'<->','color':'#175da8','lw':2})
   if deg:ax.add_patch(Arc((0,0),.8,.8,theta1=0,theta2=deg,color='#b36b20',lw=1))
   ax.set_title(f'({chr(97+i)}) AoLP = {deg}°',fontsize=16,pad=12)
-  ax.text(.4,-.3,T('0° reference','0° 基準'),fontsize=11,color='#637184')
+  ax.text(.4,-.3,T('0° reference','0° 基準'),fontsize=11,color='#000000')
  fig.savefig(out/f'aolp-examples-{lang}.svg');fig.savefig(out/f'aolp-examples-{lang}.png',dpi=150);plt.close(fig)
  fig,axes=plt.subplots(1,3,figsize=(12,3.7),layout='constrained');alpha=np.linspace(0,180,361)
  for i,(ax,dolp) in enumerate(zip(axes,[0,.5,1])):

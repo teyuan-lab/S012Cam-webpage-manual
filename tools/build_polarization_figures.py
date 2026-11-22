@@ -49,7 +49,7 @@ for lang in ('en','zh'):
  s=S(T('Fresnel reflection at Brewster angle','Brewster 角的 Fresnel 反射'))
  n=1.5;a=math.atan(n);t=math.asin(math.sin(a)/n);c=math.cos(a);ct=math.cos(t)
  rs=((c-n*ct)/(c+n*ct))**2;rp=((n*c-ct)/(n*c+ct))**2
- x,y=370,215;r=210;tr=155;ray='#596779'
+ x,y=370,215;r=210;tr=155;ray='#000000'
  s.rect(25,y,750,185,'#edf4f8');s.line(x,40,x,390,'#9aa8b7',1,False,True)
  dx,dy=r*math.sin(a),r*math.cos(a)
  s.line(x-dx,y-dy,x,y,ray,1.5,True);s.line(x,y,x+dx,y-dy,ray,1.5,True);s.line(x,y,x+tr*math.sin(t),y+tr*math.cos(t),ray,1.5,True)
@@ -58,8 +58,8 @@ for lang in ('en','zh'):
   if kind=='TE':
    s.circle(cx,cy,size,BLUE,'#fff');d=size*.6;s.line(cx-d,cy-d,cx+d,cy+d,BLUE,1);s.line(cx-d,cy+d,cx+d,cy-d,BLUE,1)
   elif size>.001:
-   nx,ny=normal;s.line(cx-nx*size,cy-ny*size,cx+nx*size,cy+ny*size,RED,1.4,True);s.line(cx+nx*size,cy+ny*size,cx-nx*size,cy-ny*size,RED,1.4,True)
-  s.text(cx+side*(size+9)-(92 if side<0 else 0),cy+(-10 if kind=='TE' else 22),f'{kind} {amp:.2f}',16,BLUE if kind=='TE' else RED)
+   nx,ny=normal;s.line(cx-nx*size,cy-ny*size,cx+nx*size,cy+ny*size,'#0000ff',2.8,True);s.line(cx+nx*size,cy+ny*size,cx-nx*size,cy-ny*size,'#0000ff',2.8,True)
+  s.text(cx+side*(size+9)-(92 if side<0 else 0),cy+(-10 if kind=='TE' else 22),f'{kind} {amp:.2f}',16,BLUE if kind=='TE' else '#0000ff')
  field(x-.88*dx,y-.88*dy,1,'TE',(c,-math.sin(a)),-1);field(x-.50*dx,y-.50*dy,1,'TM',(c,-math.sin(a)),-1)
  field(x+.4*dx,y-.4*dy,math.sqrt(rs),'TE',(c,math.sin(a)),1);field(x+.82*dx,y-.82*dy,math.sqrt(rp),'TM',(c,math.sin(a)),1)
  field(x+.38*tr*math.sin(t),y+.38*tr*math.cos(t),2*c/(c+n*ct),'TE',(ct,-math.sin(t)),-1)
@@ -67,12 +67,12 @@ for lang in ('en','zh'):
  s.text(30,35,T('Incident light','入射光'),21);s.text(510,35,T('Reflected light','反射光'),21);s.text(480,380,T('Transmitted light','穿透光'),21)
  s.text(30,408,T('Relative E amplitude · equal incident components · angle 56.3°','相對電場振幅 · 入射兩分量皆為 1 · 入射角 56.3°'),19);s.save('reflection',lang)
  s=S(T('Polarization from Rayleigh scattering','Rayleigh 散射產生偏振'));s.text(30,44,T('At 90 degrees, only the transverse dipole radiates to you','在 90° 方向，只收到橫向偶極的散射光'),25)
- s.line(45,220,370,220,GOLD,6,True);s.circle(400,220,25,BLUE,'#dbeafa');s.line(400,190,400,85,BLUE,5,True)
- s.line(400,145,400,295,RED,4);s.circle(400,220,48,BLUE);s.circle(400,220,5,BLUE,BLUE)
+ s.line(45,220,370,220,'#000000',2,True);s.circle(400,220,25,BLUE,'#dbeafa');s.line(400,190,400,85,'#000000',2,True)
+ s.line(400,145,400,295,BLUE,2);s.circle(400,220,48,BLUE);s.circle(400,220,5,BLUE,BLUE)
  s.text(40,275,T('Incident sunlight','入射日光'));s.text(455,115,T('Observer at 90 degrees','90° 方向的觀察者'),23)
  s.text(38,345,T('E into/out of page radiates upward','垂直圖面的 E 可向上方輻射'),23,BLUE)
- s.text(38,385,T('E along the viewing direction cannot radiate toward you','沿觀察方向的 E 不向該方向輻射'),23,RED)
- s.line(650,205,650,285,RED,4,True);s.text(570,325,T('Induced E','感應電場'),22,RED)
+ s.text(38,385,T('E along the viewing direction cannot radiate toward you','沿觀察方向的 E 不向該方向輻射'),23,BLUE)
+ s.line(650,205,650,285,BLUE,2,True);s.text(570,325,T('Induced E','感應電場'),22,BLUE)
  s.save('scattering',lang)
  s=S(T('Absorbing sheet polarizer','吸收式片狀偏振片'));s.text(28,42,T('Aligned absorbing chains select an E component','排列整齊的吸收分子，選擇電場分量'),26)
  s.rect(285,80,210,245,'#e3e9f0')
@@ -102,7 +102,7 @@ for lang in ('en','zh'):
  th=np.linspace(0,89.8,600);rad=np.radians(th);t=np.arcsin(np.sin(rad)/1.5)
  rs=((np.cos(rad)-1.5*np.cos(t))/(np.cos(rad)+1.5*np.cos(t)))**2
  rp=((1.5*np.cos(rad)-np.cos(t))/(1.5*np.cos(rad)+np.cos(t)))**2
- fig,ax=plt.subplots(figsize=(8,4.4),layout='constrained');ax.plot(th,rs,label='R_TE (TE)',color=BLUE,lw=2.5);ax.plot(th,rp,label='R_TM (TM)',color=RED,lw=2.5);ax.axvline(56.31,color=GOLD,ls='--',label=T('Brewster 56.3°','Brewster 角 56.3°'));ax.set(xlabel=T('Incidence angle from the normal (degrees)','由法線量起的入射角（度）'),ylabel=T('Power reflectance','光強度反射率'),ylim=(0,1),xlim=(0,90));ax.legend();ax.grid(alpha=.15);fig.savefig(OUT/f'fresnel-{lang}.svg');plt.close(fig)
+ fig,ax=plt.subplots(figsize=(8,4.4),layout='constrained');ax.plot(th,rs,label='R_TE (TE)',color=BLUE,lw=2.5);ax.plot(th,rp,label='R_TM (TM)',color='#0000ff',lw=3.2);ax.axvline(56.31,color=GOLD,ls='--',label=T('Brewster 56.3°','Brewster 角 56.3°'));ax.set(xlabel=T('Incidence angle from the normal (degrees)','由法線量起的入射角（度）'),ylabel=T('Power reflectance','光強度反射率'),ylim=(0,1),xlim=(0,90));ax.legend();ax.grid(alpha=.15);fig.savefig(OUT/f'fresnel-{lang}.svg');plt.close(fig)
  th=np.linspace(0,180,361);r=np.radians(th);P=np.sin(r)**2/(1+np.cos(r)**2)
  fig,ax=plt.subplots(figsize=(8,4.4),layout='constrained');ax.plot(th,P,color=BLUE,lw=3);ax.set(xlabel=T('Scattering angle (degrees)','散射角（度）'),ylabel=T('Ideal linear polarization degree','理想線偏振度'),ylim=(0,1.05),xlim=(0,180));ax.set_xticks([0,45,90,135,180]);ax.grid(alpha=.2);fig.savefig(OUT/f'rayleigh-{lang}.svg');plt.close(fig)
  fig,ax=plt.subplots(figsize=(8,4.4),layout='constrained');a=np.linspace(0,180,361);ax.plot(a,np.cos(np.radians(a))**2,color=BLUE,lw=3);ax.set(xlabel=T('Angle between E and transmission axis (degrees)','電場與穿透軸的夾角（度）'),ylabel=T('Transmitted intensity / incident intensity','穿透光強度／入射光強度'),xlim=(0,180),ylim=(0,1.05));ax.set_xticks([0,45,90,135,180]);ax.grid(alpha=.2);fig.savefig(OUT/f'malus-{lang}.svg');plt.close(fig)

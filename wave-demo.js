@@ -50,14 +50,14 @@ document.querySelectorAll('[data-wave-demo]').forEach(demo=>{
   };
   const render=()=>{
     const eId=`wave-e-${demo.dataset.lang}`,bId=`wave-b-${demo.dataset.lang}`,kId=`wave-k-${demo.dataset.lang}`;
-    const markers=[[eId,'#175da8'],[bId,'#c03941'],[kId,'#66788a']].map(([id,color])=>`<marker id="${id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10" fill="${color}"/></marker>`).join('');
+    const markers=[[eId,'#175da8'],[bId,'#c03941'],[kId,'#000000']].map(([id,color])=>`<marker id="${id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10" fill="${color}"/></marker>`).join('');
     let art=`<defs>${markers}</defs><rect width="900" height="420" fill="white"/>`;
     const plane=[[-.75,-.75,zFixed],[.75,-.75,zFixed],[.75,.75,zFixed],[-.75,.75,zFixed]];
     art+=`<path d="${path(plane)}Z" fill="#eaf1f7" fill-opacity=".48" stroke="#b6c6d6" stroke-width="1"/>`;
-    art+=arrow([0,0,-.2],[0,0,5.5],'#66788a',kId,1.2);
+    art+=arrow([0,0,-.2],[0,0,5.5],'#000000',kId,1.2);
     for(const [to,label] of [[[1.05,0,0],'x'],[[0,1.05,0],'y'],[[0,0,5.5],'+z · k']]){
-      if(label.length===1)art+=arrow([0,0,0],to,'#66788a',kId,.8);
-      const [x,y]=project(to);art+=`<text x="${x+10}" y="${y-4}" fill="#536479">${label}</text>`;
+      if(label.length===1)art+=arrow([0,0,0],to,'#000000',kId,.8);
+      const [x,y]=project(to);art+=`<text x="${x+10}" y="${y-4}" fill="#000000">${label}</text>`;
     }
     const fields={e:[],b:[]};
     for(let j=0;j<=230;j++){
@@ -72,8 +72,8 @@ document.querySelectorAll('[data-wave-demo]').forEach(demo=>{
       }
     }
     const f=sample(K*zFixed-phase),location=project([0,0,zFixed]);
-    art+=`<circle cx="${location[0]}" cy="${location[1]}" r="3" fill="#536479"/><text x="${location[0]-10}" y="${location[1]+100}" text-anchor="middle">${T('Fixed position → panel (b)','固定位置 → (b)')}</text>`;
-    art+=`<text x="690" y="40" fill="#175da8">E</text><text x="690" y="70" fill="#c03941">cB</text><text x="690" y="160">E ⊥ B</text><text x="690" y="190">E ⊥ z</text><text x="690" y="220">B ⊥ z</text>`;
+    art+=`<circle cx="${location[0]}" cy="${location[1]}" r="3" fill="#000000"/><text x="${location[0]-10}" y="${location[1]+100}" text-anchor="middle">${T('Fixed position → panel (b)','固定位置 → (b)')}</text>`;
+    art+=`<text x="690" y="40" fill="#175da8">E</text><text x="690" y="70" fill="#c03941">cB</text><text x="690" y="160"><tspan fill="#175da8">E</tspan> ⊥ <tspan fill="#c03941">B</tspan></text><text x="690" y="190"><tspan fill="#175da8">E</tspan> ⊥ z</text><text x="690" y="220"><tspan fill="#c03941">B</tspan> ⊥ z</text>`;
     scene.innerHTML=art;
     const trajectory=kind=>Array.from({length:121},(_,j)=>{
       const vector=sample(j/120*2*Math.PI)[kind];
@@ -86,11 +86,11 @@ document.querySelectorAll('[data-wave-demo]').forEach(demo=>{
     if(state.value==='arbitrary' && Math.abs(parameters.chi)<Math.PI/4-1e-8) {
       const psi=parameters.psi,major=85*Math.cos(parameters.chi),minor=85*Math.abs(Math.sin(parameters.chi));
       const ux=Math.cos(psi),uy=-Math.sin(psi),vx=-Math.sin(psi),vy=-Math.cos(psi);
-      ellipseGuides=`<path d="M${150-major*ux} ${160-major*uy}L${150+major*ux} ${160+major*uy}M${150-minor*vx} ${160-minor*vy}L${150+minor*vx} ${160+minor*vy}" stroke="#737f8c" stroke-width=".9" stroke-dasharray="3 4"/>
+      ellipseGuides=`<path d="M${150-major*ux} ${160-major*uy}L${150+major*ux} ${160+major*uy}M${150-minor*vx} ${160-minor*vy}L${150+minor*vx} ${160+minor*vy}" stroke="#000000" stroke-width=".9" stroke-dasharray="3 4"/>
         <text x="${150+major*ux+6}" y="${160+major*uy-6}">u</text>${minor>5?`<text x="${150+minor*vx-14}" y="${160+minor*vy-6}">v</text>`:''}`;
       if(Math.abs(psi)>.01) ellipseGuides+=`<path d="M178 160A28 28 0 0 ${psi>0?0:1} ${150+28*ux} ${160+28*uy}" fill="none" stroke="#9b6c26" stroke-width="1"/><text x="${150+40*Math.cos(psi/2)}" y="${160-40*Math.sin(psi/2)}" fill="#9b6c26">ψ</text>`;
     }
-    tip.innerHTML=`<defs>${tipMarkers}</defs><rect width="300" height="320" fill="white"/><path d="M25 160H275M150 35V285" stroke="#acbac8" stroke-width="1"/><text x="279" y="153">x</text><text x="160" y="32">y</text>
+    tip.innerHTML=`<defs>${tipMarkers}</defs><rect width="300" height="320" fill="white"/><path d="M25 160H275M150 35V285" stroke="#000000" stroke-width="1"/><text x="279" y="153">x</text><text x="160" y="32">y</text>
       <path d="${trajectory('e')}" stroke="#175da8" stroke-opacity=".35" stroke-width="1.2" fill="none"/>
       <path d="${trajectory('b')}" stroke="#c03941" stroke-opacity=".45" stroke-dasharray="4 4" stroke-width="1.2" fill="none"/>
       ${ellipseGuides}<path data-tip-field="E" d="M150 160L${ex} ${ey}" stroke="#175da8" stroke-width="2" marker-end="url(#wave-tip-e-${demo.dataset.lang})"/>

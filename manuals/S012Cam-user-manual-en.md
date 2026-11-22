@@ -328,7 +328,7 @@ Figure 19. The same scene with aligned photos (left) and displaced photos (right
 
 Select **RGB** for the combined result or **R**, **G**, or **B** for one colour channel. The combined result averages the three channels' linear Stokes values before calculating DoLP and AoLP.
 
-Pinch to zoom, drag to move around, and tap **1×** when visible to reset the view. Tap the result image to open it full screen, then tap a point to read its values and see its position on the legend. Angles that differ by **180°** describe the same polarization direction. Treat the angle cautiously where DoLP is very low.
+**Every image view supports touch zoom and tapping**, including AoLP+DoLP, DoLP, AoLP and the RGB, R, G and B channels. Pinch to zoom, drag to move around, and tap **1×** when visible to reset the view. Tap the result image to open it full screen, then tap a point to read its values and see its position on the legend. Angles that differ by **180°** describe the same polarization direction. Treat the angle cautiously where DoLP is very low.
 
 Open **Tap for details** to see the alignment status and any exposure warnings. If you used partial alignment, magenta areas have no usable measurement.
 

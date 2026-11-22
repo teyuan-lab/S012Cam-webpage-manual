@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-22T12:41:04.695814</dc:date>
+    <dc:date>2026-11-22T14:10:14.807564</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -32,20 +32,20 @@ z
    <g id="patch_2">
     <path d="M 39.729295 154.177057
 Q 137.624567 154.177057 234.401804 154.177057
-" style="fill: none; stroke: #9aa8b7; stroke-linecap: round"/>
+" style="fill: none; stroke: #000000; stroke-linecap: round"/>
     <path d="M 230.401804 152.177057
 L 234.401804 154.177057
 L 230.401804 156.177057
-" style="fill: none; stroke: #9aa8b7; stroke-linecap: round"/>
+" style="fill: none; stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="patch_3">
     <path d="M 135.498108 245.698426
 Q 135.498108 152.052688 135.498108 59.524983
-" style="fill: none; stroke: #9aa8b7; stroke-linecap: round"/>
+" style="fill: none; stroke: #000000; stroke-linecap: round"/>
     <path d="M 133.498108 63.524983
 L 135.498108 59.524983
 L 137.498108 63.524983
-" style="fill: none; stroke: #9aa8b7; stroke-linecap: round"/>
+" style="fill: none; stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="patch_4">
     <path d="M 54.715671 154.177057
@@ -62,7 +62,7 @@ L 212.278438 156.177057
    </g>
    <g id="text_1">
     <!-- 0° reference -->
-    <g style="fill: #637184" transform="translate(169.505676 179.682732) scale(0.11 -0.11)">
+    <g transform="translate(169.505676 179.682732) scale(0.11 -0.11)">
      <defs>
       <path id="ArialUnicodeMS-13" d="M 1778 4603
 Q 3272 4603 3272 2259
@@ -405,20 +405,20 @@ C 453.208004 137.037032 450.702911 133.287896 447.54509 130.130075
    <g id="patch_6">
     <path d="M 327.729295 154.177057
 Q 425.624567 154.177057 522.401804 154.177057
-" style="fill: none; stroke: #9aa8b7; stroke-linecap: round"/>
+" style="fill: none; stroke: #000000; stroke-linecap: round"/>
     <path d="M 518.401804 152.177057
 L 522.401804 154.177057
 L 518.401804 156.177057
-" style="fill: none; stroke: #9aa8b7; stroke-linecap: round"/>
+" style="fill: none; stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
     <path d="M 423.498108 245.698426
 Q 423.498108 152.052688 423.498108 59.524983
-" style="fill: none; stroke: #9aa8b7; stroke-linecap: round"/>
+" style="fill: none; stroke: #000000; stroke-linecap: round"/>
     <path d="M 421.498108 63.524983
 L 423.498108 59.524983
 L 425.498108 63.524983
-" style="fill: none; stroke: #9aa8b7; stroke-linecap: round"/>
+" style="fill: none; stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="patch_8">
     <path d="M 366.376299 211.298866
@@ -435,7 +435,7 @@ L 479.204214 101.299378
    </g>
    <g id="text_3">
     <!-- 0° reference -->
-    <g style="fill: #637184" transform="translate(457.505676 179.682732) scale(0.11 -0.11)">
+    <g transform="translate(457.505676 179.682732) scale(0.11 -0.11)">
      <use xlink:href="#ArialUnicodeMS-13"/>
      <use xlink:href="#ArialUnicodeMS-72" transform="translate(55.609375 0)"/>
      <use xlink:href="#ArialUnicodeMS-3" transform="translate(95.59375 0)"/>
@@ -553,20 +553,20 @@ C 729.16988 123.754865 720.514017 120.169489 711.498108 120.169489
    <g id="patch_10">
     <path d="M 615.729295 154.177057
 Q 713.624567 154.177057 810.401804 154.177057
-" style="fill: none; stroke: #9aa8b7; stroke-linecap: round"/>
+" style="fill: none; stroke: #000000; stroke-linecap: round"/>
     <path d="M 806.401804 152.177057
 L 810.401804 154.177057
 L 806.401804 156.177057
-" style="fill: none; stroke: #9aa8b7; stroke-linecap: round"/>
+" style="fill: none; stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="patch_11">
     <path d="M 711.498108 245.698426
 Q 711.498108 152.052688 711.498108 59.524983
-" style="fill: none; stroke: #9aa8b7; stroke-linecap: round"/>
+" style="fill: none; stroke: #000000; stroke-linecap: round"/>
     <path d="M 709.498108 63.524983
 L 711.498108 59.524983
 L 713.498108 63.524983
-" style="fill: none; stroke: #9aa8b7; stroke-linecap: round"/>
+" style="fill: none; stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="patch_12">
     <path d="M 711.498108 234.959493
@@ -583,7 +583,7 @@ L 713.498108 77.396726
    </g>
    <g id="text_5">
     <!-- 0° reference -->
-    <g style="fill: #637184" transform="translate(745.505676 179.682732) scale(0.11 -0.11)">
+    <g transform="translate(745.505676 179.682732) scale(0.11 -0.11)">
      <use xlink:href="#ArialUnicodeMS-13"/>
      <use xlink:href="#ArialUnicodeMS-72" transform="translate(55.609375 0)"/>
      <use xlink:href="#ArialUnicodeMS-3" transform="translate(95.59375 0)"/>

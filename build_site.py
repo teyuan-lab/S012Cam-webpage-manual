@@ -119,7 +119,7 @@ for lang in ('en','zh'):
    if key=='home':body=content
    else:body=heading(title,desc)+content
    if key=='rotator':
-    body=heading(title,desc)+assembly_video(lang,path)+md_html(sources['assembly'],path)
+    body=heading(title,desc)+assembly_video(lang,path)+md_html(sources['assembly'],path)+md_html(sources['handheld'],path)
     body+='<div class="actions"><a class="button" href="'+rel(path,local(lang,'buy'))+'">'+('比較 DIY 與完整版' if lang=='zh' else 'Compare DIY and assembled')+'</a><a class="button secondary" href="'+rel(path,chapter_path(lang,'assembly'))+'">'+('閱讀完整組裝與校正章節' if lang=='zh' else 'Full assembly and calibration guide')+'</a><a class="button secondary" href="'+rel(path,local(lang,'manual'))+'">'+('開始拍攝' if lang=='zh' else 'Start capturing')+'</a></div>'
    if key=='support':
     tip=('若 Gyro 停在「Turn to XX」，尚未進入「Hold still」，先轉到提示角度，稍微輕觸或輕敲手機一下，再持穩等待，保持構圖不變。' if lang=='zh' else 'If Gyro stays at “Turn to XX” instead of “Hold still”, turn to the requested angle, lightly touch or gently tap the phone once, then hold still without changing the framing.')

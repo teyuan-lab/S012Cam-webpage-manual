@@ -213,9 +213,9 @@ Hold it sideways with both hands, screen facing you, as shown in Fig. 17(a). You
 
 Choose a still subject under steady light. Keep the subject inside the dashed measurement box (12). Tap the preview to focus and meter. This keeps the selected shutter and changes ISO. The default shutter of 1/200 s suits handheld use.
 
-![Two views of holding the iPhone and turning the Polarizer Rotator](../assets/s012cam-rotator-hand-grip.png)
+![Two views of holding the iPhone and turning the Polarizer Rotator](../assets/s012cam-rotator-hand-grip-20261125.png)
 
-Fig. 17. Handheld operation. (a) Screen side: hold the iPhone with both hands and turn the dial counterclockwise with the left middle finger. (b) Camera side: the same grip seen from behind. The blue arrows show the same physical rotation from opposite sides.
+Fig. 17. Handheld operation. (a) Screen side: hold the iPhone with both hands and turn the dial counterclockwise with the left middle finger. (b) Camera side: the same grip seen from behind, with the square polarizer mounted over the circular lid and covering the camera opening. The blue arrows show the same physical rotation from opposite sides.
 
 ### Case 2. Use a tripod or secure the iPhone
 
